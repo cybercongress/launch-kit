@@ -1,0 +1,5 @@
+celery[redis]
+requests
+pandas
+tqdm
+pymongo

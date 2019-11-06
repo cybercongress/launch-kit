@@ -1,0 +1,41 @@
+version: '3'
+services:
+    scraper:
+        build: .
+        network_mode: host
+        environment:
+            - NODE_HOST=${NODE_HOST}
+            - NODE_PORT=${NODE_PORT}
+            - THREADS=${THREADS}
+            - FIRST_BLOCK=${FIRST_BLOCK}
+        depends_on:
+            - redis
+            - mongo
+
+    notebook:
+        image: jupyter/scipy-notebook
+        network_mode: host
+        environment:
+            - NODE_HOST=${NODE_HOST}
+            - NODE_PORT=${NODE_PORT}
+        volumes:
+            - ./data/notebook:/home/jovyan
+
+    redis:
+        image: redis
+        network_mode: host
+        volumes:
+            - ./data/redis:/data
+
+    mongo:
+        image: mongo
+        network_mode: host
+        volumes:
+            - ./data/mongo:/data/db
+
+    flower:
+        image: mher/flower
+        network_mode: host
+        command: ["flower", "--broker=redis://localhost:6379"]
+        depends_on:
+            - redis

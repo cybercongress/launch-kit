@@ -1,0 +1,4 @@
+
+.DS_Store
+lifetime_rewards_tool/data/mongo
+lifetime_rewards_tool/data/redis

@@ -39,5 +39,3 @@ The crawler may index blocks 6-10 hours if `cyberd` runs on the localhost.
 3. Optionally you can run `jupiter notebook` separately. Go to `validators-investigation/data/notebook` and run `jupyter-notebook` (`jupyter-notebook` should be installed)
 
 4. Follow steps in the `balances.ipynb`
-
-5. 

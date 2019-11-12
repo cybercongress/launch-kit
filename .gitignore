@@ -2,3 +2,14 @@
 .DS_Store
 lifetime_rewards_tool/data/mongo
 lifetime_rewards_tool/data/redis
+cyber_address_converter/eth-pubkeys/
+
+lifetime_rewards_tool/data/notebook/balances.csv
+
+cosmos_gift_tool/__pycache__/
+
+cosmos_gift_tool/data/cosmos_genesis_snapshot.json
+
+ethereum_gift_tool/data/ethereum.csv
+
+ethereum_gift_tool/google-big-query-key.json

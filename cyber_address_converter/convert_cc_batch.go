@@ -3,21 +3,21 @@ package main
 import (
 	"bufio"
 	"encoding/csv"
-	"fmt"
-	"github.com/tendermint/tendermint/libs/bech32"
 	"io"
+	"os"
+
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
-	"os"
+	"github.com/tendermint/tendermint/libs/bech32"
 )
 
-// Usage: cosmos-address-tool convert-cosmos-batch ./cosmos-hub.csv --acc-prefix=cyber
+// Usage: cosmos-address-tool convert-cosmos-batch ./cosmos-hub.csv ./output.csv --acc-prefix=cyber
 func ConvertCosmosToCosmosCmd() *cobra.Command {
 
 	cmd := &cobra.Command{
 		Use:   "convert-cosmos-batch <path-to-cosmos-csv> --acc-prefix=<prefix>",
 		Short: "Converts cosmos addresses to another cosmos addresses with given prefixes",
-		Args:  cobra.ExactArgs(1),
+		Args:  cobra.ExactArgs(2),
 		RunE: func(cmd *cobra.Command, args []string) error {
 
 			accs, balances, err := readAccounts(args[0])
@@ -25,7 +25,7 @@ func ConvertCosmosToCosmosCmd() *cobra.Command {
 				return err
 			}
 
-			resultFile, err := os.Create("cosmos.csv")
+			resultFile, err := os.Create(args[1])
 			if err != nil {
 				return err
 			}
@@ -46,8 +46,8 @@ func ConvertCosmosToCosmosCmd() *cobra.Command {
 					return err
 				}
 
-				fmt.Printf("[Cosmos Address: %s] [Converted Address: %s] [Balance: %s]", accs[i], addr, balances[i])
-				println()
+				//fmt.Printf("[Cosmos Address: %s] [Converted Address: %s] [Balance: %s]", accs[i], addr, balances[i])
+				//println()
 
 				r := writer.Write([]string{addr, balances[i]})
 				if r != nil {

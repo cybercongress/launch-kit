@@ -19,3 +19,9 @@ cyber_address_converter/cosmos-address-tool
 *.csv
 
 cyber_address_converter/cyber
+
+ethereum_gift_tool/__pycache__/
+
+genesis_generator_tool/processors/__pycache__/
+
+genesis_generator_tool/data/

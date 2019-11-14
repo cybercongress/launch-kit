@@ -1,0 +1,161 @@
+{
+  "genesis_time": "2019-11-12T10:42:25.21122Z",
+  "chain_id": "euler-x",
+  "consensus_params": {
+    "block": {
+      "max_bytes": "22020096",
+      "max_gas": "-1",
+      "time_iota_ms": "1000"
+    },
+    "evidence": {
+      "max_age": "100000"
+    },
+    "validator": {
+      "pub_key_types": [
+        "ed25519"
+      ]
+    }
+  },
+  "app_hash": "",
+  "app_state": {
+    "accounts": [
+    ],
+    "auth": {
+      "params": {
+        "max_memo_characters": "256",
+        "tx_sig_limit": "10",
+        "tx_size_cost_per_byte": "0",
+        "sig_verify_cost_ed25519": "0",
+        "sig_verify_cost_secp256k1": "0"
+      }
+    },
+    "bank": {
+      "send_enabled": true
+    },
+    "distribution": {
+      "fee_pool": {
+        "community_pool": [
+          {
+            "denom": "cyb",
+            "amount": "2000000000000.000000000000000000"
+          }
+        ]
+      },
+      "community_tax": "0.100000000000000000",
+      "base_proposer_reward": "0.010000000000000000",
+      "bonus_proposer_reward": "0.050000000000000000",
+      "withdraw_addr_enabled": true,
+      "delegator_withdraw_infos": null,
+      "previous_proposer": "",
+      "outstanding_rewards": null,
+      "validator_accumulated_commissions": null,
+      "validator_historical_rewards": null,
+      "validator_current_rewards": null,
+      "delegator_starting_infos": null,
+      "validator_slash_events": null
+    },
+    "mint": {
+      "minter": {
+        "inflation": "0.030000000000000000",
+        "annual_provisions": "0.000000000000000000"
+      },
+      "params": {
+        "mint_denom": "cyb",
+        "inflation_rate_change": "0.100000000000000000",
+        "inflation_max": "0.150000000000000000",
+        "inflation_min": "0.010000000000000000",
+        "goal_bonded": "0.880000000000000000",
+        "blocks_per_year": "6311520"
+      }
+    },
+    "staking": {
+      "params": {
+        "unbonding_time": "1814400000000000",
+        "max_validators": 7,
+        "max_entries": 7,
+        "bond_denom": "cyb"
+      },
+      "last_total_power": "0",
+      "last_validator_powers": null,
+      "validators": null,
+      "delegations": null,
+      "unbonding_delegations": null,
+      "redelegations": null,
+      "exported": false
+    },
+    "pool": {
+      "not_bonded_tokens": "202000000000000",
+      "bonded_tokens": "0"
+    },
+    "supply": {
+      "supply": [
+        {
+          "denom": "cyb",
+          "amount": "202000000000000"
+        }
+      ]
+    },
+    "slashing": {
+      "params": {
+        "max_evidence_age": "1814400000000000",
+        "signed_blocks_window": "240",
+        "min_signed_per_window": "0.800000000000000000",
+        "downtime_jail_duration": "0",
+        "slash_fraction_double_sign": "0.050000000000000000",
+        "slash_fraction_downtime": "0.000500000000000000"
+      },
+      "signing_infos": {},
+      "missed_blocks": {}
+    },
+    "gov": {
+      "starting_proposal_id": "1",
+      "deposits": null,
+      "votes": null,
+      "proposals": null,
+      "deposit_params": {
+        "min_deposit": [
+          {
+            "denom": "cyb",
+            "amount": "500000000000"
+          }
+        ],
+        "max_deposit_period": "7200000000000"
+      },
+      "voting_params": {
+        "voting_period": "7200000000000"
+      },
+      "tally_params": {
+        "quorum": "0.334000000000000000",
+        "threshold": "0.500000000000000000",
+        "veto": "0.334000000000000000"
+      }
+    },
+    "bandwidth": {
+      "Params": {
+        "link_msg_cost": "100",
+        "recovery_period": "18000",
+        "adjust_price_period": "10",
+        "base_credit_price": "1.000000000000000000",
+        "desirable_bandwidth": "200000000",
+        "max_block_bandwidth": "111111",
+        "tx_cost": "300",
+        "non_link_msg_cost": "500"
+      }
+    },
+    "rank": {
+      "Params": {
+        "calculation_period": "10",
+        "damping_factor": "0.850000000000000000",
+        "tolerance": "0.001000000000000000"
+      }
+    },
+    "gentxs": [
+    ],
+    "crisis": {
+      "constant_fee": {
+        "denom": "cyb",
+        "amount": "1000"
+      }
+    }
+  }
+}

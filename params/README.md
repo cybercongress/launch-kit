@@ -6,24 +6,21 @@ Here the more subjective parameter choices are documented with the reasons behin
 
 Note that all durations are specified in nanoseconds.
 
-## Staking Module
+## cyberd parametrs
 
-| Param             | `euler-4` | `euler-5` |Comment                                 |
-|-------------------|-----------|-----------|----------------------------------------|
-| unbonding_time    | 3 weeks   |3 weeks    |time duration of unbonding              |
-| max_validators    | 146       |146        |maximum number of active validators set |
-| bonded_coin_denom | cyb       |eul        |the bonded coin denom                   |
-
-## Minting Module
-
-| Param                 | `euler-4`            | `euler-5`           |Comment                                  |
-|-----------------------|----------------------|---------------------|-----------------------------------------|
-| inflation             | 0.07                 | 0.03                |initial annual inflation rate            |
-| inflation_max         | 0.20                 | 0.15                |maximum annual inflation rate            |
-| inflation_min         | 0.07                 | 0.01                |minimum annual inflation rate            |
-| inflation_rate_change | 0.13                 | 0.13                |rate at which the inflation rate changes |
-| goal_bonded           | 0.67                 | 0.88                |the point of inflation change sign       |
-| blocks_per_year       |31536000 (~1 s/block) |6311520 (~5 s/block) |rate at which the inflation rate changes |
+| Param                 | `euler-4` | `euler-5` | `cyber`  |                                        |
+|-----------------------|----------------------|-----------|----------|----------------------------------------|
+| *Staking Module*                                                                                               |
+| unbonding_time        | 3 weeks              |3 weeks               |          |time duration of unbonding              |
+| max_validators        | 146                  |146                   |          |maximum number of active validators set |
+| bonded_coin_denom     | cyb                  |eul                   |          |the bonded coin denom                   |
+| *Minting Module*        |                      |                      |          |                                        |
+| inflation             | 0.07                 | 0.03                |                | initial annual inflation rate |
+| inflation_max         | 0.20                 | 0.15                ||maximum annual inflation rate            |
+| inflation_min         | 0.07                 | 0.01                ||minimum annual inflation rate            |
+| inflation_rate_change | 0.13                 | 0.13                ||rate at which the inflation rate changes |
+| goal_bonded           | 0.67                 | 0.88                ||the point of inflation change sign       |
+| blocks_per_year       |31536000 (~1s) |6311520 (~5s) ||rate at which the inflation rate changes |
 
 ## Slashing Module
 

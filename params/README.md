@@ -1,10 +1,6 @@
 # Genesis Parameters
 
-Many genesis fields are self-evident, null, or uncontroversial (e.g. gas prices, which are chosen for spam prevention).
-
 Here the more subjective parameter choices are documented with the reasons behind their recommendation.
-
-Note that all durations are specified in nanoseconds.
 
 ## Staking Module
 
@@ -29,7 +25,7 @@ Note that all durations are specified in nanoseconds.
 
 | Param                      | `euler-4` | `euler-5` |Comment                             |
 |----------------------------|---------- |-----------|------------------------------------|
-| max_evidence_ag            | 3 weeks   | 3 week    |the maximum age of evidence         |
+| max_evidence_age           | 3 weeks   | 3 week    |the maximum age of evidence         |
 | signed_blocks_window       | 1800      | 240       |the rolling window for uptime       |
 | min_signed_per_window      | 0.42      | 0.80      |minimum signed blocks in the window |
 | downtime_jail_duration     | 0s        | 0s        |the time before unjail is possible  |

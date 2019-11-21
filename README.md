@@ -56,6 +56,6 @@ The chain paramas available at `params` [README](/params/README.md)
 | create first day        | 100 TGOL               | 100 TTHC           | tokens allocated to round `0`|
 | start time              | open_time + 240h       | open_time + 504h   | the time of round 1 start |
 | number of rounds        | 49 + 1                 | 499 + 1            | round zero + daily rounds |
-| create per day          | 8.16326531 TGOL        | 0.80160321 TGOL    | tokens allocated to each daily round|
+| create per day          | 8.16326531 TGOL        | 0.80160321 TTHC    | tokens allocated to each daily round|
 
 \* -  the `x` is amount of atoms funded at the current moment

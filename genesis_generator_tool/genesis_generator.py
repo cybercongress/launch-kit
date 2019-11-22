@@ -101,10 +101,10 @@ def save_json(distribution_json, genesis_json, balances):
             "amount": distribution_json['community_pool']
     }]
 
-    genesis_json["app_state"]["pool"] = [{
+    genesis_json["app_state"]["pool"] = {
             "not_bonded_tokens": distribution_json["total"],
             "bonded_tokens": "0"
-    }]
+    }
 
     genesis_json["app_state"]["supply"]["supply"] = [{
             "denom": DENOM,

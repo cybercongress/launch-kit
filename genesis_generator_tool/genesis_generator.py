@@ -76,11 +76,12 @@ def save_json(distribution_json, genesis_json, balances):
         float(distribution_json["total"]), 
         "total"
     )
+
     genesis_json["app_state"]["accounts"] = [{
         "address": address,
         "coins": [
             {
-                "denom":  "eul",
+                "denom":  DENOM,
                 "amount": str(row["cyb_balance"])
             }
         ],
@@ -92,8 +93,23 @@ def save_json(distribution_json, genesis_json, balances):
         "start_time": "0",
         "end_time": "0",
         "module_name": "",
-        # "module_permissions": "null"
+        "module_permissions": None
     } for address, row in balances.sort_values("number").iterrows()]
+
+    genesis_json["app_state"]["distribution"]["fee_pool"]["community_pool"] = [{
+            "denom": DENOM,
+            "amount": distribution_json['community_pool']
+    }]
+
+    genesis_json["app_state"]["pool"] = [{
+            "not_bonded_tokens": distribution_json["total"],
+            "bonded_tokens": "0"
+    }]
+
+    genesis_json["app_state"]["supply"]["supply"] = [{
+            "denom": DENOM,
+            "amount": distribution_json['total']
+    }]
 
     json.dump(
         genesis_json,

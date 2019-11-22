@@ -25,3 +25,5 @@ ethereum_gift_tool/__pycache__/
 genesis_generator_tool/processors/__pycache__/
 
 genesis_generator_tool/data/
+
+genesis_generator_tool/__pycache__/

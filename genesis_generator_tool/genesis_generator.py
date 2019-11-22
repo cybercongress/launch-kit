@@ -111,6 +111,26 @@ def save_json(distribution_json, genesis_json, balances):
             "amount": distribution_json['total']
     }]
 
+    sum_amt_accs = sum([int(i['coins'][0]['amount']) for i in genesis_json["app_state"]["accounts"]])
+    print(DENOM, 'sum of accounts:', sum_amt_accs)
+
+    community_pool = int(genesis_json["app_state"]["distribution"]['fee_pool']['community_pool'][0]["amount"])
+    print(DENOM, 'in community pool:', community_pool)
+
+    summ = sum_amt_accs + community_pool
+    delta = int(genesis_json["app_state"]["supply"]["supply"][0]["amount"]) - summ
+
+    print("sum accounts and cummunity pool:", summ, "expected:", genesis_json["app_state"]["supply"]["supply"][0]["amount"], "delta:", delta, DENOM)
+    print("Allocate change dust to cummunity pool and save to .json")
+
+    community_pool += delta
+
+    genesis_json["app_state"]["distribution"]["fee_pool"]["community_pool"] = [{
+            "denom": DENOM,
+            "amount": str(community_pool)
+    }]
+
+
     json.dump(
         genesis_json,
         open(GENERATED_GENESIS_PATH, "w")

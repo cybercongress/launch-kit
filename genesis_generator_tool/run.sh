@@ -12,8 +12,8 @@ echo "validators rewards loaded"
 echo "start to collecting distribution files"
 
 cp ../params/network_genesis.json ./data/network_genesis.json
-cp ../congress/cyber_distribution.json ./data/cyber_distribution.json
-cp ../congress/manual_distribution.json ./data/manual_distribution.json
+cp ../distribution/cyber_distribution.json ./data/cyber_distribution.json
+cp ../distribution/manual_distribution.json ./data/manual_distribution.json
 
 echo "distribution files collected"
 

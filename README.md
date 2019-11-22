@@ -1,5 +1,5 @@
 # Launch kit
-An awesome must-have toolkit and a protocol for a Genesis launch 
+An awesome must-have toolkit and a protocol for the Genesis launch 
 
 ## Launch protocol
 ![](pic/launch_protocol_v2.png)
@@ -23,14 +23,15 @@ An awesome must-have toolkit and a protocol for a Genesis launch
 The chain paramas available at `params` [README](/params/README.md)
 
 ## Distribution params
+(Please see explanatory notes below the table)
 
-| Param                             | `euler-5`   | `cyber`    |Notes|
+| Parameters                             | `euler-5`   | `cyber`    |Notes|
 |:----------------------------------|:-----------:|:----------:|:----:|
 |*Distribution params*|
 | Foundation contract address      | ?         | ?        | ?  |
 | **Foundation token**             | **GOL**   | **THC**  | **ERC20 token in Aragon DAO**  |
-| ETH Game of Thrones distr        | 100 TGOL  | 100 TTHC | Distribution of gov. tokens for Game of Thrones auction to the ETH community  |
-| Auction distr                    | 500 TGOL  | 500 TTHC | Amount of gov tokens allocated to the auction  |
+| Distr to ETH Game of Thrones         | 100 TGOL  | 100 TTHC | Distribution of gov. tokens for Game of Thrones auction to the ETH community  |
+| Auction distr                    | 500 TGOL  | 500 TTHC | Amount of gov. tokens allocated to the auction  |
 | cyber~Congress distr             | 97 TGOL   | 97 TTHC  | Amont of gov. tokens allocated to cyber~Congress (inventors, team)   |
 | **Chain token**                  | **EUL**   | **CYB**  | **Chain liquid token**  |
 | Cosmos gift                      | 10 TEUL   | 10 TCYB  | Chain token gift to the Cosmos community. Each address on block 1110000 entitlted to a gift according to [distribution]() |
@@ -58,4 +59,8 @@ The chain paramas available at `params` [README](/params/README.md)
 | Number of rounds        | 49 + 1                 | 499 + 1            | Round zero + daily rounds |
 | Created per day          | 8.16326531 TGOL        | 0.80160321 TTHC    | Amount of tokens allocated to each daily round|
 
-\* -  the `x` is amount of atoms funded at the current moment
+\* -  the `x` the is amount of ATOMs funded for the current moment <br>
+\ - distr. = distribution | gov. = governance <br>
+\ - `Foundation token` refers to the Aragon entity that is in charge of the donated ETH as per the [protocol White paper](https://github.com/cybercongress/cyber/blob/master/main.tex). The Aragon DAO is responsible for on-chain governance. Please see out paper for more information <br>
+\ - `Chain token` refers to the main token of the cyber protocol. It is used for staking, bandwith and for ranking. Please see protocol paper for more inforamtion.
+

@@ -1,6 +1,6 @@
 # Cosmos gift tool
 
-The tool for collecting Cosmos network addresses with balances to future gifts. It's kinda preparation tool the output is .csv file with addresses and balances on the current snapshot.
+A tool for collecting Cosmos network addresses with balances for future gifts. This is a preparation tool, the output is a .csv file with addresses and balances of the current snapshot.
 
 ## Requirements
  - [gaia ](https://github.com/cosmos/gaia/blob/master/docs/installation.md)
@@ -11,8 +11,8 @@ The tool for collecting Cosmos network addresses with balances to future gifts. 
 
  ## Preparations
 
- 1. Make sure you cosmoshub-2 node have synced t least 1110001 block. For boosting the sync process you can follow [this guide](https://docs.chainlayer.io/quicksync/cosmos-snapshot). 
- 2. You cannot export the state while having the node run. Temporarily halt the node and then perform an export
+ 1. Make sure you cosmoshub-2 node is synced to at least 1110001 blocks. To boost the sync process, you can follow [this guide](https://docs.chainlayer.io/quicksync/cosmos-snapshot)
+ 2. You cannot export the state while your node is running. Temporarily halt the node, and then perform the export
  3. Run the following command: 
  ```bash
  gaiad export --for-zero-height --height=1110000 --home=<PATH_TO_GAIA_HOME_DIRECTORY> > cosmos_genesis_snapshot.json
@@ -32,4 +32,6 @@ The tool for collecting Cosmos network addresses with balances to future gifts. 
  ```
  8. The `cosmos.csv` file will show up in 5-10 seconds at `$PATH_TO_LAUNCH_KIT/launch-kit/cosmos_gift_tool/data/cosmos.csv`
 
- Nice! Now you have all cosmos addresses with non-zero balances on type `cosmosaddress,cosmosbalance` in the .csv file. Now you need `cyber address converter` to convert `cosmos` addresses into `cyber`. More details in `cyber address converter` [README](../cyber_address_converter/README.md)
+ Good job! 
+ You now have all the Cosmos addresses with non-zero balances of type `cosmosaddress,cosmosbalance` in the .csv file. You now  need `cyber address converter` to convert `cosmos` addresses into `cyber` addresses. 
+ More details in `cyber address converter` [README](../cyber_address_converter/README.md)

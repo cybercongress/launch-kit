@@ -60,8 +60,7 @@ def get_distributions(distribution_json, manual_json):
 def concatenate_balances(all_balances):
     balances_df = pd.concat(all_balances, sort=False)
     # balances_df["number"] = range(balances_df.shape[0])
-    # balances_df["number"] += 1
-    balances_df = balances_df.groupby("address").agg({
+    balances_df = balances_df.groupby("address", sort=False).agg({
         "cyb_balance": "sum",
         # "number": "min"
     })

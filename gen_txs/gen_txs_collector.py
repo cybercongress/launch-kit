@@ -10,15 +10,10 @@ print("genesis.json loaded")
 
 path = "data/gen_txs/"
 gentxslist = os.listdir(path)
-
-i = 0
-for file in gentxslist:
-    gentxslist[i] = path + gentxslist[i]
-    i+=1
-
 gentxs = []
 
 for file in gentxslist:
+    file = path + file
     with open(file, 'r') as f:
         gentxs.append(json.load(f))
 

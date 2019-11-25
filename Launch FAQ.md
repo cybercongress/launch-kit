@@ -116,10 +116,10 @@ More detail applies to gifts. Please see the [protocol paper](https://github.com
 ### What is the reward breakdown (including validators, community pools and gifts)?
 You can see all the breakdowns in this repository (the launch-kit repository). 
 
-There are 800 TTHC tokens (Terabytes are 12 zeros). They are broken down as per follows:
-- 75% are for cyber~Auction
-- 12.5% are for GoT
-- 12.5% is allocated to cyber~Congress
+There are 700 TTHC tokens (Terabytes are 12 zeros). They are broken down as per follows:
+- 71.4% are for cyber~Auction
+- 14.3% are for GoT
+- 14.3% is allocated to cyber~Congress
 
 There are 1PTCYB (a petabyte is 15 zeros). They are broken down per following:
 - 90% for the distribution games (in other words open-sale) and for those who stake THC tokens (including cyber~Congress)

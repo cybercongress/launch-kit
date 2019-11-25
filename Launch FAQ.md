@@ -1,6 +1,37 @@
 **Please note that this FAQ is still a work in progress and some links might need to be obtained manually, i.e. asked for in our [#fuckgoogle TG](https://t.me/fuckgoogle) channel**
 
 # cyber Launch FAQ (and some extras)
+Content:
+- [What is this document about?](https://github.com/cybercongress/launch-kit/blob/0.1.0/Launch%20FAQ.md#what-is-this-document-about)
+- [What is Cyber?](https://github.com/cybercongress/launch-kit/blob/0.1.0/Launch%20FAQ.md#what-is-cyber)
+- [What are Cyb and cyb~Virus?](https://github.com/cybercongress/launch-kit/blob/0.1.0/Launch%20FAQ.md#what-are-cyb-and-cybvirus)
+- [What is cyber~Page?](https://github.com/cybercongress/launch-kit/blob/0.1.0/Launch%20FAQ.md#what-is-cyberpage)
+- [What are THC and CYB?](https://github.com/cybercongress/launch-kit/blob/0.1.0/Launch%20FAQ.md#what-are-thc-and-cyb)
+- [What is cyber~Foundation?](https://github.com/cybercongress/launch-kit/blob/0.1.0/Launch%20FAQ.md#what-is-cyberfoundation)
+- [What other entities are there?](https://github.com/cybercongress/launch-kit/blob/0.1.0/Launch%20FAQ.md#what-other-entities-are-there)
+- [What are the distribution games?](https://github.com/cybercongress/launch-kit/blob/0.1.0/Launch%20FAQ.md#what-are-the-distribution-games)
+- [What is cyber~Auction?](https://github.com/cybercongress/launch-kit/blob/0.1.0/Launch%20FAQ.md#what-is-cyberauction)
+- [Who and why do you gift?](https://github.com/cybercongress/launch-kit/blob/0.1.0/Launch%20FAQ.md#who-and-why-do-you-gift)
+- [What is the reward breakdown (including validators, community pools and gifts)?](https://github.com/cybercongress/launch-kit/blob/0.1.0/Launch%20FAQ.md#what-is-the-reward-breakdown-including-validators-community-pools-and-gifts)
+- [How is rank calculated?](https://github.com/cybercongress/launch-kit/blob/0.1.0/Launch%20FAQ.md#how-is-rank-calculated)
+- [Why do you use CUDA cards?](https://github.com/cybercongress/launch-kit/blob/0.1.0/Launch%20FAQ.md#why-do-you-use-cuda-cards)
+- [Where can I find the current net version?](https://github.com/cybercongress/launch-kit/blob/0.1.0/Launch%20FAQ.md#where-can-i-find-the-current-net-version)
+- [Where can I find an active list of seed-nodes?](https://github.com/cybercongress/launch-kit/blob/0.1.0/Launch%20FAQ.md#where-can-i-find-an-active-list-of-seed-nodes)
+- [What incentives are there to run a validator on cyber?](https://github.com/cybercongress/launch-kit/blob/0.1.0/Launch%20FAQ.md#what-incentives-are-there-to-run-a-validator-on-cyber)
+- [What do I (currently) require to run a validator node?](https://github.com/cybercongress/launch-kit/blob/0.1.0/Launch%20FAQ.md#what-do-i-currently-require-to-run-a-validator-node)
+- [How many validators are there?](https://github.com/cybercongress/launch-kit/blob/0.1.0/Launch%20FAQ.md#how-many-validators-are-there)
+- [What is expected from validators?](https://github.com/cybercongress/launch-kit/blob/0.1.0/Launch%20FAQ.md#what-is-expected-from-validators)
+- [Are there any incentives for users?](https://github.com/cybercongress/launch-kit/blob/0.1.0/Launch%20FAQ.md#are-there-any-incentives-for-users)
+- [Are there any transactional costs?](https://github.com/cybercongress/launch-kit/blob/0.1.0/Launch%20FAQ.md#are-there-any-transactional-costs)
+- [Is inflation endless?](https://github.com/cybercongress/launch-kit/blob/0.1.0/Launch%20FAQ.md#is-inflation-endless)
+- [What are MCYB / GCYB / PCYB, etc?](https://github.com/cybercongress/launch-kit/blob/0.1.0/Launch%20FAQ.md#what-are-mcyb--gcyb--pcyb-etc)
+- [How many tokens are there?](https://github.com/cybercongress/launch-kit/blob/0.1.0/Launch%20FAQ.md#how-many-tokens-are-there)
+- [How can I contribute?](https://github.com/cybercongress/launch-kit/blob/0.1.0/Launch%20FAQ.md#how-can-i-contribute)
+- [Will I be rewarded for my contributions?](https://github.com/cybercongress/launch-kit/blob/0.1.0/Launch%20FAQ.md#will-i-be-rewarded-for-my-contributions)
+- [What and how can I test already?](https://github.com/cybercongress/launch-kit/blob/0.1.0/Launch%20FAQ.md#what-and-how-can-i-test-already)
+- [When is the launch?](https://github.com/cybercongress/launch-kit/blob/0.1.0/Launch%20FAQ.md#when-is-the-launch)
+- [How can I contact you?](https://github.com/cybercongress/launch-kit/blob/0.1.0/Launch%20FAQ.md#how-can-i-contact-you)
+- [VIP links (in no particular order):](https://github.com/cybercongress/launch-kit/blob/0.1.0/Launch%20FAQ.md#vip-links-in-no-particular-order)
 
 ### What is this document about?
 This FAQ is primarily addressed at validators and those interested in the launch process. It addresses different questions related to the protocol, economics, incentives, etc. I have tried to keep the answers as short as possible. Please make sure to check out links provided throughout the FAQ for more details on each topic. 

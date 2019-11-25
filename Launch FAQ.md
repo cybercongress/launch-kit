@@ -65,10 +65,10 @@ CYB is a native token of the sovereign cyber protocol powered by the Tendermint 
 ### What is cyber~Foundation?
 cyber ~Foundation is a sovereign entity deployed by cyber ~Congress. The initial intentions of cyber ~Congress can be found in [this document](https://github.com/cybercongress/congress/blob/master/README.md). 
 
-The role of cyber ~Foundation is to help the community govern the protocol via an Aragon DAO. It is a fund managed via a decentralized engine, charged with the donated ETH and managed by the community (agents of the protocol). It is also responsible for organising the Game of links and the minting of THC tokens. It should be noted that burn and mint rights must (and will) be revoked after allocation of the tokens.  
+The role of cyber ~Foundation is to help the community govern the protocol via an Aragon DAO. It is a fund managed via a decentralized engine, charged with the donated ETH and managed by the community (agents of the protocol). 
 
 ### What other entities are there?
-cyber~ Congress, which is a sovereign entity that helps to launch the protocol, commits to the code base, helps to gather the initial community, write the initial documentation, organise the distribution and deploy the Genesis. Its intentions can be found in the link to the document above. The Congress lives in Ethereum, as an [Aragon DAO](https://mainnet.aragon.org/#/cybercongress/0x4feb2bcc5907e7779130c093eef8fb44502c1330). cyber~ Congress is entitled to receive 10% of THC tokens for its work (which it will stake to receive CYB tokens). Our target is to wash down this share by 5 in the next 15 years. Out of its share cyber~Congress is allocating 3% to another entity, that will help to develop the ecosystem: cyber ~Ecosystem. 
+cyber~ Congress, which is a sovereign entity that helps to launch the protocol, commits to the code base, helps to gather the initial community, write the initial documentation, organise the distribution and deploy the Genesis. Its intentions can be found in the link to the document above. The Congress lives in Ethereum, as an [Aragon DAO](https://mainnet.aragon.org/#/cybercongress/0x4feb2bcc5907e7779130c093eef8fb44502c1330). It is responsible for organising the Game of links and the minting of THC tokens. It should be noted that burn and mint rights must (and will) be revoked after allocation of the tokens.  cyber~ Congress is entitled to receive 14.3% (rounded) of THC tokens for its work (which it will stake to receive CYB tokens). Our target is to wash down this share by 5 in the next 15 years. Out of its share cyber~Congress is allocating 3% to another entity, that will help to develop the ecosystem: cyber ~Ecosystem. 
 
 Its intentions and goals, can be found in [this docuemnt](https://github.com/cybercongress/congress/blob/master/ecosystem/cyber~Ecosystem%20development%20paper.md). Its main goal is to help grow the protocol and the innovation around it.
 
@@ -117,6 +117,7 @@ More detail applies to gifts. Please see the [protocol paper](https://github.com
 You can see all the breakdowns in this repository (the launch-kit repository). 
 
 There are 700 TTHC tokens (Terabytes are 12 zeros). They are broken down as per follows:
+(numbers are rounded)
 - 71.4% are for cyber~Auction
 - 14.3% are for GoT
 - 14.3% is allocated to cyber~Congress

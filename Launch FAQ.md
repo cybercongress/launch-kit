@@ -194,7 +194,7 @@ Not in its "regular" form. Cyber has declined transactional or message fees in f
 The more RC (resource credits) the more transactions one can make. The more bandwidth points, the more opportunities. 
 
 ### Is inflation endless?
-Unlike in Cosmos, the inflation in cyberd constantly strives to ~7%. This is achieved by tuning the `TokensPerBlock` parameter during the genesis setup. Given that the network has 1-second target block time and ~7% target inflation the starting parameter will be 50 MCYB (mega CYB).
+The inflation is defined by validators.
 
 ### What are MCYB / GCYB / PCYB, etc?
 Those are representations of the amounts of CYB tokens in megabytes, gigabytes, terabytes, petabytes, etc. I.E. 1GCYB of tokens is 1 Giga (byte) CYB of tokens or 1 with 9 zeros, which equals to 1 billion.

@@ -33,3 +33,5 @@ venv/
 gen_txs/data/
 
 .idea/
+
+.vscode/

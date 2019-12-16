@@ -27,12 +27,21 @@ def get_json_distributions(distribution_json, manual_json):
     ]
 
 
-def get_absolute_distributions(distribution_json):
+def get_validators_distributions(distribution_json):
     return [
         AbsoluteCSVProcessor(
             expected_emission=distribution_json["validators_drop"],
             distribution_type="validators_drop",
             path=VALIDATORS_PATH_CSV
+        )
+    ]
+
+def get_urbit_distributions(distribution_json):
+    return [
+        AbsoluteCSVProcessor(
+            expected_emission=distribution_json["urbit_drop"],
+            distribution_type="urbit_drop",
+            path=URBIT_PATH_CSV
         )
     ]
 
@@ -51,7 +60,8 @@ def get_relative_distributions(distribution_json):
 
 def get_distributions(distribution_json, manual_json):
     processors = get_json_distributions(distribution_json, manual_json) \
-                + get_absolute_distributions(distribution_json) \
+                + get_validators_distributions(distribution_json) \
+                + get_urbit_distributions(distribution_json) \
                 + get_relative_distributions(distribution_json)
 
     return [processor.process() for processor in processors]

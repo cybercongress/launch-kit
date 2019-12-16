@@ -35,3 +35,11 @@ gen_txs/data/
 .idea/
 
 .vscode/
+
+lifetime_rewards_tool/data/notebook/__pycache__/
+
+urbit_gift_tool/data/
+
+lifetime_rewards_tool/data/notebook/.ipynb_checkpoints/
+
+urbit_gift_tool/__pycache__/

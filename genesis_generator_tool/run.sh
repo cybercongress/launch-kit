@@ -6,6 +6,9 @@ echo "cosmos gift loaded"
 cp ../ethereum_gift_tool/data/ethereum.csv ./data/ethereum.csv
 echo "ethereum gift loaded"
 
+cp ../urbit-gift_tool/data/ethereum.csv ./data/ethereum.csv
+echo "ethereum gift loaded"
+
 cp ../lifetime_rewards_tool/data/notebook/validators.csv ./data/validators.csv
 echo "validators rewards loaded"
 
@@ -24,6 +27,11 @@ echo "address tool ready for use"
 
 echo "converting cosmos addresses into cyber"
 ./cyber convert-cosmos-batch ../genesis_generator_tool/data/cosmos.csv ../genesis_generator_tool/data/cosmos.csv --acc-prefix=cyber
+echo "done"
+
+echo "converting ethereum urbit addresses into cyber"
+./cyber convert-ethereum-batch ../genesis_generator_tool/data/ethereum.csv ./eth-pubkeys --acc-prefix=cyber
+mv ./ethereum.csv ../genesis_generator_tool/data/urbit.csv
 echo "done"
 
 echo "converting ethereum addresses into cyber"

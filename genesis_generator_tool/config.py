@@ -3,6 +3,7 @@ from collections import OrderedDict
 # For genesis generator
 DENOM = "eul"
 VALIDATORS_PATH_CSV = "./data/validators.csv"
+URBIT_PATH_CSV = "./data/urbit.csv"
 CSV_DISTRIBUTIONS = OrderedDict([
     ("cosmos_drop", "./data/cosmos.csv"),
     ("ethereum_drop", "./data/ethereum.csv")

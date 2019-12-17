@@ -46,48 +46,19 @@ def collect_points(points_list):
                 planets[owner] = 1
     return galaxies, stars, planets
 
-def token_allocation(urbit_points):
-    galaxies, stars, planets = collect_points(urbit_points)
-    sum_galaxies = sum(galaxies.values())
-    sum_stars = sum(stars.values())
-    sum_planets = sum(planets.values())
-    for owner in galaxies:
-        galaxies[owner] = galaxies[owner] / sum_galaxies * GALAXIES_ALLOC
-
-    for owner in stars:
-        stars[owner] = stars[owner] / sum_stars * STARS_ALLOC
-
-    for owner in planets:
-        planets[owner] = planets[owner] / sum_planets * PLANETS_ALLOC
-    return galaxies, stars, planets
-
-def saving_to_csv(urbit_allocation):
-    galaxies, stars, planets = urbit_allocation
-    galaxies_df = pd.DataFrame.from_dict(galaxies, orient='index')
-    stars_df = pd.DataFrame.from_dict(stars, orient='index')
-    planets_df = pd.DataFrame.from_dict(planets, orient='index')
-    frames = [galaxies_df, stars_df, planets_df]
-    urbit_df = pd.concat(frames)
-    urbit_df.to_csv('./data/urbit.csv', header=False)
-
 print("Collecting all points from ethereum public dataset")
 result = run_sql(URBIT_POINTS_SQL)
 results = [dict(row) for row in tqdm(result, total=result.total_rows)]
 urbit_points = [x['value'] for x in results]
 
 print("Start to group point holders")
-urbit_points = collect_points(urbit_points)
-
-print("allocate tokens by groups")
-print("galaxies:", GALAXIES_ALLOC)
-print("stars:", STARS_ALLOC)
-print("planets:", PLANETS_ALLOC)
-
-urbit_allocation = token_allocation(urbit_points)
-
-print("saving to ./data/urbit.csv")
-saving_to_csv(urbit_allocation)
-print("done")
+galaxies, stars, planets = collect_points(urbit_points)
+galaxies_df = pd.DataFrame.from_dict(galaxies, orient='index')
+stars_df = pd.DataFrame.from_dict(stars, orient='index')
+planets_df = pd.DataFrame.from_dict(planets, orient='index')
+galaxies_df.to_csv('./data/galaxies.csv', header=False)
+stars_df.to_csv('./data/stars.csv', header=False)
+planets_df.to_csv('./data/planets.csv', header=False)
 
 
 

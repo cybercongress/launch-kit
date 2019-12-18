@@ -11,7 +11,13 @@ A list of subjective parameter choices with reasons for their recommendation.
 | unbonding_time        | 3 weeks       | 5 days      | 3 weeks      |Duration time for unbonding                                   |
 | max_validators        | 146           | 146          | 146          |Maximum number of active validators set                      |
 | bonded_coin_denom     | cyb           | eul          | cyb          |The bonded coin denom.                                        |
-|*Minting Module*                                                                                                                   |
+| *Slashing module* |
+| signed_blocks_window | 240         | 240        | 240        | |
+| min_signed_per_window | 0.80       | 0.80        | 0.80        | |
+| downtime_jail_duration | 1800000000000| 1800000000000|1800000000000| |
+| slash_fraction_double_sign | 0.05| 0.05|0.05| |
+| slash_fraction_downtime | 0.0001| 0.0001|0.0001| |
+|*Minting Module*    |
 | inflation             | 0.07          | 0.03         | 0.03         |The initial annual inflation rate                                |
 | inflation_max         | 0.20          | 0.15         | 0.15         |The maximum annual inflation rate                                |
 | inflation_min         | 0.07          | 0.01         | 0.01         |The minimum annual inflation rate                                |

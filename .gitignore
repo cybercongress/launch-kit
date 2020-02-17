@@ -49,3 +49,7 @@ urbit_gift_tool/google-big-query-key.json
 lifetime_rewards_tool/__pycache__/
 
 game_rewards_calculations/__pycache__/
+
+cyberlink_exporter/__pycache__/
+
+cyberlink_exporter/data/cyberlinks.json

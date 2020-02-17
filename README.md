@@ -65,3 +65,14 @@ The chain paramas available at `params` [README](/params/README.md)
 \ - `Foundation token` refers to the Aragon entity that is in charge of the donated ETH as per the [protocol White paper](https://github.com/cybercongress/cyber/blob/master/main.tex). The Aragon DAO is responsible for on-chain governance. Please see out paper for more information <br>
 \ - `Chain token` refers to the main token of the cyber protocol. It is used for staking, bandwith and for ranking. Please see protocol paper for more inforamtion.
 
+---
+
+## Points of truth
+
+|File name | Description | IPFS hash | 
+| ---------|-------------|-----------|
+| cosmos.csv | cosmos network balances state at block 1110000 |  QmcgfjcNwucHrSrWFNxKGYLjLouedYjyeP3hRrqD6P8m9K |
+| ethereum.csv | ethereum network balances state at block 8080808, exclude contracts and addresses without at least one outgoing transaction | QmVCMwK3273Wb4gddzmxiitquCe844Qe63SWVyWFA8gEsT | 
+| galaxies_balance.csv | galaxies balances on non-contract addresses with at least one outgoing transaction. At ~9128000 block state | QmR7nbMZDrQE5wLoUhgKJ6pZiUkCyJ4bCfgDEyWGfH3SvJ |
+| stars_balance.csv | stars balances on non-contract addresses with at least one outgoing transaction. At ~9128000 block state | QmUkXZcHB9L3cg2uqMC5ejkCaD3eWsZRmyuWtdATxZUMKj |
+| planets_balance.csv | planets balances on non-contract addresses with at least one outgoing transaction. At ~9128000 block state | QmZjc2KEQMpvK3dudsyar1Qzq6e4M5ds3CCteUXbne6zxs | 

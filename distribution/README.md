@@ -1,4 +1,6 @@
-# Awesome readme
+# Distribution
+
+At first glance, the distribution looks pretty complex. This is not true. The main object of the successful launch PoS network is nice genesis distribution. You can find below the table with all the distribution parameters. To avoid confusion decided to use two pairs of tokens monikers in the testnet and the mainnet. Since different tasks following by the testnet and the mainnet the distribution different too. Anyway, the trend of allocating to communities as many tokens as possible follows in both cases.
 
 ## Distribution params
 

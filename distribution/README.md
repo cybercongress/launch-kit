@@ -47,3 +47,7 @@ At first glance, the distribution looks pretty complex. This is not true. The ma
 \ - distr. = distribution | gov. = governance <br>
 \ - `Foundation token` refers to the Aragon entity that is in charge of the donated ETH as per the [protocol White paper](https://github.com/cybercongress/cyber/blob/master/main.tex). The Aragon DAO is responsible for on-chain governance. Please see out paper for more information <br>
 \ - `Chain token` refers to the main token of the cyber protocol. It is used for staking, bandwith and for ranking. Please see protocol paper for more inforamtion.
+
+## Workflow
+
+For correct work of `genesis_generator_tool` is necessary to fill `cyber_distribution.json` file with groups for distributing. After it has done, necessary to fill `manual_distribution.json` with addresses of groups are excluded from automatic distribution. Check twice, the sum of addresses balances in  `manual_distribution.json` by the group should be equal with the group amount in `cyber_distribution.json`.

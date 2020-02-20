@@ -4,13 +4,9 @@ lifetime_rewards_tool/data/mongo
 lifetime_rewards_tool/data/redis
 cyber_address_converter/eth-pubkeys/
 
-lifetime_rewards_tool/data/notebook/balances.csv
-
 cosmos_gift_tool/__pycache__/
 
 cosmos_gift_tool/data/cosmos_genesis_snapshot.json
-
-ethereum_gift_tool/data/ethereum.csv
 
 ethereum_gift_tool/google-big-query-key.json
 
@@ -24,13 +20,13 @@ ethereum_gift_tool/__pycache__/
 
 genesis_generator_tool/processors/__pycache__/
 
-genesis_generator_tool/data/
-
 genesis_generator_tool/__pycache__/
 
-venv/
+!*.json
 
-gen_txs/data/
+genesis_generator_tool/data/*.json
+
+venv/
 
 .idea/
 
@@ -42,7 +38,7 @@ lifetime_rewards_tool/data/notebook/.ipynb_checkpoints/
 
 urbit_gift_tool/__pycache__/
 
-urbit_gift_tool/google-big-query-key.json
+urbit_gift_tool/*.json
 
 lifetime_rewards_tool/__pycache__/
 
@@ -51,3 +47,11 @@ game_rewards_calculations/__pycache__/
 cyberlink_exporter/__pycache__/
 
 cyberlink_exporter/data/cyberlinks.json
+
+gen_txs/data/gen_txs/
+
+cosmos_gift_tool/data/*.json
+
+ethereum_gift_tool/*.json
+
+gen_txs/data/*.json

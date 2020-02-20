@@ -6,7 +6,7 @@ At first glance, the distribution looks pretty complex. This is not true. The ma
 
 (Please see explanatory notes below the table)
 
-| Parameters                             | `euler-5`   | `cyber`    |Notes|
+| Parameters                             | `euler-6`   | `cyber`    |Notes|
 |:----------------------------------|:-----------:|:----------:|:----:|
 |*Distribution params*|
 | Foundation contract address      | ?         | ?        | ?  |

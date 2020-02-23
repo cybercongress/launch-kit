@@ -13,13 +13,16 @@ gentxslist = os.listdir(path)
 gentxs = []
 
 for file in gentxslist:
-    file = path + file
-    with open(file, 'r') as f:
-        gentxs.append(json.load(f))
+    if file == ".gitkeep":
+        pass
+    else:
+        file = path + file
+        with open(file, 'r') as f:
+            gentxs.append(json.load(f))
 
 print("gen_tx files loaded")
 
-genesis_dict["app_state"]["gentxs"] = gentxs
+genesis_dict["app_state"]["genutil"]["gentxs"] = gentxs
 
 print("gentxs added")
 

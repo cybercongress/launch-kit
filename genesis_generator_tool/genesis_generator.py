@@ -86,23 +86,20 @@ def save_json(distribution_json, genesis_json, balances):
         "total"
     )
 
-    genesis_json["app_state"]["accounts"] = [{
-        "address": address,
-        "coins": [
-            {
-                "denom":  DENOM,
-                "amount": str(row["cyb_balance"])
-            }
-        ],
-        "sequence_number": "0",
-        "account_number": str(row["number"]),
-        "original_vesting": [],
-        "delegated_free": [],
-        "delegated_vesting": [],
-        "start_time": "0",
-        "end_time": "0",
-        "module_name": "",
-        "module_permissions": None
+    genesis_json["app_state"]["auth"]["accounts"] = [{
+        "type": "cosmos-sdk/Account",
+        "value": {
+            "address": address,
+            "coins": [
+                {
+                    "denom":  DENOM,
+                    "amount": str(row["cyb_balance"])
+                }
+            ],
+            "public_key": "",
+            "account_number": str(row["number"]),
+            "sequence": "0"
+        }
     } for address, row in balances.sort_values("number").iterrows()]
 
     genesis_json["app_state"]["distribution"]["fee_pool"]["community_pool"] = [{
@@ -120,7 +117,7 @@ def save_json(distribution_json, genesis_json, balances):
             "amount": distribution_json['total']
     }]
 
-    sum_amt_accs = sum([int(i['coins'][0]['amount']) for i in genesis_json["app_state"]["accounts"]])
+    sum_amt_accs = sum([int(i["value"]['coins'][0]['amount']) for i in genesis_json["app_state"]["auth"]["accounts"]])
     print(DENOM, 'sum of accounts:', sum_amt_accs)
 
     community_pool = int(genesis_json["app_state"]["distribution"]['fee_pool']['community_pool'][0]["amount"])

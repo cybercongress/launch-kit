@@ -1,5 +1,5 @@
 {
-  "genesis_time": "2019-11-12T10:42:25.21122Z",
+  "genesis_time": "2020-02-21T13:00:17.927334Z",
   "chain_id": "euler-6",
   "consensus_params": {
     "block": {
@@ -8,7 +8,8 @@
       "time_iota_ms": "1000"
     },
     "evidence": {
-      "max_age": "100000"
+      "max_age_num_blocks": "100000",
+      "max_age_duration": "172800000000000"
     },
     "validator": {
       "pub_key_types": [
@@ -18,41 +19,24 @@
   },
   "app_hash": "",
   "app_state": {
-    "accounts": [
-    ],
-    "auth": {
+    "supply": {
+      "supply": [
+        {
+          "denom": "eul",
+          "amount": "202000000000000"
+        }
+      ]
+    },
+    "slashing": {
       "params": {
-        "max_memo_characters": "256",
-        "tx_sig_limit": "10",
-        "tx_size_cost_per_byte": "1",
-        "sig_verify_cost_ed25519": "1",
-        "sig_verify_cost_secp256k1": "1"
-      }
-    },
-    "bank": {
-      "send_enabled": true
-    },
-    "distribution": {
-      "fee_pool": {
-        "community_pool": [
-          {
-            "denom": "eul",
-            "amount": "7000000000000"
-          }
-        ]
+        "signed_blocks_window": "240",
+        "min_signed_per_window": "0.800000000000000000",
+        "downtime_jail_duration": "1",
+        "slash_fraction_double_sign": "0.050000000000000000",
+        "slash_fraction_downtime": "0.000500000000000000"
       },
-      "community_tax": "0.0",
-      "base_proposer_reward": "0.010000000000000000",
-      "bonus_proposer_reward": "0.050000000000000000",
-      "withdraw_addr_enabled": true,
-      "delegator_withdraw_infos": null,
-      "previous_proposer": "",
-      "outstanding_rewards": null,
-      "validator_accumulated_commissions": null,
-      "validator_historical_rewards": null,
-      "validator_current_rewards": null,
-      "delegator_starting_infos": null,
-      "validator_slash_events": null
+      "signing_infos": {},
+      "missed_blocks": {}
     },
     "mint": {
       "minter": {
@@ -70,9 +54,10 @@
     },
     "staking": {
       "params": {
-        "unbonding_time": "86400000000000",
-        "max_validators": 20,
-        "max_entries": 20,
+        "unbonding_time": "1814400000000000",
+        "max_validators": 7,
+        "max_entries": 7,
+        "historical_entries": 0,
         "bond_denom": "eul"
       },
       "last_total_power": "0",
@@ -83,29 +68,68 @@
       "redelegations": null,
       "exported": false
     },
+    "evidence": {
+      "params": {
+        "max_evidence_age": "120000000000"
+      },
+      "evidence": []
+    },
+    "wasm": {
+      "codes": null,
+      "contracts": null
+    },
+    "bank": {
+      "send_enabled": true
+    },
+    "distribution": {
+      "params": {
+        "community_tax": "0.100000000000000000",
+        "base_proposer_reward": "0.010000000000000000",
+        "bonus_proposer_reward": "0.050000000000000000",
+        "withdraw_addr_enabled": true
+      },
+      "fee_pool": {
+        "community_pool": [
+          {
+            "denom": "eul",
+            "amount": "2000000000000.000000000000000000"
+          }
+        ]
+      },
+      "delegator_withdraw_infos": null,
+      "previous_proposer": "",
+      "outstanding_rewards": null,
+      "validator_accumulated_commissions": null,
+      "validator_historical_rewards": null,
+      "validator_current_rewards": null,
+      "delegator_starting_infos": null,
+      "validator_slash_events": null
+    },
+    "rank": {
+      "params": {
+        "calculation_period": "10",
+        "damping_factor": "0.850000000000000000",
+        "tolerance": "0.001000000000000000"
+      }
+    },
+    "genutil": {
+      "gentxs": []
+    },
     "pool": {
-      "not_bonded_tokens": "707000000000000",
+      "not_bonded_tokens": "202000000000000",
       "bonded_tokens": "0"
     },
-    "supply": {
-      "supply": [
-        {
-          "denom": "eul",
-          "amount": "707000000000000"
-        }
-      ]
-    },
-    "slashing": {
+    "bandwidth": {
       "params": {
-        "max_evidence_age": "86400000000000",
-        "signed_blocks_window": "240",
-        "min_signed_per_window": "0.800000000000000000",
-        "downtime_jail_duration": "1800000000000",
-        "slash_fraction_double_sign": "0.050000000000000000",
-        "slash_fraction_downtime": "0.000100000000000000"
-      },
-      "signing_infos": {},
-      "missed_blocks": {}
+        "tx_cost": "3000",
+        "link_msg_cost": "1000",
+        "non_link_msg_cost": "5000",
+        "recovery_period": "700",
+        "adjust_price_period": "10",
+        "base_credit_price": "50.000000000000000000",
+        "desirable_bandwidth": "100000",
+        "max_block_bandwidth": "5000"
+      }
     },
     "gov": {
       "starting_proposal_id": "1",
@@ -116,46 +140,35 @@
         "min_deposit": [
           {
             "denom": "eul",
-            "amount": "70000000000"
+            "amount": "500000000000"
           }
         ],
-        "max_deposit_period": "86400000000000"
+        "max_deposit_period": "7200000000000"
       },
       "voting_params": {
-        "voting_period": "86400000000000"
+        "voting_period": "7200000000000"
       },
       "tally_params": {
-        "quorum": "0.334000000000000000",
-        "threshold": "0.500000000000000000",
-        "veto": "0.334000000000000000"
+        "quorum": "0.150000000000000000",
+        "threshold": "0.150000000000000000",
+        "veto": "0.150000000000000000"
       }
     },
-    "bandwidth": {
-      "Params": {
-        "link_msg_cost": "1000",
-        "recovery_period": "17280",
-        "adjust_price_period": "20",
-        "base_credit_price": "1.000000000000000000",
-        "desirable_bandwidth": "200000000",
-        "max_block_bandwidth": "120000",
-        "tx_cost": "300",
-        "non_link_msg_cost": "500"
-      }
-    },
-    "rank": {
-      "Params": {
-        "calculation_period": "10",
-        "damping_factor": "0.850000000000000000",
-        "tolerance": "0.000100000000000000"
-      }
-    },
-    "gentxs": [
-    ],
     "crisis": {
       "constant_fee": {
         "denom": "eul",
-        "amount": "1000000000"
+        "amount": "10000000000"
       }
+    },
+    "auth": {
+      "params": {
+        "max_memo_characters": "256",
+        "tx_sig_limit": "10",
+        "tx_size_cost_per_byte": "1",
+        "sig_verify_cost_ed25519": "1",
+        "sig_verify_cost_secp256k1": "1"
+      },
+      "accounts": []
     }
   }
 }

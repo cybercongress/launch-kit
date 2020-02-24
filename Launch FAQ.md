@@ -1,5 +1,3 @@
-**Please note that this FAQ is still a work in progress and some links might need to be obtained manually, i.e. asked for in our [#fuckgoogle TG](https://t.me/fuckgoogle) channel**
-
 # cyber Launch FAQ (and some extras)
 Content:
 - [What is this document about?](https://github.com/cybercongress/launch-kit/blob/0.1.0/Launch%20FAQ.md#what-is-this-document-about)

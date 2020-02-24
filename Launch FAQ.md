@@ -1,4 +1,5 @@
-# cyber Launch FAQ (and some extras)
+# cyber Launch FAQ
+
 Content:
 - [What is this document about?](https://github.com/cybercongress/launch-kit/blob/0.1.0/Launch%20FAQ.md#what-is-this-document-about)
 - [What is Cyber?](https://github.com/cybercongress/launch-kit/blob/0.1.0/Launch%20FAQ.md#what-is-cyber)

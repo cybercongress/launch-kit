@@ -1,6 +1,8 @@
 # Launch kit
 
-An awesome must-have toolkit and a protocol for the Genesis launch. This toolkit provides a launch protocol for cosmos-based networks, recommended workflow and necessary tools for `genesis.json` compilation. Also, it contains a crisis protocol. 
+An awesome must-have toolkit and a protocol for the Genesis launch. This toolkit provides a launch protocol for cosmos-based networks, recommended workflow and necessary tools for `genesis.json` compilation. Also, it contains a crisis protocol.
+
+The network launch is a complex process with many dependent factors. It starts with developing distribution and do not end with the first block of the network. This repo is at the same time example of a working launch process we practice. It does not pretend to be some unique method for launch by all projects but the experience saved here is very useful for future great projects.
 
 ## ToC
 
@@ -58,16 +60,15 @@ In the second case, you can calculate the balances as you want, and the genesis 
 
 5. After you prepared all the files you need to move it to `genesis-generator-tool/data` and start the genesis generation.
 
-
 ## Tools
 
-- The Game rewards tools
-- ETH and Cosmos to Cyber converter
-- ETH gift distributor
-- Cosmos gift distributor
-- Urbit gift distributor
-- Genesis generator
-- Data exporters
+- [The Game rewards tools](./game_rewards_calculations/README.md) for calculating rewards after incentivize game
+- [ETH and Cosmos to Cyber converter](./cyber_address_converter/README.md). `ETH -> cosmos-based` addresses converter and `cosmos-based -> cosmos-based` converter
+- [ETH gift distributor](./ethereum_gift_tool/README.md) for collecting ethereum non-contract addresses with at list one outgoing transaction on a given blog height
+- [Cosmos gift distributor](./cosmos_gift_tool/README.md) for parsing cosmos addresses from state exported file on a given blog height
+- [Urbit gift distributor](./urbit_gift_tool/README.md) for collecting Urbit entities on given block height, getting their owners and distributing gifts. 
+- [Genesis generator](./genesis_generator_tool/README.md) for generating genesis file
+- [Data exporters](./cyberlink_exporter/README.md) for exporting data from the network. Now available exporting cyberlinks by account on given block height
 
 ## Network params
 

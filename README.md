@@ -1,6 +1,6 @@
 # Launch kit
 
-An awesome must-have toolkit and a protocol for the Genesis launch. This toolkit provides a launch protocol for cosmos-based networks, recommended workflow and necessary tools for genesis.json compilation. Also, it contains a crisis protocol.
+An awesome must-have toolkit and a protocol for the Genesis launch. This toolkit provides a launch protocol for cosmos-based networks, recommended workflow and necessary tools for `genesis.json` compilation. Also, it contains a crisis protocol. 
 
 ## ToC
 
@@ -34,7 +34,7 @@ This zone contains three major events:
 
 The finalization zone should be available only after tokens distribution (as pended commitment). The main event of this zone is mainnet preparations done.
 
-![launch workflow](pic/launch_protocol_v2.png)
+![launch workflow](pic/protocol.png)
 
 ## Workflow
 
@@ -52,7 +52,7 @@ The finalization zone should be available only after tokens distribution (as pen
 
 In the first case, you just need a `.csv` file with addresses and native chain balances. The genesis-generator tool will parse distribution files and apply the quadratic function to this group. 
 
-> Notice. The addresses should be converted into the your-network format. For details visit provided [converter].
+> Notice. The addresses should be converted into the your-network format. For details visit provided [converter](./cyber_address_converter/README.md).
 
 In the second case, you can calculate the balances as you want, and the genesis generator tool just inserts it in the right format. But you should carry about the distribution sum by yourself. This sum should compare with value at `cyber_distribution.json`. More technical details at the [genesis-generator-tool](./genesis-generator-tool/README.md). 
 

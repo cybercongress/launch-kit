@@ -97,8 +97,8 @@ def save_json(distribution_json, genesis_json, balances):
                 }
             ],
             "public_key": "",
-            "account_number": str(row["number"]),
-            "sequence": "0"
+            "account_number": int(row["number"]),
+            "sequence": 0
         }
     } for address, row in balances.sort_values("number").iterrows()]
 

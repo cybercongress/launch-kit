@@ -1,6 +1,6 @@
 {
-  "genesis_time": "2020-02-21T13:00:17.927334Z",
-  "chain_id": "euler-6",
+  "genesis_time": "2020-03-26T13:00:17.927334Z",
+  "chain_id": "euler-x",
   "consensus_params": {
     "block": {
       "max_bytes": "22020096",
@@ -23,17 +23,17 @@
       "supply": [
         {
           "denom": "eul",
-          "amount": "202000000000000"
+          "amount": "233000000000000"
         }
       ]
     },
     "slashing": {
       "params": {
-        "signed_blocks_window": "240",
-        "min_signed_per_window": "0.800000000000000000",
-        "downtime_jail_duration": "1",
-        "slash_fraction_double_sign": "0.050000000000000000",
-        "slash_fraction_downtime": "0.000500000000000000"
+        "signed_blocks_window": "300",
+        "min_signed_per_window": "0.700000000000000000",
+        "downtime_jail_duration": "60000000000",
+        "slash_fraction_double_sign": "0.020000000000000000",
+        "slash_fraction_downtime": "0.000100000000000000"
       },
       "signing_infos": {},
       "missed_blocks": {}
@@ -45,7 +45,7 @@
       },
       "params": {
         "mint_denom": "eul",
-        "inflation_rate_change": "0.100000000000000000",
+        "inflation_rate_change": "0.130000000000000000",
         "inflation_max": "0.150000000000000000",
         "inflation_min": "0.010000000000000000",
         "goal_bonded": "0.880000000000000000",
@@ -54,10 +54,10 @@
     },
     "staking": {
       "params": {
-        "unbonding_time": "1814400000000000",
-        "max_validators": 7,
-        "max_entries": 7,
-        "historical_entries": 0,
+        "unbonding_time": "432000000000000",
+        "max_validators": 146,
+        "max_entries": 21,
+        "historical_entries": 20,
         "bond_denom": "eul"
       },
       "last_total_power": "0",
@@ -70,7 +70,7 @@
     },
     "evidence": {
       "params": {
-        "max_evidence_age": "120000000000"
+        "max_evidence_age": "432000000000000"
       },
       "evidence": []
     },
@@ -83,7 +83,7 @@
     },
     "distribution": {
       "params": {
-        "community_tax": "0.100000000000000000",
+        "community_tax": "0.000000000000000000",
         "base_proposer_reward": "0.010000000000000000",
         "bonus_proposer_reward": "0.050000000000000000",
         "withdraw_addr_enabled": true
@@ -107,7 +107,7 @@
     },
     "rank": {
       "params": {
-        "calculation_period": "10",
+        "calculation_period": "5",
         "damping_factor": "0.850000000000000000",
         "tolerance": "0.001000000000000000"
       }
@@ -116,19 +116,19 @@
       "gentxs": []
     },
     "pool": {
-      "not_bonded_tokens": "202000000000000",
+      "not_bonded_tokens": "233000000000000",
       "bonded_tokens": "0"
     },
     "bandwidth": {
       "params": {
-        "tx_cost": "3000",
-        "link_msg_cost": "1000",
-        "non_link_msg_cost": "5000",
-        "recovery_period": "700",
+        "tx_cost": "300",
+        "link_msg_cost": "100",
+        "non_link_msg_cost": "500",
+        "recovery_period": "16000",
         "adjust_price_period": "10",
-        "base_credit_price": "50.000000000000000000",
-        "desirable_bandwidth": "100000",
-        "max_block_bandwidth": "5000"
+        "base_credit_price": "1.000000000000000000",
+        "desirable_bandwidth": "1000000000",
+        "max_block_bandwidth": "125000"
       }
     },
     "gov": {
@@ -140,18 +140,18 @@
         "min_deposit": [
           {
             "denom": "eul",
-            "amount": "500000000000"
+            "amount": "10000000000"
           }
         ],
-        "max_deposit_period": "7200000000000"
+        "max_deposit_period": "432000000000000"
       },
       "voting_params": {
-        "voting_period": "7200000000000"
+        "voting_period": "432000000000000"
       },
       "tally_params": {
-        "quorum": "0.150000000000000000",
-        "threshold": "0.150000000000000000",
-        "veto": "0.150000000000000000"
+        "quorum": "0.200000000000000000",
+        "threshold": "0.500000000000000000",
+        "veto": "0.334000000000000000"
       }
     },
     "crisis": {

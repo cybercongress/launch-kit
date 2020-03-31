@@ -4,117 +4,103 @@ If you in the list of Genesis validators you will get automatically respect from
 
 This ceremony provides to validators sign the first transaction and start validating from the first block.
 
+
+
 ## Requirements
 
-- [go1.13+](https://tecadmin.net/install-go-on-ubuntu/)
 - [ipfs](https://docs.ipfs.io/guides/guides/install/)
-- [cyberd and cyberdcli](https://github.com/cybercongress/cyberd)
-- keys
+- [cyberd and cyberdcli](https://github.com/cybercongress/go-cyber)
 
 ## Flow
 
 The flow is pretty simple:
 
-1. Clone `cyberd` repo
+1. Install `cyberd` and `cyberdcli` on your computer use by the following command:
 
 ```bash
-git clone https://github.com/cybercongress/cyberd.git
+sudo bash < <(curl -s https://mars.cybernode.ai/go-cyber/install_cyberdcli_v0.1.6.sh)
 ```
 
-2. Usually, you just need to switch the branch according to the network ID but if you confused just ask the correct version in telegram [chat](https://t.me/fuckgoogle)
+2. Import your account to cyberdcli you want to launch a validator. Make sure you will import account with non-zero balance: you can check it out with cyber.page gift tool by entering your validator address (if you have gift for `euler-4` validating), or `cosmos` and `ethereum` addresses.
 
-3. Go inside repo:
+for `cosmos` and validator addresses use the following command:
 
 ```bash
-cd cyberd
+cyberdcli keys add <your_account_name> --recover
 ```
 
-and run:
+and than input your bip39 mnemonic
+
+for `urbit` and `ethereum`:
 
 ```bash
-make
+cyberdcli keys add private <your_account_name>
 ```
 
-> if you get this message `Makefile:42: *** CUDA not installed for GPU support, please install or set CUDA_ENABLED=false.  Stop.` use `nano makefile` and change `CUDA_ENABLED=false`
+and than input you HEX private key
 
-to install `cyberd` and `cyberdcli` globally, and execute them by `cyberd` and `cyberdcli` commands, or run:
+All keys will store at `$HOME/.cyberdcli/keys` directory.
+
+Nice. Now you hve a keys for making first transaction. 
+
+3. Prepare directory for `cyberd` data:
 
 ```bash
-go build -o cyberd ./cmd/cyberd
-go build -o cyberdcli ./cmd/cyberdcli
+mkdir $PATH_TO_CYBERD/.cyberd
 ```
 
-to install locally and execute them by `./cyberd` and `./cyberdcli` commands inside the repo.
-
-4. Create directory for `cyberd` and `cyberdcli` data:
+4. Initialize cyberd repo:
 
 ```bash
-mkdir cyberdata
-cd cyberdata
-mkdir cyberd
-mkdir cyberdcli
+cyberd init <your_validator_moniker> --home $PATH_TO_CYBERD/.cyberd
 ```
 
-5. Initialize cyberd repo:
+If you will not add `--home` flag the `.cyberd` initiation will be at `$HOME/.cyberd` directory. 
+
+5. Get the `genesis.json` file by the IPFS hash:
 
 ```bash
-cyberd init --home <PATH_TO_CYBERD>/cyberdata/cyberd
-```
-
-6. Put your:
-
-- `node_key.json`
-- `priv_validator.json`
-
-to `<PATH_TO_CYBERD>/cyberdata/cyberd/config` (overwrite existed)
-and
-
-- `keys.db`
-
-to `<PATH_TO_CYBERD>/cyberdata/cyberdcli/keys`
-
-7. Check your validator consensus pubkey and you cyber address by following comands:
-
-```bash
-cyberd tendermint show-validator --home <PATH_TO_CYBERD>/cyberdata/cyberd
-cyberdcli keys list --home <PATH_TO_CYBERD>/cyberdata/cyberdcli
-```
-
-if all your necessary keys exists you can sign genesis file
-
-8. go to `cyberdata/cyberd` directory, remove existing `genesis.json` and get the genesis.json by the following command:
-
-```bash
-ipfs get <GENESIS_HASH> -o genesis.json
+ipfs get Qm... -o $PATH_TO_CYBERD/.cyberd/config/genesis.json
 ```
 
 The `genesis.json` file huge, so it can get a time.
 
-9. Sign it. The transaction structure pretty similar for validator creation transaction:
+7. Check your validator consensus pubkey and you cyber address by following comands:
+
+```bash
+cyberd tendermint show-validator --home $PATH_TO_CYBERD/.cyberd
+cyberdcli keys list
+```
+
+> **IMPORTANT**
+You also need to backup your `$PATH_TO_CYBERD/.cyberd/config/node_key.json` and `$PATH_TO_CYBERD/.cyberd/config/priv_validator_key.json` files and import them to your production node before launch for correct working! If you will lose this files your node can't sing blocks. 
+
+if all your necessary keys exists you can sign genesis file
+
+8. Sign it. The transaction structure pretty similar for validator creation transaction:
 
 ```bash
 cyberd gentx \
-    --amount eul     \
-    --commission-max-change-rate  \
-    --commission-max-rate  \
-    --commission-rate  \
-    --home-client <PATH_TO_CYBERD>/cyberdata/cyberdcli \
-    --min-self-delegation "" \
+    --amount <>eul     \
+    --commission-max-change-rate 0.01 \
+    --commission-max-rate 0.1 \
+    --commission-rate 0.03 \
+    --min-self-delegation "10" \
     --name <key_name>      \
     --node-id <nod_moniker> \
-    --output-document <validator_moniker>.json \
+    --output-document $PATH_TO_CYBERD/.cyberd/<validator_moniker>.json \
     --pubkey <validator_consensus_pubkey> \
-    --home <PATH_TO_CYBERD>/cyberdata/cyberd
+    --home $PATH_TO_CYBERD/.cyberd
 ```
 
-The output file is signed genesis transaction for validator creation
+The output file is signed genesis transaction for validator creation at `$PATH_TO_CYBERD/.cyberd`
 
-10. Fork this repo 
+9. Fork this repo 
 
-```
+```bash
 https://github.com/cybercongress/launch-kit.git
 ```
 
-11. Clone it, put your transaction file to `gen_txs/data/gen_txs/`, and submit PR. 
+10. Clone it, put your transaction file to `gen_txs/data/gen_txs/`, and submit PR. 
 
-12. Done! 
+11. Done! 

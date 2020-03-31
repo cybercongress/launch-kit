@@ -1,10 +1,8 @@
 # Genesis ceremony
 
-If you in the list of Genesis validators you will get automatically respect from the community. It's a law.
+If you in the list of Genesis validators you will get automatically respect from the community.
 
 This ceremony provides to validators sign the first transaction and start validating from the first block.
-
-
 
 ## Requirements
 
@@ -21,9 +19,9 @@ The flow is pretty simple:
 sudo bash < <(curl -s https://mars.cybernode.ai/go-cyber/install_cyberdcli_v0.1.6.sh)
 ```
 
-2. Import your account to cyberdcli you want to launch a validator. Make sure you will import account with non-zero balance: you can check it out with cyber.page gift tool by entering your validator address (if you have gift for `euler-4` validating), or `cosmos` and `ethereum` addresses.
-
-for `cosmos` and validator addresses use the following command:
+2. Import to cyberdcli your account you want to launch a validator. Make sure you will import an account with non-zero balance: you can check it out with cyber.page gift tool by entering your validator address (if you have gift for `euler-4` validating), or `cosmos` and `ethereum` addresses.
+Since v.38 cosmos-sdk uses os-native keyring to store all your keys. We've noticed that in several cases it does not work well by default (for example if you don't have GUI installed on your machine). If you face on with errors by executing commands below please check [this section](https://github.com/cybercongress/go-cyber/blob/0.1.6_run_out_of_docker/docs/run_validator.md#prepare-the-staking-address), or ask us at [telegram chat](https://t.me/fuckgoogle).
+For `cosmos` and validator addresses use the following command, your account name is the whatever name you want for you :
 
 ```bash
 cyberdcli keys add <your_account_name> --recover
@@ -39,9 +37,7 @@ cyberdcli keys add private <your_account_name>
 
 and than input you HEX private key
 
-All keys will store at `$HOME/.cyberdcli/keys` directory.
-
-Nice. Now you hve a keys for making first transaction. 
+Nice. Now you hve a keys for making first transaction.
 
 3. Prepare directory for `cyberd` data:
 
@@ -49,13 +45,13 @@ Nice. Now you hve a keys for making first transaction.
 mkdir $PATH_TO_CYBERD/.cyberd
 ```
 
-4. Initialize cyberd repo:
+4. Initialize cyberd repo with validator moniker you want:
 
 ```bash
 cyberd init <your_validator_moniker> --home $PATH_TO_CYBERD/.cyberd
 ```
 
-If you will not add `--home` flag the `.cyberd` initiation will be at `$HOME/.cyberd` directory. 
+If you will not add `--home` flag the `.cyberd` initiation will be at `$HOME/.cyberd` directory.
 
 5. Get the `genesis.json` file by the IPFS hash:
 
@@ -73,9 +69,9 @@ cyberdcli keys list
 ```
 
 > **IMPORTANT**
-You also need to backup your `$PATH_TO_CYBERD/.cyberd/config/node_key.json` and `$PATH_TO_CYBERD/.cyberd/config/priv_validator_key.json` files and import them to your production node before launch for correct working! If you will lose this files your node can't sing blocks. 
+You also need to backup your `$PATH_TO_CYBERD/.cyberd/config/node_key.json` and `$PATH_TO_CYBERD/.cyberd/config/priv_validator_key.json` files and import them to your production node before launch for correct working! If you will lose this files your node can't sign blocks. 
 
-if all your necessary keys exists you can sign genesis file
+If all your necessary keys exists you can sign genesis file
 
 8. Sign it. The transaction structure pretty similar for validator creation transaction:
 
@@ -93,14 +89,16 @@ cyberd gentx \
     --home $PATH_TO_CYBERD/.cyberd
 ```
 
+all params presented here just for example. You can import yours according to your validator strategy. 
+
 The output file is signed genesis transaction for validator creation at `$PATH_TO_CYBERD/.cyberd`
 
-9. Fork this repo 
+9. Fork this repo
 
 ```bash
 https://github.com/cybercongress/launch-kit.git
 ```
 
-10. Clone it, put your transaction file to `gen_txs/data/gen_txs/`, and submit PR. 
+10. Clone it, put your transaction file to `gen_txs/data/gen_txs/`, and submit a PR. 
 
 11. Done! 

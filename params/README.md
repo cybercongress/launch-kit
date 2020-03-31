@@ -2,7 +2,6 @@
 
 A list of subjective parameter choices with reasons for their recommendation.
 
-
 ## cyberd parameters
 
 | Param | `euler-4` |`euler-5` | `euler-6` | `cyber`* | Notes |
@@ -12,9 +11,10 @@ A list of subjective parameter choices with reasons for their recommendation.
 | max_validators | 146 | 146 | 146 | 146 | Maximum number of active validators set |
 | max_entries | 7 | 146 | 21 | 21 | Maximum amount of delegations by one account |
 | bonded_coin_denom | cyb | eul | eul | cyb | The bonded coin denom |
+| max_evidence_age | 21 day | 5 days | 5 days | 21 days | Time period indicator that a validator committed malicious behavior |
+| historical_entries | N/A |  | 20 | 20 |  |
 | *Slashing module* |
 | signed_blocks_window | 1800 | 300 | 300 | 300 | The window for signing blocks |
-| max_evidence_age | 21 day | 5 days | 5 days | 21 days | Time period indicator that a validator committed malicious behavior |
 | min_signed_per_window | 0.42 | 0.70 | 0.70 | 0.70 | The fraction of signed blocks per window to be an active validator |
 | downtime_jail_duration | 0 min | 30 min | 1 min | 1 min | Time duration before unjail transaction available |
 | slash_fraction_double_sign | 0.20| 0.02 | 0.02 | 0.02 | Slashing for double sign |
@@ -42,7 +42,7 @@ A list of subjective parameter choices with reasons for their recommendation.
 | recovery_period | 86400 (24h) blocks | 16000 (24.4h) blocks | 16000 (24.4h) blocks | 16000 (24.4h) blocks | Full bandwidth recovery period |
 | adjust_price_period | 60 blocks (~1 min) | 10 blocks (~1 min) | 10 blocks (~1 min) |  10 blocks (~1 min) | How ofter the price is recalculated |
 | base_credit_price | 1.0 | 1.0 | 1.0 | 1.0 | The base bandwidth cost multiplier |
-| desirable_bandwidth | 2000000000 | 2000000000 | 100000000 |  2000000000 | The amount that all users on average can spend for recover period |
+| desirable_bandwidth | 2000000000 | 2000000000 | 1000000000 |  2000000000 | The amount that all users on average can spend for recover period |
 | max_block_bandwidth   | 111111 | 250000 | 125000 |  125000 | The maximum bandwidth in one block |
 | link_msg_cost | 100 | 100 | 100 | 100 | Link message cost |
 | tx_cost | 300 | 300 | 300 | 300 | Transaction message cost |
@@ -52,4 +52,4 @@ A list of subjective parameter choices with reasons for their recommendation.
 | damping_factor | 0.85 | 0.85 | 0.85 | 0.85 | Link-through probability. Included to prevent sinks |
 | tolerance | 0.001 | 0.001 | 0.001 | 0.001 | Used  for  convergence  of PageRank vector |
 
-\* The `cyber` mainnet parameters have not defined yet. There are estimated parameters  
+\* The `cyber` mainnet parameters have not defined yet. There are estimated parameters

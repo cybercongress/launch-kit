@@ -1,5 +1,7 @@
 # Distribution
 
+
+
 At first glance, the distribution looks pretty complex. This is not true. The main object of the successful launch PoS network is nice genesis distribution. You can find below the table with all the distribution parameters. To avoid confusion decided to use two pairs of tokens monikers in the testnet and the mainnet. Since different tasks following by the testnet and the mainnet the distribution different too. Anyway, the trend of allocating to communities as many tokens as possible follows in both cases.
 
 ## Distribution params
@@ -49,5 +51,7 @@ At first glance, the distribution looks pretty complex. This is not true. The ma
 \ - `Chain token` refers to the main token of the cyber protocol. It is used for staking, bandwith and for ranking. Please see protocol paper for more inforamtion.
 
 ## Workflow
+
+PRs
 
 For correct work of `genesis_generator_tool` is necessary to fill `cyber_distribution.json` file with groups for distributing. After it has done, necessary to fill `manual_distribution.json` with addresses of groups are excluded from automatic distribution. Check twice, the sum of addresses balances in  `manual_distribution.json` by the group should be equal with the group amount in `cyber_distribution.json`.

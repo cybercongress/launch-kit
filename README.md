@@ -90,3 +90,6 @@ The distribution paramas available at `distribution` [README](/distribution/READ
 | stars_balance.csv | stars balances on non-contract addresses with at least one outgoing transaction. At 9110129 block state | QmUkXZcHB9L3cg2uqMC5ejkCaD3eWsZRmyuWtdATxZUMKj |
 | planets_balance.csv | planets balances on non-contract addresses with at least one outgoing transaction. At 9110129 block state | QmZjc2KEQMpvK3dudsyar1Qzq6e4M5ds3CCteUXbne6zxs |
 | euler-6 genesis.json unsigned | | QmYrZuyMvskb2tkY65Go1Dadh1axXjY4x3VfFadaSSRf8b |
+| cyber_distribution | the distribution by user groups in euler-5/6 | QmfW6pEsHnC76ZWwGgtbhnRq4fJrUdiU9tz9M2oUnw3JNr |
+| manual_distribution.json | the manual distribution inside groups in euler-5/6 | QmbEX1yNqCXbLF9fqQbJrE58zm4EXF2A8K6WDy9LjXSecd |
+| network_genesis.json | the genesis.json template with current params for euler-6 | QmNboiSbS4TP6xptek6uyUnuxL3uL4Xef9qbyR7BvuH8Sf |

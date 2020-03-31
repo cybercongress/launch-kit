@@ -1,8 +1,8 @@
 # Genesis ceremony
 
-If you in the list of Genesis validators you will get automatically respect from the community.
+Validators who get to participate in the Genesis block are more likely to get more respect from the community. It's the law.
 
-This ceremony provides to validators sign the first transaction and start validating from the first block.
+To achieve this, we have a Genesis ceremony. This ceremony provides validators with the ability to sign the first transaction and start validating from the first block.
 
 ## Requirements
 
@@ -22,24 +22,31 @@ sudo bash < <(curl -s https://mars.cybernode.ai/go-cyber/install_cyberdcli_v0.1.
 2. Import to cyberdcli your account you want to launch a validator. Make sure you will import an account with non-zero balance: you can check it out with cyber.page gift tool by entering your validator address (if you have gift for `euler-4` validating), or `cosmos` and `ethereum` addresses.
 Since v.38 cosmos-sdk uses os-native keyring to store all your keys. We've noticed that in several cases it does not work well by default (for example if you don't have GUI installed on your machine). If you face on with errors by executing commands below please check [this section](https://github.com/cybercongress/go-cyber/blob/0.1.6_run_out_of_docker/docs/run_validator.md#prepare-the-staking-address), or ask us at [telegram chat](https://t.me/fuckgoogle).
 For `cosmos` and validator addresses use the following command, your account name is the whatever name you want for you :
+2. Import your account to cyberdcli that you want to launch a validator from. Make sure you import an account with a non-zero balance. You can check the balance using [cyber.page gift tool](https://cyber.page/) by entering your validator address (if you had a gift for `euler-4` validating), or `Cosmos` and `Ethereum` addresses.
+
+If you are importing a `cosmos` address or a previous validator address (that has already validated cyber on previous `euler` testnets), use the following command:
 
 ```bash
 cyberdcli keys add <your_account_name> --recover
 ```
 
-and than input your bip39 mnemonic
+(<your_account_name> is the desired name for your account. Don't forget to remove the `<` and the `>` symbols)
 
-for `urbit` and `ethereum`:
+and then input your bip39 mnemonic
+
+If you are importing an address that had a `Urbit` or an `Ethereum` gift, then:
 
 ```bash
 cyberdcli keys add private <your_account_name>
 ```
 
-and than input you HEX private key
+and then input your HEX private key.
 
-Nice. Now you hve a keys for making first transaction.
+The keys will be stored at your `$HOME/.cyberdcli/keys` directory, locally on your machine. Please make sure your machine is safe to keep your keys on it.
 
-3. Prepare directory for `cyberd` data:
+Awesome! You now have the keys for making the first transaction. 
+
+3. Prepare a directory for `cyberd` data:
 
 ```bash
 mkdir $PATH_TO_CYBERD/.cyberd
@@ -51,17 +58,17 @@ mkdir $PATH_TO_CYBERD/.cyberd
 cyberd init <your_validator_moniker> --home $PATH_TO_CYBERD/.cyberd
 ```
 
-If you will not add `--home` flag the `.cyberd` initiation will be at `$HOME/.cyberd` directory.
+If you will not add the `--home` flag, the initiation of `.cyberd` will happen in your `$HOME/.cyberd` directory. 
 
-5. Get the `genesis.json` file by the IPFS hash:
+5. Get the `genesis.json` file from the IPFS hash:
 
 ```bash
 ipfs get Qm... -o $PATH_TO_CYBERD/.cyberd/config/genesis.json
 ```
 
-The `genesis.json` file huge, so it can get a time.
+The `genesis.json` file is huge. It can take time do download it.
 
-7. Check your validator consensus pubkey and you cyber address by following comands:
+7. Check your validator consensus pubkey and you cyber address with the following commands:
 
 ```bash
 cyberd tendermint show-validator --home $PATH_TO_CYBERD/.cyberd
@@ -69,11 +76,11 @@ cyberdcli keys list
 ```
 
 > **IMPORTANT**
-You also need to backup your `$PATH_TO_CYBERD/.cyberd/config/node_key.json` and `$PATH_TO_CYBERD/.cyberd/config/priv_validator_key.json` files and import them to your production node before launch for correct working! If you will lose this files your node can't sign blocks. 
+You need to backup your `$PATH_TO_CYBERD/.cyberd/config/node_key.json` and `$PATH_TO_CYBERD/.cyberd/config/priv_validator_key.json` files and import them onto your production node before the launch of the network! If you will lose these files, your node won't sing blocks. 
 
-If all your necessary keys exists you can sign genesis file
+If all your necessary keys exist you can sign the genesis file.
 
-8. Sign it. The transaction structure pretty similar for validator creation transaction:
+8. Sign it. The transaction structure is pretty similar to the creation of a validator launching:
 
 ```bash
 cyberd gentx \
@@ -92,6 +99,7 @@ cyberd gentx \
 all params presented here just for example. You can import yours according to your validator strategy. 
 
 The output file is signed genesis transaction for validator creation at `$PATH_TO_CYBERD/.cyberd`
+The output file is the signed genesis transaction for validator creation. It is located at `$PATH_TO_CYBERD/.cyberd`
 
 9. Fork this repo
 

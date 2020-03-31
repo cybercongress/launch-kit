@@ -57,9 +57,9 @@ To achieve this, we have a Genesis ceremony. This ceremony provides validators w
  cyberd init <your_validator_moniker&gt; --home $PATH_TO_CYBERD/.cyberd
  ```
  
-&gt; **IMPORTANT**
+&gt; **Important**
 
-If you `euler-5` validator, please, copy your `node_key.json` and `priv_validator_key.json` from <PATH_TO_EULER-5_DATA>/cyberd/config and replace auto-generated files after initialization.
+If you were a `euler-5` validator, please, copy your `node_key.json` and `priv_validator_key.json` from <PATH_TO_EULER-5_DATA>/cyberd/config and replace auto-generated files after the initialization.
 
  If you will not add the `--home` flag, the initiation of `.cyberd` will happen in your `$HOME/.cyberd` directory. 
  
@@ -78,7 +78,7 @@ If you `euler-5` validator, please, copy your `node_key.json` and `priv_validato
  cyberdcli keys list
  ```
  
- &gt; **IMPORTANT**
+ &gt; **Important**
  You need to backup your `$PATH_TO_CYBERD/.cyberd/config/node_key.json` and `$PATH_TO_CYBERD/.cyberd/config/priv_validator_key.json` files and import them onto your production node before the launch of the network! If you will lose these files, your node won't sing blocks. 
  
  If all your necessary keys are in place, you are ready to sign the genesis file.

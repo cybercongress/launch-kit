@@ -85,7 +85,8 @@ The distribution paramas available at `distribution` [README](/distribution/READ
 |File name | Description | IPFS hash | 
 | ---------|-------------|-----------|
 | cosmos.csv | cosmos network balances state at block 1110000 |  QmcgfjcNwucHrSrWFNxKGYLjLouedYjyeP3hRrqD6P8m9K |
-| ethereum.csv | ethereum network balances state at block 8080808, exclude contracts and addresses without at least one outgoing transaction | QmVCMwK3273Wb4gddzmxiitquCe844Qe63SWVyWFA8gEsT | 
+| ethereum.csv | ethereum network balances state at block 8080808, exclude contracts and addresses without at least one outgoing transaction | QmVCMwK3273Wb4gddzmxiitquCe844Qe63SWVyWFA8gEsT |
 | galaxies_balance.csv | galaxies balances on non-contract addresses with at least one outgoing transaction. At 9110129 block state | QmR7nbMZDrQE5wLoUhgKJ6pZiUkCyJ4bCfgDEyWGfH3SvJ |
 | stars_balance.csv | stars balances on non-contract addresses with at least one outgoing transaction. At 9110129 block state | QmUkXZcHB9L3cg2uqMC5ejkCaD3eWsZRmyuWtdATxZUMKj |
-| planets_balance.csv | planets balances on non-contract addresses with at least one outgoing transaction. At 9110129 block state | QmZjc2KEQMpvK3dudsyar1Qzq6e4M5ds3CCteUXbne6zxs | 
+| planets_balance.csv | planets balances on non-contract addresses with at least one outgoing transaction. At 9110129 block state | QmZjc2KEQMpvK3dudsyar1Qzq6e4M5ds3CCteUXbne6zxs |
+| euler-6 genesis.json unsigned | | QmYrZuyMvskb2tkY65Go1Dadh1axXjY4x3VfFadaSSRf8b |

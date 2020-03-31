@@ -57,6 +57,10 @@ To achieve this, we have a Genesis ceremony. This ceremony provides validators w
  cyberd init <your_validator_moniker&gt; --home $PATH_TO_CYBERD/.cyberd
  ```
  
+&gt; **IMPORTANT**
+
+If you `euler-5` validator, please, copy your `node_key.json` and `priv_validator_key.json` from <PATH_TO_EULER-5_DATA>/cyberd/config and replace auto-generated files after initialization.
+
  If you will not add the `--home` flag, the initiation of `.cyberd` will happen in your `$HOME/.cyberd` directory. 
  
  5. Get the `genesis.json` file from the IPFS hash:

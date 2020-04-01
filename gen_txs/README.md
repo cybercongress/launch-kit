@@ -41,7 +41,7 @@ To achieve this, we have a Genesis ceremony. This ceremony provides validators w
  
  And then input your HEX private key (the system will ask you to add a password for encryption).
  
- The keys will be stored at your `$HOME/.cyberdcli/keys` directory, locally on your machine. Please make sure your machine is safe to keep your keys on it.
+ The keys will be stored locally on your machine. Please make sure your machine is safe to keep your keys on it.
  
  Awesome! You now have the keys for making the first transaction. 
  

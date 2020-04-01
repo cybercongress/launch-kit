@@ -66,7 +66,7 @@ If you were a `euler-5` validator, please, copy your `node_key.json` and `priv_v
  5. Get the `genesis.json` file from the IPFS hash:
  
  ```bash
- ipfs get Qm... -o $PATH_TO_CYBERD/.cyberd/config/genesis.json
+ ipfs get QmYrZuyMvskb2tkY65Go1Dadh1axXjY4x3VfFadaSSRf8b -o $PATH_TO_CYBERD/.cyberd/config/genesis.json
  ```
  
  The `genesis.json` file is huge. It can take time do download it.

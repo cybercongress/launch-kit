@@ -48,12 +48,8 @@ cyberlink_exporter/__pycache__/
 
 cyberlink_exporter/data/cyberlinks.json
 
-gen_txs/data/gen_txs/
-
 cosmos_gift_tool/data/*.json
 
 ethereum_gift_tool/*.json
-
-gen_txs/data/*.json
 
 backup/backup23022020/

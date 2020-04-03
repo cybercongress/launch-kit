@@ -95,3 +95,4 @@ The distribution paramas available at `distribution` [README](/distribution/READ
 | network_genesis.json | the genesis.json template with current params for euler-6 | QmNboiSbS4TP6xptek6uyUnuxL3uL4Xef9qbyR7BvuH8Sf |
 | cyberlinks.json | the euler-5 cyberlinks by address at 1580000 block height | QmNsDrgrJfGvs4Z6mg7XU5KMjg49FGtjUET1NqNoCynrzP |
 | precommits.csv | precommits count by validator at euler-5 testnet at 1580000 block height | QmdfktVx9jpRx45WTAW9YkfbVijr2pC1AyvuhcS2bSgULk |
+| euler-6 genesis.json signed | | QmfYSpPY2BqiPa528sbSP11dAHFBhw3Yj5wh81x65D9hZM |

@@ -1,0 +1,46 @@
+{
+    "type": "cosmos-sdk/StdTx",
+    "value": {
+        "msg": [
+            {
+                "type": "cosmos-sdk/MsgCreateValidator",
+                "value": {
+                    "description": {
+                        "moniker": "sta",
+                        "identity": "",
+                        "website": "",
+                        "security_contact": "",
+                        "details": ""
+                    },
+                    "commission": {
+                        "rate": "0.000000000000000000",
+                        "max_rate": "0.100000000000000000",
+                        "max_change_rate": "0.010000000000000000"
+                    },
+                    "min_self_delegation": "10",
+                    "delegator_address": "cyber1hmkqhy8ygl6tnl5g8tc503rwrmmrkjcq4878e0",
+                    "validator_address": "cybervaloper1hmkqhy8ygl6tnl5g8tc503rwrmmrkjcq4xvhhf",
+                    "pubkey": "cybervalconspub1zcjduepqz4dnk3702wsrksnfsdv3adz97rzcysu8w7a3et2pyvswpce909hsgyshz6",
+                    "value": {
+                        "denom": "eul",
+                        "amount": "700000000000"
+                    }
+                }
+            }
+        ],
+        "fee": {
+            "amount": [],
+            "gas": "200000"
+        },
+        "signatures": [
+            {
+                "pub_key": {
+                    "type": "tendermint/PubKeySecp256k1",
+                    "value": "A2VNyRXHdKHqT3mosH+sPHFhvCglaCEnK6wLgG8yN8WO"
+                },
+                "signature": "sOxQ3P9PVZmvqB9uQ8LMwIOJIeRbvIje6AZaNGVyk/lUUy6H8D8H3PzSN2fvi2endRwwzjoSgomgEBrMxoXKfA=="
+            }
+        ],
+        "memo": "sta@192.168.1.105:26656"
+    }
+}

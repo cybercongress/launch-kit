@@ -43,7 +43,7 @@ At first glance, the distribution looks pretty complex. This is not true. The ma
 | Created on first day        | 100 TGOL               | 100 TTHC           | Amount of tokens allocated to round `0`|
 | Starting time              | open_time + 240h       | open_time + 504h   | The time of start of round 1 |
 | Number of rounds        | 49 + 1                 | 500 + 1            | Round zero + daily rounds |
-| Created per day          | 8.16326531 TGOL        | 0.80160321 TTHC    | Amount of tokens allocated to each daily round|
+| Created per day          | 8.16326531 TGOL        | 1 TTHC    | Amount of tokens allocated to each daily round|
 
 \* -  the `x` the is amount of ATOMs funded for the current moment <br>
 \ - distr. = distribution | gov. = governance <br>

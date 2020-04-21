@@ -13,6 +13,7 @@ This repo is an example of a working launch process of [cyber](https://cyber.pag
 - [Tools](#tools)
 - [Network params](#network-params)
 - [Distribution params](#distribution-params)
+- [Crisis protocol](#crisis-protocol)
 - [Points of truth](#points-of-truth)
 - [Cybers launch FAQ](https://github.com/cybercongress/launch-kit/blob/0.1.0/Launch%20FAQ.md)
 
@@ -80,6 +81,38 @@ The network params are available at the `params` [README](/params/README.md)
 ## Distribution params
 
 The distribution params are available at the `distribution` [README](/distribution/README.md)
+
+## Crisis protocol
+
+We can not guarantee that everything will go as expected. The software can be vulnerable. If anything goes wrong, cyber\~Congress as the organiser of the game, has the full power of deciding whether the game must be restarted without any rewards or restarted with partial rewards, depending on the circumstances. In the case, such a circumstance shall arise we are going to count with community opinions.
+
+We define 2 danger zones with probabilities to unexpected behaviour and one zone as an intersection of the defined zones:
+
+- Network running
+- Contracts running
+- The intersection of the two above
+
+In case anything goes wrong, we’ve prepared a crisis protocol.
+
+If the network will fail:
+
+1. Stop the contracts (claim app)
+2. Save current euler snapshot
+3. Relaunch next euler with previous euler genesis.json
+4. Start the contracts (claim app)
+
+If the contracts will fail:
+
+1. Stop the contracts (claim app)
+2. Pool bounty
+3. Redeploy the contracts (claim app)
+4. Continue the auction
+
+If everything gets fucked up from both ends, then:
+
+1. Stop the contracts (claim app)
+2. Save current euler snapshot
+3. One week pause for community discussions. And for cyber\~Congress to make a decision
 
 ---
 

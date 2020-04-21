@@ -14,6 +14,7 @@ This repo is an example of a working launch process of [cyber](https://cyber.pag
 - [Network params](#network-params)
 - [Distribution params](#distribution-params)
 - [Points of truth](#points-of-truth)
+- [Cybers launch FAQ](https://github.com/cybercongress/launch-kit/blob/0.1.0/Launch%20FAQ.md)
 
 ## Launch protocol
 

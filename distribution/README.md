@@ -15,7 +15,7 @@ At first glance, the distribution looks pretty complex. This is not true. The ma
 | **Foundation token**             | **GOL**   | **THC**  | **ERC20 token in Aragon DAO**  |
 | Distr to ETH Game of Thrones         | 1 TGOL  | 100 TTHC | Distribution of gov. tokens for Game of Thrones auction to the ETH community  |
 | Auction distr                    | 6 TGOL  | 500 TTHC | Amount of gov. tokens allocated to the auction  |
-| cyber~Congress distr             | 8 TGOL   | 97 TTHC  | Amont of gov. tokens allocated to cyber~Congress (inventors, team)   |
+| cyber~Congress distr             | 8 TGOL   | 100 TTHC  | Amont of gov. tokens allocated to cyber~Congress (inventors, team)   |
 | **Chain token**                  | **EUL**   | **CYB**  | **Chain liquid token**  |
 | Cosmos gift                      | 10 TEUL   | 10 TCYB  | Chain token gift to the Cosmos community. Each address on block 1110000 entitlted to a gift according to [distribution]() |
 | Ethereum gift                    | 80 TEUL   | 80 TCYB  | Chain token gift to the Ethereum community. 99.7% of addresses on block 8080808 are entitiled to a gift according to [distribution]() |
@@ -27,7 +27,7 @@ At first glance, the distribution looks pretty complex. This is not true. The ma
 | Delegation discipline            | NaN   | 5 TCYB  | Tokens allocated for Game of Links delegation discipline |
 | Lifetime discipline            | NaN   | 2 TCYB  | Tokens allocated for Game of Links lifetime discipline |
 | Community pool, GoL bounty       | 2 TEUL    | 2 TCYB   | Amount of tokens in the community pool at the start |
-| Full validator set extra rewards | NaN   | 10 TCYB  | Extara reward to validators if the set of active validators will reach 146 and will last for a period of 10,000 blocks |
+| Full validator set extra rewards | NaN   | 5 TCYB  | Extara reward to validators if the set of active validators will reach 146 and will last for a period of 10,000 blocks |
 | Cosmos Game of Thrones            | 1 TEUL  | 100 TCYB | Chain tokens |
 | **SUM**                          | 233 TEUL | 1000 TCYB|  |
 |*Takeoff funding params*|

@@ -69,8 +69,9 @@ There are 700 TTHC tokens (Terabytes are 12 zeros). They are broken down as per 
 
 There are 1PTCYB (a petabyte is 15 zeros). They are broken down per following:
 
-- 90% for the distribution games (in other words open-sale) and for those who stake THC tokens (including cyber~Congress)
+- 80% for public allocation
 - 10% is a gift to Urbit, Cosmos and ETH communities
+- 10% inventors, cyber\~Congress team and seed donors
 
 A further breakdown is available in the [white paper](https://github.com/cybercongress/cyber/blob/master/main.tex).
 
@@ -91,7 +92,7 @@ It is [a community governed DAO](https://github.com/cybercongress/cyber-foundati
 ### What are the distribution games?
 There are 3 distribution games proposed in total. Their goal is to help increase the initial efficiency of the distribution. 
 
-- The Game of links is focused on the early believers in the protocol and the initial validator set. 100 TCYB is allocated for this game, to each of the participating communities. It is launched at the same time that Euler-5 is launched. The main idea of the Game of Links is to establish a starting value of relevance in the knowledge graph because it is crucial to get quality search results from the inception of the network. The game will be finished when either 600 thousand ATOMs are collected or 90 days have passed from the start of the funding (there will probably be a prolongation for an N period to have a grand finale of the game).
+- The Game of links is focused on the early believers in the protocol and the initial validator set. 100 TCYB is allocated for this game, to each of the participating communities. It is launched at the same time that Euler-5 is launched. The main idea of the Game of Links is to establish a starting value of relevance in the knowledge graph because it is crucial to get quality search results from the inception of the network. The game will be finished when either 200 thousand ATOMs are collected or 146 days have passed from the start of the funding (there will probably be a prolongation for an N period to have a grand finale of the game).
 There are 4 major disciplines in which participants can compete (a) lifetime of a validator - the longer the validator is run for, the better; (b) delegations to a validator - the more a validator is delegated, the better; (c) bandwidth and load - the more someone spends the better; and, finally (d) relevance - this is projected in terms of the top 1000 CID's and links to those. The idea is to find the most relevant content or CID's.
 Tokens for the game can be obtained either from EULER-4 rewards, from gifts or from test auctions.
 Any other information can be found [in the provision file](https://github.com/cybercongress/congress/pull/240/files) and [in the launch-kit repo](https://github.com/cybercongress/launch-kit).

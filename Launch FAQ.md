@@ -60,20 +60,19 @@ More detail applies to gifts. Please see the [protocol paper](https://github.com
 ### What is the reward breakdown (including validators, community pools and gifts)?
 You can see all the breakdowns in this repository (the launch-kit repository). 
 
-There are 700 TTHC tokens (Terabytes are 12 zeros). They are broken down as per follows:
+There are 750 TTHC tokens (Terabytes are 12 zeros). They are broken down as per follows:
 
 (numbers are rounded)
-- 71.4% are for cyber~Auction
-- 14.3% are for GoT
-- 14.3% is allocated to cyber~Congress
+- 80% are for cyber~Auction
+- 20% is allocated to cyber~Congress, seed donors, inventors and development fund
 
 There are 1PTCYB (a petabyte is 15 zeros). They are broken down per following:
 
-- 80% for public allocation
+- 75% for public allocation
 - 10% is a gift to Urbit, Cosmos and ETH communities
-- 10% inventors, cyber\~Congress team and seed donors
+- 15% inventors, cyber\~Congress team, development fund and seed donors
 
-A further breakdown is available in the [white paper](https://github.com/cybercongress/cyber/blob/master/main.tex).
+A further breakdown is available in the [white paper](https://ipfs.io/ipfs/QmQ1Vong13MDNxixDyUdjniqqEj8sjuNEBYMyhQU4gQgq3).
 
 A complete breakdown of THC and CYB by category can be viewed in the [launch-kit readme file](https://github.com/cybercongress/launch-kit#distribution-params).
 
@@ -81,7 +80,7 @@ A complete breakdown of THC and CYB by category can be viewed in the [launch-kit
 The inflation is defined by validators and governance.
 
 ### How many tokens are there?
-1 PCYB (and growing) & 700 TTHC
+1 PCYB (and growing) & 750 TTHC
 
 ### What is cyber~Congress?
 The congress is [the DAO](https://mainnet.aragon.org/#/cybercongress) behind the launch of the protocol. The initial intentions of cyber~Congress can be found in the Evolution of Species. The congress helps to launch the protocol, commits to the code base, helps to gather the initial community, write the initial documentation, organise the distribution and deploy the Genesis. The Congress lives in Ethereum, as an Aragon DAO. It is responsible for organising the Game of links and the minting of THC tokens. The congress will launch the protocol, hand it over to the community and remain a functioning entity that commits to the code, improves the protocol and makes it an intergalactic product.
@@ -90,28 +89,23 @@ The congress is [the DAO](https://mainnet.aragon.org/#/cybercongress) behind the
 It is [a community governed DAO](https://github.com/cybercongress/cyber-foundation). The role of cyber~Foundation is to help the community govern the protocol via an Aragon DAO. It is a fund managed via a decentralized engine, charged with the donated ETH and managed by the community (agents of the protocol). The initial intentions of cyber ~Congress can be found in [this document](https://github.com/cybercongress/congress/blob/master/README.md). 
  
 ### What are the distribution games?
-There are 3 distribution games proposed in total. Their goal is to help increase the initial efficiency of the distribution. 
+There are 2 distribution games proposed in total. Their goal is to help increase the initial efficiency of the distribution. 
 
-- The Game of links is focused on the early believers in the protocol and the initial validator set. 100 TCYB is allocated for this game, to each of the participating communities. It is launched at the same time that Euler-5 is launched. The main idea of the Game of Links is to establish a starting value of relevance in the knowledge graph because it is crucial to get quality search results from the inception of the network. The game will be finished when either 200 thousand ATOMs are collected or 146 days have passed from the start of the funding (there will probably be a prolongation for an N period to have a grand finale of the game).
+- The Game of links is focused on the early believers in the protocol and the initial validator set. It is launched at the same time that Euler-5 is launched. The main idea of the Game of Links is to establish a starting value of relevance in the knowledge graph because it is crucial to get quality search results from the inception of the network. The game will be finished when either 300 thousand ATOMs are collected or 146 days have passed from the start of the funding (there will probably be a prolongation for an N period to have a grand finale of the game).
 There are 4 major disciplines in which participants can compete (a) lifetime of a validator - the longer the validator is run for, the better; (b) delegations to a validator - the more a validator is delegated, the better; (c) bandwidth and load - the more someone spends the better; and, finally (d) relevance - this is projected in terms of the top 1000 CID's and links to those. The idea is to find the most relevant content or CID's.
 Tokens for the game can be obtained either from EULER-4 rewards, from gifts or from test auctions.
-Any other information can be found [in the provision file](https://github.com/cybercongress/congress/pull/240/files) and [in the launch-kit repo](https://github.com/cybercongress/launch-kit).
-
-- The game of Thrones will begin after the Genesis. It is an auction that is primarily focused on speculators (GoT represents window 0 of cyber~Auction).  10% of CYB supply is allocated per each competing community. 100TCYB to the ATOM community for donating ETH. And an equivalent amount to the ETH community, which will initially receive THC tokens that they can lock during the auction in exchange for CYB tokens (in other words the ETH donators can potentially receive both THC and CYB tokens). The game will last for 21 days.  
-In other words, it's a game where one community of hodlers tries to outbid the other in return for receiving a larger discount. We have added an arbitrage opportunity in the form of a discount for ATOM holders during the game (this is because the market cap of ATOM is smaller than the market cap of ETH). Distribution of tokens will happen after the end of the game is announced.  
-
-The third game is called cyber~Auction.
+Any other information can be found [in the provision file](https://cybercongress.ai/game-of-links/) and [in the launch-kit repo](https://github.com/cybercongress/launch-kit).
 
 ### What is cyber~Auction?
-cyber ~Auction is part of the initial distribution games. If the first two focus on specific target groups (although anyone is free to participate). The goal of cyber ~Auction is to focus on all web3 agents. It will take place after the end of the previous games. 
+cyber\~Auction is part of the initial distribution games. If the first two focus on specific target groups (although anyone is free to participate). The goal of cyber\~Auction is to focus on all web3 agents. It will take place after the end of the previous games. 
 
-cyber~ Auctions main purpose is the value of relevance or in other words - gain access to the donated ETH from the auction itself. The auction will last for 500 rounds that last for 23 hours each (a little over 479 days). Every round has 1 billion THC is at skate. The more you donate and the less has been donated by others on that same day the more you can gain.
+cyber\~Auctions main purpose is the value of relevance or in other words - gain access to the donated ETH from the auction itself. The auction will last for 500 rounds that last for 23 hours each (a little over 479 days). Every round has 1 billion THC is at skate. The more you donate and the less has been donated by others on that same day the more you can gain.
 
 After the end of the distribution, participants will be able to unlock their THC tokens and use them as they wish, e.i. transfer, trade, etc. As a result of the auction, the community will have access to all the donated ETH within the Aragon organization.  
 
 One more mega important part of the auction to remember, are the creative powers of THC. If you vest your THC tokens for the period of the auction - you receive 1 CYB token for each locked THC token for the duration of the auction!
 
-After the end of cyber~ Auction, all the remaining THC tokens on the contract and the equivalent in CYB tokens will be provably burned. 
+After the end of cyber\~Auction, all the remaining THC tokens on the contract and the equivalent in CYB tokens will be provably burned. 
 
 ### Where can I find the latest release?
 The current net version should always (and only) be checked on GitHub. In the [releases section](https://github.com/cybercongress/go-cyber).
@@ -131,7 +125,7 @@ The launch is planned for 2020.
 Our main form of contact is via [GitHub](https://github.com/cybercongress) issues and pull requests. You may also contact us on our TG [#fuckGoogle](https://t.me/fuckgoogle) channel or via our [forum](https://ai.cybercongress.ai/).
 
 ### Links:
-- [Protocol white paper](https://ipfs.io/ipfs/QmceNpj6HfS81PcCaQXrFMQf7LR5FTLkdG9sbSRNy3UXoZ)
+- [Protocol white paper](https://ipfs.io/ipfs/QmQ1Vong13MDNxixDyUdjniqqEj8sjuNEBYMyhQU4gQgq3)
 - [cyber.page](https://cyber.page/)
 - [Validator onboarding doc](https://github.com/cybercongress/congress/blob/master/ecosystem/validators/onboarding.md)
 - [Gitcoin issues](https://gitcoin.co/cybercongress)

@@ -27,18 +27,18 @@ This FAQ is primarily addressed at developers, validators and those interested i
 Cyber is a decentralized google. Its mission is to create a universal search protocol to (a) build an open semantic field of the internet with the help of blockchain technology and [cyberlinks,](https://github.com/cybercongress/congress/blob/master/ecosystem/ELI-5%20FAQ.md#what-are-cyberlinks) and (b) decentralize the infrastructure of the web with the help of blockchain
 
 ### What components is cyber made from
-cyber is a galaxy of smaller components. This includes:
-- cyber: the protocol for the search engine
-- cyb: your friendly immortal robot for web3
-- cyber.page: a gateway app
+Cyber is a galaxy of smaller components. This includes:
+- Cyber: [the protocol](https://github.com/cybercongress/go-cyber) for the search engine
+- Cyb: your [friendly immortal robot](https://github.com/cybercongress/cyb) for web3
+- cyber.page: [a gateway app](https://cyber.page/)
 - And many more [smaller components](https://github.com/cybercongress/congress/blob/master/ecosystem/Cyber%20Homestead%20doc.md#cybermetagalaxy)
 
 ### What are THC and CYB?
-THC and CYB are the two "native" tokens of the ecosystem (GOL and EUL are the names of the testnet tokens). 
+THC and CYB are the 2 tokens of the ecosystem (GOL and EUL are the names of the testnet tokens). 
 
-THC is an Ethereum based ERC-20 token that has utility value in the form of control over cyber~ Foundation and the ETH from the distribution games. It is a governance token. The creative powers of THC come from the ability to receive 1 CYB token per each (one) THC token when locking it before the end of cyber~Auction.
+THC is an Ethereum based ERC-20 token that has utility value in the form of control over [cyber\~Foundation](https://github.com/cybercongress/cyber-foundation) and the ETH from the distribution games. It is a governance token. The creative powers of THC come from the ability to receive 1 CYB token per each (one) THC token when locking it before the end of cyber\~Auction.
 
-CYB is a native token of the sovereign cyber protocol powered by the Tendermint consensus algorithm. It has 3 primary uses: (1) staking for consensus, (2) bandwidth limiting for submitting cyberlinks, and (3) expression of will for the computing of cyber~Rank by the agents.
+CYB is a native token of the sovereign cyber protocol powered by the Tendermint consensus algorithm. It has 3 primary uses: (1) staking for consensus, (2) bandwidth limiting for submitting cyberlinks, and (3) expression of will for the computing of cyber\~Rank by the agents.
 
 ### Who and why do you gift?
 We are gifting 3 communities. Those are: 
@@ -46,16 +46,14 @@ We are gifting 3 communities. Those are:
 Every account within the Ethereum foundation network with at least 1 outgoing transaction which is not a contract and holds > 0.2 ETH at block 8080808 is entitled to a gift
 
 - ATOM community that will receive 1% of CYB tokens
-Every non-zero account within Cosmos hub-2 at block 1110000 is entitled to a gift
+Every non-zero account within Cosmos hub-3 at block 2000000
 
 - Urbit community that will receive 1% of CYB tokens 
-Every account which holds galaxies (30%), stars (30%), or planets (40%) at block 9069000 according to the number of objects is entitled to a gift
+Every account which holds galaxies (30%), stars (30%), or planets (40%) at block 10677601 according to the number of objects is entitled to a gift
 
 The key purpose of those gifts is for every account in Genesis to be able to make at least 1 cyberlink in the space of 24 hours after the network has been unloaded. This will help to increase participation and give those communities the ability to engage in the protocol. The protocol itself will gain a massive benefit via the economic integration of the largest developers, the most innovative and of the most promising communities withing the open-source space. 
 
-The ETH and ATOM communities will receive their tokens in test net tokens, which should be claimed and used during the distribution games.
-
-More detail applies to gifts. Please see the [protocol paper](https://github.com/cybercongress/cyber/blob/master/main.tex).
+More details in our [WP](https://ipfs.io/ipfs/QmQ1Vong13MDNxixDyUdjniqqEj8sjuNEBYMyhQU4gQgq3)
 
 ### What is the reward breakdown (including validators, community pools and gifts)?
 You can see all the breakdowns in this repository (the launch-kit repository). 
@@ -83,23 +81,24 @@ The inflation is defined by validators and governance.
 1 PCYB (and growing) & 750 TTHC
 
 ### What is cyber~Congress?
-The congress is [the DAO](https://mainnet.aragon.org/#/cybercongress) behind the launch of the protocol. The initial intentions of cyber~Congress can be found in the Evolution of Species. The congress helps to launch the protocol, commits to the code base, helps to gather the initial community, write the initial documentation, organise the distribution and deploy the Genesis. The Congress lives in Ethereum, as an Aragon DAO. It is responsible for organising the Game of links and the minting of THC tokens. The congress will launch the protocol, hand it over to the community and remain a functioning entity that commits to the code, improves the protocol and makes it an intergalactic product.
+The congress is [the DAO](https://mainnet.aragon.org/#/cybercongress) behind the launch of the protocol. The initial intentions of cyber\~Congress can be found in the Evolution of Species. The congress helps to launch the protocol, commits to the code base, helps to gather the initial community, write the initial documentation, organise the distribution and deploy the Genesis. The Congress lives in Ethereum, as an Aragon DAO. It is responsible for organising the Game of links and the minting of THC tokens. The congress will launch the protocol, hand it over to the community and remain a functioning entity that commits to the code, improves the protocol and makes it an intergalactic product.
 
 ### What is cyber~Foundation?
-It is [a community governed DAO](https://github.com/cybercongress/cyber-foundation). The role of cyber~Foundation is to help the community govern the protocol via an Aragon DAO. It is a fund managed via a decentralized engine, charged with the donated ETH and managed by the community (agents of the protocol). The initial intentions of cyber ~Congress can be found in [this document](https://github.com/cybercongress/congress/blob/master/README.md). 
+It is [a community governed DAO](https://github.com/cybercongress/cyber-foundation). The role of cyber\~Foundation is to help the community govern the protocol via an Aragon DAO. It is a fund managed via a decentralized engine, charged with the donated ETH and managed by the community (agents of the protocol).
  
 ### What are the distribution games?
 There are 2 distribution games proposed in total. Their goal is to help increase the initial efficiency of the distribution. 
 
-- The Game of links is focused on the early believers in the protocol and the initial validator set. It is launched at the same time that Euler-5 is launched. The main idea of the Game of Links is to establish a starting value of relevance in the knowledge graph because it is crucial to get quality search results from the inception of the network. The game will be finished when either 300 thousand ATOMs are collected or 146 days have passed from the start of the funding (there will probably be a prolongation for an N period to have a grand finale of the game).
+The Game of links is focused on the early believers in the protocol and the initial validator set. It is launched at the same time that Euler-5 is launched. The main idea of the Game of Links is to establish a starting value of relevance in the knowledge graph because it is crucial to get quality search results from the inception of the network. The game will be finished when either 300 thousand ATOMs are collected or 146 days have passed from the start of the funding (there will probably be a prolongation for an N period to have a grand finale of the game).
+
 There are 4 major disciplines in which participants can compete (a) lifetime of a validator - the longer the validator is run for, the better; (b) delegations to a validator - the more a validator is delegated, the better; (c) bandwidth and load - the more someone spends the better; and, finally (d) relevance - this is projected in terms of the top 1000 CID's and links to those. The idea is to find the most relevant content or CID's.
-Tokens for the game can be obtained either from EULER-4 rewards, from gifts or from test auctions.
-Any other information can be found [in the provision file](https://cybercongress.ai/game-of-links/) and [in the launch-kit repo](https://github.com/cybercongress/launch-kit).
+
+Tokens for the game can be obtained either from EULER-4 rewards, from gifts or from test auctions. Any other information can be found [in the provision file](https://cybercongress.ai/game-of-links/) and [in the launch-kit repo](https://github.com/cybercongress/launch-kit).
 
 ### What is cyber~Auction?
 cyber\~Auction is part of the initial distribution games. If the first two focus on specific target groups (although anyone is free to participate). The goal of cyber\~Auction is to focus on all web3 agents. It will take place after the end of the previous games. 
 
-cyber\~Auctions main purpose is the value of relevance or in other words - gain access to the donated ETH from the auction itself. The auction will last for 500 rounds that last for 23 hours each (a little over 479 days). Every round has 1 billion THC is at skate. The more you donate and the less has been donated by others on that same day the more you can gain.
+cyber\~Auctions main purpose is the value of relevance or in other words - gain access to the donated ETH from the auction itself. The auction will last for 88 rounds that last for 24 hours each. Every round has THC at skate. The more you donate and the less has been donated by others on that same day the more you can gain.
 
 After the end of the distribution, participants will be able to unlock their THC tokens and use them as they wish, e.i. transfer, trade, etc. As a result of the auction, the community will have access to all the donated ETH within the Aragon organization.  
 
@@ -114,7 +113,7 @@ The current net version should always (and only) be checked on GitHub. In the [r
 Check out [the onboarding doc](https://github.com/cybercongress/congress/blob/master/ecosystem/validators/onboarding.md) for validators.
 
 ### What and how can I contribute?
-Right now you can help by testing the latest running release or/and any of our applications (please see all the links at the end of this document).
+Right now you can help by testing the latest running release or/and any of our applications (please see all the links at the end of this document). You can also start helping by commiting to the knowledge graph by [playing GoL](https://cyber.page/gol) and getting rewards.
 
 ### When is the launch?
 For now, cyber is still in the test net zone. Meaning, that you can already help to validate the chain, test it, be entitled to receive rewards, etc. 
@@ -122,7 +121,7 @@ For now, cyber is still in the test net zone. Meaning, that you can already help
 The launch is planned for 2020.
 
 ### How can I contact you?
-Our main form of contact is via [GitHub](https://github.com/cybercongress) issues and pull requests. You may also contact us on our TG [#fuckGoogle](https://t.me/fuckgoogle) channel or via our [forum](https://ai.cybercongress.ai/).
+You may contact us on our TG [#fuckGoogle](https://t.me/fuckgoogle) channel or via our [forum](https://ai.cybercongress.ai/).
 
 ### Links:
 - [Protocol white paper](https://ipfs.io/ipfs/QmQ1Vong13MDNxixDyUdjniqqEj8sjuNEBYMyhQU4gQgq3)

@@ -11,7 +11,6 @@ At first glance, the distribution looks pretty complex. This is not true. The ma
 |*Distribution params*|
 | Foundation contract address      | https://mainnet.aragon.org/#/eulerfoundation/0xd84469ecd96825c956d7ae8b072209ca89ae37e2/ | https://mainnet.aragon.org/#/cybercongress/0xa0a55e68dc52b47f8a9d5d05329fab5bdabffb14 | DAO |
 | **Foundation token**             | **GOL**   | **THC**  | **ERC20 token in Aragon DAO**  |
-| cyber~Congress distr             | 8 TGOL   | 100 TTHC  | Amont of gov. tokens allocated to cyber~Congress (inventors, team)|
 | Auction distr                    | 6 TGOL  | 600 TTHC | Amount of gov. tokens allocated to the auction  |
 | cyber~Congress distr             | 8 TGOL   | 150 TTHC  | Amont of gov. tokens allocated to cyber~Congress (inventors, team)|
 | **Chain token**                  | **EUL**   | **CYB**  | **Chain liquid token**  |

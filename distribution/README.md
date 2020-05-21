@@ -11,11 +11,9 @@ At first glance, the distribution looks pretty complex. This is not true. The ma
 |*Distribution params*|
 | Foundation contract address      | https://mainnet.aragon.org/#/eulerfoundation/0xd84469ecd96825c956d7ae8b072209ca89ae37e2/ | https://mainnet.aragon.org/#/cybercongress/0xa0a55e68dc52b47f8a9d5d05329fab5bdabffb14 | DAO |
 | **Foundation token**             | **GOL**   | **THC**  | **ERC20 token in Aragon DAO**  |
-| Distr to ETH Game of Thrones         | 1 TGOL  | 100 TTHC | Distribution of gov. tokens for Game of Thrones auction to the ETH community  |
-| Auction distr                    | 6 TGOL  | 500 TTHC | Amount of gov. tokens allocated to the auction  |
-| cyber~Congress distr             | 8 TGOL   | 100 TTHC  | Amont of gov. tokens allocated to cyber~Congress (inventors, team)   |
+| cyber~Congress distr             | 8 TGOL   | 100 TTHC  | Amont of gov. tokens allocated to cyber~Congress (inventors, team)|
 | Auction distr                    | 6 TGOL  | 600 TTHC | Amount of gov. tokens allocated to the auction  |
-| cyber~Congress distr             | 8 TGOL   | 150 TTHC  | Amont of gov. tokens allocated to cyber~Congress (inventors, team)   |
+| cyber~Congress distr             | 8 TGOL   | 150 TTHC  | Amont of gov. tokens allocated to cyber~Congress (inventors, team)|
 | **Chain token**                  | **EUL**   | **CYB**  | **Chain liquid token**  |
 | Cosmos gift                      | 10 TEUL   | 10 TCYB  | Chain token gift to the Cosmos community. Each address on block 1110000 entitlted to a gift according to [distribution]() |
 | Ethereum gift                    | 80 TEUL   | 80 TCYB  | Chain token gift to the Ethereum community. 99.7% of addresses on block 8080808 are entitiled to a gift according to [distribution]() |

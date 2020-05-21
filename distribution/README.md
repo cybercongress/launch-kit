@@ -25,7 +25,6 @@ At first glance, the distribution looks pretty complex. This is not true. The ma
 | Lifetime discipline            | NaN   | 3 TCYB  | Tokens allocated for Game of Links lifetime discipline |
 | Community pool, GoL bounty       | 2 TEUL    | 2 TCYB   | Amount of tokens in the community pool at the start |
 | Full validator set extra rewards | NaN   | 5 TCYB  | Extara reward to validators if the set of active validators will reach 146 and will last for a period of 10,000 blocks |
-| Cosmos Game of Thrones            | 1 TEUL  | 100 TCYB | Chain tokens |
 | Cosmos Game of Thrones            | 1 TEUL  | NaN | Chain tokens |
 | **SUM**                          | 233 TEUL | 1000 TCYB|  |
 |*Takeoff funding params*|
@@ -37,10 +36,6 @@ At first glance, the distribution looks pretty complex. This is not true. The ma
 |*Auction contract params*|
 | Contract address        | https://mainnet.aragon.org/#/eulerfoundation/0x0b1f54be915e77d9bf14268f94f8a26afab11296/ | ?                  | Contract address with allocated tokens |
 | Open time               | with `euler-5` launch  | with `cyber` launch| The time of start of round `0` of the auction |
-| Created on first day        | 100 TGOL               | 100 TTHC           | Amount of tokens allocated to round `0`|
-| Starting time              | open_time + 240h       | open_time + 504h   | The time of start of round 1 |
-| Number of rounds        | 49 + 1                 | 500 + 1            | Round zero + daily rounds |
-| Created per day          | 8.16326531 TGOL        | 1 TTHC    | Amount of tokens allocated to each daily round|
 
 \* -  the `x` the is amount of ATOMs funded for the current moment <br>
 \ - distr. = distribution | gov. = governance <br>

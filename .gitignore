@@ -53,3 +53,5 @@ cosmos_gift_tool/data/*.json
 ethereum_gift_tool/*.json
 
 backup/backup23022020/
+
+takeoff_distribution/__pycache__/

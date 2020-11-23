@@ -1,0 +1,482 @@
+CONGRESS_COSMOS_ADDRESS = 'cosmos1latzme6xf6s8tsrymuu6laf2ks2humqv2tkd9a'
+CONGRESS_CYBER_ADDRESS = ''
+URL = ''
+takeoff_distr = 100000000000000 # 100 TEUL
+from_date = '2020-03-30 00:00:00'
+to_date = '2020-12-01 00:00:00'
+ETH_NODE_RPC = ''
+
+EVANGELISM_CONTRACT = '0xfc3849b9711f69ddb677FAcfF0CD6755A981a1F0'
+
+EVANGELISM_CONTRACT_ABI = [{
+   "constant":True,
+   "inputs":[
+
+   ],
+   "name":"hasInitialized",
+   "outputs":[
+      {
+         "name":"",
+         "type":"bool"
+      }
+   ],
+   "payable":False,
+   "stateMutability":"view",
+   "type":"function"
+},
+{
+   "constant":True,
+   "inputs":[
+      {
+         "name":"_script",
+         "type":"bytes"
+      }
+   ],
+   "name":"getEVMScriptExecutor",
+   "outputs":[
+      {
+         "name":"",
+         "type":"address"
+      }
+   ],
+   "payable":False,
+   "stateMutability":"view",
+   "type":"function"
+},
+{
+   "constant":True,
+   "inputs":[
+
+   ],
+   "name":"getRecoveryVault",
+   "outputs":[
+      {
+         "name":"",
+         "type":"address"
+      }
+   ],
+   "payable":False,
+   "stateMutability":"view",
+   "type":"function"
+},
+{
+   "constant":True,
+   "inputs":[
+
+   ],
+   "name":"foundation",
+   "outputs":[
+      {
+         "name":"",
+         "type":"address"
+      }
+   ],
+   "payable":False,
+   "stateMutability":"view",
+   "type":"function"
+},
+{
+   "constant":True,
+   "inputs":[
+      {
+         "name":"token",
+         "type":"address"
+      }
+   ],
+   "name":"allowRecoverability",
+   "outputs":[
+      {
+         "name":"",
+         "type":"bool"
+      }
+   ],
+   "payable":False,
+   "stateMutability":"view",
+   "type":"function"
+},
+{
+   "constant":True,
+   "inputs":[
+
+   ],
+   "name":"appId",
+   "outputs":[
+      {
+         "name":"",
+         "type":"bytes32"
+      }
+   ],
+   "payable":False,
+   "stateMutability":"view",
+   "type":"function"
+},
+{
+   "constant":True,
+   "inputs":[
+
+   ],
+   "name":"getInitializationBlock",
+   "outputs":[
+      {
+         "name":"",
+         "type":"uint256"
+      }
+   ],
+   "payable":False,
+   "stateMutability":"view",
+   "type":"function"
+},
+{
+   "constant":False,
+   "inputs":[
+      {
+         "name":"_token",
+         "type":"address"
+      }
+   ],
+   "name":"transferToVault",
+   "outputs":[
+
+   ],
+   "payable":False,
+   "stateMutability":"nonpayable",
+   "type":"function"
+},
+{
+   "constant":True,
+   "inputs":[
+      {
+         "name":"_sender",
+         "type":"address"
+      },
+      {
+         "name":"_role",
+         "type":"bytes32"
+      },
+      {
+         "name":"_params",
+         "type":"uint256[]"
+      }
+   ],
+   "name":"canPerform",
+   "outputs":[
+      {
+         "name":"",
+         "type":"bool"
+      }
+   ],
+   "payable":False,
+   "stateMutability":"view",
+   "type":"function"
+},
+{
+   "constant":True,
+   "inputs":[
+
+   ],
+   "name":"getEVMScriptRegistry",
+   "outputs":[
+      {
+         "name":"",
+         "type":"address"
+      }
+   ],
+   "payable":False,
+   "stateMutability":"view",
+   "type":"function"
+},
+{
+   "constant":True,
+   "inputs":[
+      {
+         "name":"",
+         "type":"uint256"
+      }
+   ],
+   "name":"evangelists",
+   "outputs":[
+      {
+         "name":"cyberAddress",
+         "type":"string"
+      },
+      {
+         "name":"cosmosAddress",
+         "type":"string"
+      },
+      {
+         "name":"ethereumAddress",
+         "type":"address"
+      },
+      {
+         "name":"nickname",
+         "type":"string"
+      },
+      {
+         "name":"keybase",
+         "type":"string"
+      },
+      {
+         "name":"github",
+         "type":"string"
+      },
+      {
+         "name":"status",
+         "type":"uint8"
+      }
+   ],
+   "payable":False,
+   "stateMutability":"view",
+   "type":"function"
+},
+{
+   "constant":True,
+   "inputs":[
+
+   ],
+   "name":"FOUNDER_ROLE",
+   "outputs":[
+      {
+         "name":"",
+         "type":"bytes32"
+      }
+   ],
+   "payable":False,
+   "stateMutability":"view",
+   "type":"function"
+},
+{
+   "constant":True,
+   "inputs":[
+
+   ],
+   "name":"kernel",
+   "outputs":[
+      {
+         "name":"",
+         "type":"address"
+      }
+   ],
+   "payable":False,
+   "stateMutability":"view",
+   "type":"function"
+},
+{
+   "constant":True,
+   "inputs":[
+
+   ],
+   "name":"isPetrified",
+   "outputs":[
+      {
+         "name":"",
+         "type":"bool"
+      }
+   ],
+   "payable":False,
+   "stateMutability":"view",
+   "type":"function"
+},
+{
+   "anonymous":False,
+   "inputs":[
+      {
+         "indexed":False,
+         "name":"cyberAddress",
+         "type":"string"
+      },
+      {
+         "indexed":False,
+         "name":"cosmosAddress",
+         "type":"string"
+      },
+      {
+         "indexed":False,
+         "name":"ethereumAddress",
+         "type":"address"
+      },
+      {
+         "indexed":False,
+         "name":"nickname",
+         "type":"string"
+      },
+      {
+         "indexed":False,
+         "name":"keybase",
+         "type":"string"
+      },
+      {
+         "indexed":False,
+         "name":"github",
+         "type":"string"
+      }
+   ],
+   "name":"Believed",
+   "type":"event"
+},
+{
+   "anonymous":False,
+   "inputs":[
+      {
+         "indexed":False,
+         "name":"nickname",
+         "type":"string"
+      }
+   ],
+   "name":"Blessed",
+   "type":"event"
+},
+{
+   "anonymous":False,
+   "inputs":[
+      {
+         "indexed":False,
+         "name":"nickname",
+         "type":"string"
+      }
+   ],
+   "name":"Unblessed",
+   "type":"event"
+},
+{
+   "anonymous":False,
+   "inputs":[
+      {
+         "indexed":True,
+         "name":"executor",
+         "type":"address"
+      },
+      {
+         "indexed":False,
+         "name":"script",
+         "type":"bytes"
+      },
+      {
+         "indexed":False,
+         "name":"input",
+         "type":"bytes"
+      },
+      {
+         "indexed":False,
+         "name":"returnData",
+         "type":"bytes"
+      }
+   ],
+   "name":"ScriptResult",
+   "type":"event"
+},
+{
+   "anonymous":False,
+   "inputs":[
+      {
+         "indexed":True,
+         "name":"vault",
+         "type":"address"
+      },
+      {
+         "indexed":True,
+         "name":"token",
+         "type":"address"
+      },
+      {
+         "indexed":False,
+         "name":"amount",
+         "type":"uint256"
+      }
+   ],
+   "name":"RecoverToVault",
+   "type":"event"
+},
+{
+   "constant":False,
+   "inputs":[
+      {
+         "name":"_foundation",
+         "type":"address"
+      }
+   ],
+   "name":"initialize",
+   "outputs":[
+
+   ],
+   "payable":False,
+   "stateMutability":"nonpayable",
+   "type":"function"
+},
+{
+   "constant":False,
+   "inputs":[
+      {
+         "name":"_cyberAddress",
+         "type":"string"
+      },
+      {
+         "name":"_cosmosAddress",
+         "type":"string"
+      },
+      {
+         "name":"_nickname",
+         "type":"string"
+      },
+      {
+         "name":"_keybase",
+         "type":"string"
+      },
+      {
+         "name":"_github",
+         "type":"string"
+      }
+   ],
+   "name":"believe",
+   "outputs":[
+
+   ],
+   "payable":True,
+   "stateMutability":"payable",
+   "type":"function"
+},
+{
+   "constant":False,
+   "inputs":[
+      {
+         "name":"_nickname",
+         "type":"string"
+      }
+   ],
+   "name":"bless",
+   "outputs":[
+
+   ],
+   "payable":False,
+   "stateMutability":"nonpayable",
+   "type":"function"
+},
+{
+   "constant":False,
+   "inputs":[
+      {
+         "name":"_nickname",
+         "type":"string"
+      }
+   ],
+   "name":"unbless",
+   "outputs":[
+
+   ],
+   "payable":False,
+   "stateMutability":"nonpayable",
+   "type":"function"
+},
+{
+   "constant":False,
+   "inputs":[
+
+   ],
+   "name":"collect",
+   "outputs":[
+
+   ],
+   "payable":False,
+   "stateMutability":"nonpayable",
+   "type":"function"
+}
+]

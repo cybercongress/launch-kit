@@ -1,6 +1,8 @@
 import requests
 import pandas as pd
 import numpy as np
+import json
+from cyberpy._wallet import address_to_address
 
 from web3 import Web3
 from config import *
@@ -29,14 +31,11 @@ def get_contract(address, abi):
     web3 = get_w3_client()
     return web3.eth.contract(address=address, abi=abi)
 
-# w3 = Web3(Web3.HTTPProvider('https://mars.cybernode.ai/geth/'))
-
-pages = int(requests.get(URL.format('1')).json()['page_total'])
+pages = int(requests.get(URL.format(CONGRESS_COSMOS_ADDRESS ,'1')).json()['page_total'])
 contract = get_contract(EVANGELISM_CONTRACT, EVANGELISM_CONTRACT_ABI)
 
 evangelists = {}
 i = 0
-
 while True:
     try:
         evangelist = contract.functions.evangelists(i).call()
@@ -48,7 +47,7 @@ while True:
 txs = []
 
 for page in range(1, pages + 1):
-    resp = requests.get(URL.format(str(page))).json()
+    resp = requests.get(URL.format(CONGRESS_COSMOS_ADDRESS, str(page))).json()
     txs.extend(resp['txs'])
 
 timestamps = []
@@ -83,18 +82,101 @@ df['distribution'] = np.round(df['share'] * takeoff_distr).astype(int)
 df['evangelist'] = df.apply(lambda row: get_evangelist(row['memos']), axis=1)
 df['evangelist_address'] = df.apply(lambda row: evangelist_address(row['evangelist']), axis=1)
 df['cashback'] = (df['donates'] * 0.1).astype(int)
+df.to_csv('./data/distribution.csv')
 
 takeoff_df = df[['donors', 'distribution']].copy()
-cashback_df = df[['evangelist', 'evangelist_address', 'cashback']].copy()
+takeoff_df = takeoff_df.groupby(['donors']).sum().sort_values(by=['distribution'], ascending=False).reset_index()
+takeoff_df.to_csv('./data/takeoff.csv')
+takeoff_df['donors'] = takeoff_df.apply(lambda row: address_to_address(row['donors'], 'cyber'), axis=1)
+takeoff_df.to_csv('./data/cyber.csv')
 
-takeoff_df = takeoff_df.groupby(['donors']).sum().sort_values(by=['distribution'], ascending=False)
-cashback_df = cashback_df.groupby(['evangelist', 'evangelist_address']).sum().sort_values(by=['cashback'], ascending=False)
+cashback_df = df[['evangelist', 'evangelist_address', 'cashback']].copy()
+cashback_df = cashback_df.groupby(['evangelist', 'evangelist_address']).sum().sort_values(by=['cashback'], ascending=False).reset_index()
+cashback_df.to_csv('./data/cashback.csv')
+
+team_data = dict(zip(TEAM, ([int(round(df.donates.sum() * 0.02) / 4)] * 4)))
+team_df = pd.DataFrame.from_dict(team_data, orient='index').reset_index()
+team_df = team_df.rename(columns={'index': 'evangelist_address', 0: 'cashback'})
+team_df.to_csv('./data/team.csv')
+
+cashback_df = cashback_df.drop(columns=['evangelist'])
+cashback_df = pd.concat([cashback_df, team_df], ignore_index=True)
+cashback_df = cashback_df.groupby(['evangelist_address']).sum().sort_values(by=['cashback'], ascending=False).reset_index()
+cashback_df.to_csv('./data/cosmos.csv')
 
 print(takeoff_df.distribution.sum(), 'EULs allocated, or:', takeoff_df.distribution.sum()/1000000000000, 'TEULs')
 print(cashback_df.cashback.sum(), 'cashback uATOMs, or:', cashback_df.cashback.sum()/1000000, 'ATOMs')
 
 
+# cyber tansaction preparation
 
-df.to_csv('/Users/alpuchilo/Documents/GitHub/launch-kit/takeoff_distribution/distribution.csv')
-takeoff_df.to_csv('/Users/alpuchilo/Documents/GitHub/launch-kit/takeoff_distribution/takeoff.csv')
-cashback_df.to_csv('/Users/alpuchilo/Documents/GitHub/launch-kit/takeoff_distribution/cashback.csv')
+msgs = []
+
+for index, row in takeoff_df.iterrows():
+    msg = {
+        "type": "cosmos-sdk/MsgSend",
+        "value": {
+            "from_address": CONGRESS_CYBER_ADDRESS,
+            "to_address": row['donors'],
+            "amount": [
+                {
+                    "denom": "eul",
+                    "amount": str(row['distribution'])
+                }
+            ]
+        }
+    }
+    msgs.append(msg)
+
+tx = {
+    "type": "cosmos-sdk/StdTx",
+    "value": {
+        "msg": msgs,
+        "fee": {
+            "amount": [],
+            "gas": "200000"
+        },
+        "signatures": None,
+        "memo": "takeoff EUL distribution"
+    }
+}
+
+with open("./data/cyber.json", "w") as fp:
+    json.dump(tx,fp, indent=4)
+
+
+# cosmos tansaction preparation
+
+msgs = []
+
+for index, row in cashback_df.iterrows():
+    msg = {
+        "type": "cosmos-sdk/MsgSend",
+        "value": {
+            "from_address": CONGRESS_COSMOS_ADDRESS,
+            "to_address": row['evangelist_address'],
+            "amount": [
+                {
+                    "denom": "uatom",
+                    "amount": str(row['cashback'])
+                }
+            ]
+        }
+    }
+    msgs.append(msg)
+
+tx = {
+    "type": "cosmos-sdk/StdTx",
+    "value": {
+        "msg": msgs,
+        "fee": {
+            "amount": [],
+            "gas": "2000000"
+        },
+        "signatures": None,
+        "memo": "evangelism cashback program and team distribution"
+    }
+}
+
+with open("./data/cosmos.json", "w") as fp:
+    json.dump(tx,fp, indent=4)

@@ -1,12 +1,17 @@
 CONGRESS_COSMOS_ADDRESS = 'cosmos1latzme6xf6s8tsrymuu6laf2ks2humqv2tkd9a'
-CONGRESS_CYBER_ADDRESS = ''
-URL = ''
+CONGRESS_CYBER_ADDRESS = 'cyber1latzme6xf6s8tsrymuu6laf2ks2humqvdq39v8'
+URL = '' + 'txs?message.action=send&transfer.recipient={}&page={}'
 takeoff_distr = 100000000000000 # 100 TEUL
 from_date = '2020-03-30 00:00:00'
 to_date = '2020-12-01 00:00:00'
 ETH_NODE_RPC = ''
 
 EVANGELISM_CONTRACT = '0xfc3849b9711f69ddb677FAcfF0CD6755A981a1F0'
+
+TEAM = ['cosmos14nzyt8wmx4g6zkeluelukamgsh5v4xgnmeq9y4',
+        'cosmos1cg79pj70mgl8xlum0rw5yy6enk9jszsrpl6hw5',
+        'cosmos16macu2qtc0jmqc7txvf0wkz84cycsx72ywrucl',
+        'cosmos1rhlsrmu8qphuw9qcgulcyx9r3v2p7tm70w3yq5']
 
 EVANGELISM_CONTRACT_ABI = [{
    "constant":True,

@@ -55,3 +55,5 @@ ethereum_gift_tool/*.json
 backup/backup23022020/
 
 takeoff_distribution/__pycache__/
+
+takeoff_distribution/data/

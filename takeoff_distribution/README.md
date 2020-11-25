@@ -1,25 +1,27 @@
 # Takeoff distribution tool
 
-This tool will help to distribute tokens according to distribution rules.
+This tool can help to distribute tokens according to your own distribution rules.
 
-At the current implementation, this tool collects all donors transactions during the takeoff round and also gets addresses from the evangelism referral program. 
+The current implementation, collects all the transactions of the donors during the takeoff round (your auction) and collects addresses from the evangelism referral program (your ambassador programm).
 
-As a result - two prepared for signing and broadcasting `.json` files.
+As a result, the 2 are prepared for signing and broadcasting as `.json` files.
 
-0. Clone launch-kit repo and make sure that you have `python3` and `pip3`.
+## Flow:
+
+0. Clone the launch-kit repo and make sure that you have `python3` and `pip3` installed:
 
 ```bash
 git clone https://github.com/cybercongress/launch-kit
 cd launch-kit/takeoff_distribution
 ```
 
-1. Install requirements
+1. Install requirements:
 
 ```bash
-pip3 install requirements.txt 
+pip3 install requirements.txt
 ```
 
-2. Fill the `config.py` file with credentials:
+2. Fill the `config.py` file with the following credentials:
 
 ```python
 CONGRESS_COSMOS_ADDRESS = 'cosmos1latzme6xf6s8tsrymuu6laf2ks2humqv2tkd9a'
@@ -33,29 +35,31 @@ ETH_NODE_RPC = '<ETH_NODE_RPC>'
 
 Actually and gaia LCD url and ethereum node RPC.
 
-3. Run
+3. Run:
 
 ```bash
 python3 main.py
 ```
 
-It will take approximately 30-40 seconds. The output will like
+It will take approximately 30-40 seconds. The output will be:
+
 ```bash
 99999999999992 EULs allocated, or: 99.999999999992 TEULs
 1010280712 cashback uATOMs, or: 1010.280712 ATOMs
 ```
-that summarized distribution.
 
-The result you will see in the `data` folder. You may find `distribution.csv` table with all data collected from LCD and RPC according to the configured account. 
+That summarizes the distribution.
 
-Also, you can find `cashback.csv`,  `takeoff.csv`, and `team.csv` tables grouped by addresses.
+You will see the results in the `data` folder. You may find the `distribution.csv` table with all the collected data from LCD and RPC points according to the configured account.
 
-The final tables are `cyber.csv` and `cosmos.csv` - from those tables will be prepared transaction files. 
+You will find the `cashback.csv`,  `takeoff.csv`, and `team.csv` tables grouped by addresses.
 
-And, finally, `cyber.json` and `cosmos.json` - prepared for signing and broadcasting transactions in cyber and cosmos networks accordantly by `cyber` and `cosmos` multisigs accordantly.
+The final tables are `cyber.csv` and `cosmos.csv`. Out of these tables, you will be preparing the transaction files.
 
-4. After that, you need to make procedures of sign and broadcast `cyber.json` and `cosmos.json`.
+Finally, `cyber.json` and `cosmos.json` are prepared for signing and broadcasting transactions to Cyber and to the Cosmos network  with the help of `cyber` and `cosmos` multisigs.
 
-[This article](https://cybercongress.ai/docs/go-cyber/multisig_guide/) should help you. You may start from `Spending out of a multisig account` section where `unsigned.json` is yours `cyber.json` and `cosmos.json` in correct networks.
+4. After that you need to sign and broadcast `cyber.json` and `cosmos.json`.
+
+[This article](https://cybercongress.ai/docs/go-cyber/multisig_guide/) should help you. You may start with the `Spending out of a multisig account` section, where `unsigned.json` is yours `cyber.json` and `cosmos.json` in the correct network.
 
 Good luck!

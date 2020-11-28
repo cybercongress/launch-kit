@@ -106,6 +106,7 @@ cashback_df.to_csv('./data/cosmos.csv')
 
 print(takeoff_df.distribution.sum(), 'EULs allocated, or:', takeoff_df.distribution.sum()/1000000000000, 'TEULs')
 print(cashback_df.cashback.sum(), 'cashback uATOMs, or:', cashback_df.cashback.sum()/1000000, 'ATOMs')
+print(df.donates.sum(), 'donations uATOMs, or:', df.donates.sum()/1000000, 'ATOMs')
 
 
 # cyber tansaction preparation

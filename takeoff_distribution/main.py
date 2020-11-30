@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import json
 from cyberpy._wallet import address_to_address
+import math
 
 from web3 import Web3
 from config import *
@@ -104,11 +105,6 @@ cashback_df = pd.concat([cashback_df, team_df], ignore_index=True)
 cashback_df = cashback_df.groupby(['evangelist_address']).sum().sort_values(by=['cashback'], ascending=False).reset_index()
 cashback_df.to_csv('./data/cosmos.csv')
 
-print(takeoff_df.distribution.sum(), 'EULs allocated, or:', takeoff_df.distribution.sum()/1000000000000, 'TEULs')
-print(cashback_df.cashback.sum(), 'cashback uATOMs, or:', cashback_df.cashback.sum()/1000000, 'ATOMs')
-print(df.donates.sum(), 'donations uATOMs, or:', df.donates.sum()/1000000, 'ATOMs')
-
-
 # cyber tansaction preparation
 
 msgs = []
@@ -181,3 +177,22 @@ tx = {
 
 with open("./data/cosmos.json", "w") as fp:
     json.dump(tx,fp, indent=4)
+
+# print(takeoff_df.distribution.sum(), 'EULs allocated, or:', takeoff_df.distribution.sum()/1000000000000, 'TEULs')
+# print(cashback_df.cashback.sum(), 'cashback uATOMs, or:', cashback_df.cashback.sum()/1000000, 'ATOMs')
+# print(df.donates.sum(), 'donations uATOMs, or:', df.donates.sum()/1000000, 'ATOMs')
+
+donates_in_atom = df.donates.sum()/1000000
+donates_in_atom_ratio = donates_in_atom/300000*100
+gcybs_won = (math.sqrt(5) * math.sqrt(df.donates.sum()/1000000 + 12500) - 250) / 10 * 1000
+part_addresses = takeoff_df.shape[0]
+disc_alloc = donates_in_atom_ratio/100 * 38 * 1000
+
+print(' -', donates_in_atom, 'ATOMs of 300,000 have been donated and this is', donates_in_atom_ratio, '% of desirable')
+print(' -', part_addresses, 'cosmos addresses participated in the takeoff and won', gcybs_won, 'GCYBs of 100000')
+print(' -', 'Also, this', part_addresses, 'addresses won', disc_alloc, 'GCYBs of 38000 for Game of Links players in disciplines depends on takeoff')
+print('In details:')
+print(' - relevance:', 20000 * donates_in_atom_ratio/100, 'GCYBs')
+print(' - load:', 10000 * donates_in_atom_ratio/100, 'GCYBs')
+print(' - delegation:', 5000 * donates_in_atom_ratio/100, 'GCYBs')
+print(' - lifetime:', 3000 * donates_in_atom_ratio/100, 'GCYBs')

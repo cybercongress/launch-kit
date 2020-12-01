@@ -5,12 +5,12 @@ from progressbar import Bar, ETA, FileTransferSpeed, Percentage, ProgressBar
 # put the graphql API endpoint (str) in GRAPHQL_API variable
 # fill the HEADERS dictionary accordingly graphql engine permissions
 
-# HEIGHT = 
-# GRAPHQL_API = ''
-# HEADERS = {
-#     'content-type': 'application/json',
-#     "authorization": ''
-#   }
+HEIGHT = 1580000
+GRAPHQL_API = 'https://titan.cybernode.ai/graphql/v1/graphql'
+HEADERS = {
+    'content-type': 'application/json',
+    "authorization": ''
+  }
 
 # the GRAPQL query for getting all cyberlinks on less or equal block HEIGHT
 CYBERLINKS_Q = Template('''{

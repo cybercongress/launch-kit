@@ -101,9 +101,9 @@ team_df = team_df.rename(columns={'index': 'evangelist_address', 0: 'cashback'})
 team_df.to_csv('./data/team.csv')
 
 cashback_df = cashback_df.drop(columns=['evangelist'])
-cashback_df = pd.concat([cashback_df, team_df], ignore_index=True)
-cashback_df = cashback_df.groupby(['evangelist_address']).sum().sort_values(by=['cashback'], ascending=False).reset_index()
-cashback_df.to_csv('./data/cosmos.csv')
+# cashback_df = pd.concat([cashback_df, team_df], ignore_index=True)
+# cashback_df = cashback_df.groupby(['evangelist_address']).sum().sort_values(by=['cashback'], ascending=False).reset_index()
+# cashback_df.to_csv('./data/cahsback.csv')
 
 # cyber tansaction preparation
 
@@ -142,7 +142,7 @@ with open("./data/cyber.json", "w") as fp:
     json.dump(tx,fp, indent=4)
 
 
-# cosmos tansaction preparation
+# cashback tansaction preparation
 
 msgs = []
 
@@ -171,11 +171,47 @@ tx = {
             "gas": "2000000"
         },
         "signatures": None,
-        "memo": "evangelism cashback program and team distribution"
+        "memo": "evangelism cashback program"
     }
 }
 
-with open("./data/cosmos.json", "w") as fp:
+with open("./data/cashback.json", "w") as fp:
+    json.dump(tx,fp, indent=4)
+
+# team tx preparation
+
+msgs = []
+
+for index, row in team_df.iterrows():
+    msg = {
+        "type": "cosmos-sdk/MsgSend",
+        "value": {
+            "from_address": CONGRESS_COSMOS_ADDRESS,
+            "to_address": row['evangelist_address'],
+            "amount": [
+                {
+                    "denom": "uatom",
+                    "amount": str(row['cashback'])
+                }
+            ]
+        }
+    }
+    msgs.append(msg)
+
+tx = {
+    "type": "cosmos-sdk/StdTx",
+    "value": {
+        "msg": msgs,
+        "fee": {
+            "amount": [],
+            "gas": "2000000"
+        },
+        "signatures": None,
+        "memo": "team motivation program"
+    }
+}
+
+with open("./data/team.json", "w") as fp:
     json.dump(tx,fp, indent=4)
 
 # print(takeoff_df.distribution.sum(), 'EULs allocated, or:', takeoff_df.distribution.sum()/1000000000000, 'TEULs')

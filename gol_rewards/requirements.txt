@@ -3,3 +3,4 @@ requests
 cyberpy
 asyncio
 aiohttp
+sqlite3

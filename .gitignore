@@ -12,8 +12,6 @@ ethereum_gift_tool/google-big-query-key.json
 
 cyber_address_converter/cosmos-address-tool
 
-*.csv
-
 cyber_address_converter/cyber
 
 ethereum_gift_tool/__pycache__/
@@ -57,3 +55,13 @@ backup/backup23022020/
 takeoff_distribution/__pycache__/
 
 takeoff_distribution/data/
+
+gol_rewards/__pycache__/config.cpython-38.pyc
+
+gol_rewards/utils/__pycache__/db.cpython-38.pyc
+
+gol_rewards/utils/__pycache__/queries.cpython-38.pyc
+
+backup/
+
+gol_rewards/__pycache__/

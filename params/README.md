@@ -1,3 +1,77 @@
+# Bostrom genesis parameters [WIP]
+
+| Module           	| Parameter                      	| Value        	|
+|------------------	|--------------------------------	|--------------	|
+| wasm             	|                                	|              	|
+|                  	| code_upload_access             	| Everybody    	|
+|                  	| instantiate_default_permission 	| Everybody    	|
+|                  	| max_wasm_code_size             	| 512 KB       	|
+| staking          	|                                	|              	|
+|                  	| unbonding_time                 	| 5 days       	|
+|                  	| max_validators                 	| 92           	|
+|                  	| max_entries                    	| 8             |
+| slashing         	|                                	|              	|
+|                  	| signed_blocks_window           	| 1024 blocks  	|
+|                  	| min_signed_per_window          	| 60%          	|
+|                  	| downtime_jail_duration         	| 600 s        	|
+|                  	| slash_fraction_double_sign     	| 2%           	|
+|                  	| slash_fraction_downtime        	| 0.01%        	|
+| resources        	|                                	|              	|
+|                  	| max_slots                      	| 8            	|
+|                  	| base_vesting_time              	| 1 month      	|
+|                  	| max_vesting_time               	| 6 month      	|
+|                  	| base_vesting_resource          	| 100 MBOOT    	|
+| rank             	|                                	|              	|
+|                  	| calculation_period             	| 5            	|
+|                  	| damping_factor                 	| 0.85         	|
+|                  	| tolerance                      	| 0.001        	|
+| mint             	|                                	|              	|
+|                  	| inflation                      	| 10%          	|
+|                  	| mint_denom                     	| boot         	|
+|                  	| inflation_rate_change          	| 7%           	|
+|                  	| inflation_max                  	| 20%          	|
+|                  	| inflation_min                  	| 5%           	|
+|                  	| goal_bonded                    	| 70%          	|
+| liquidity        	|                                	|              	|
+|                  	| min_init_deposit_amount        	| 100000       	|
+|                  	| init_pool_coin_mint_amount     	| 100000       	|
+|                  	| pool_creation_fee              	| 1 GBOOT      	|
+|                  	| swap_fee_rate                  	| 0.3%         	|
+|                  	| withdraw_fee_rate              	| 0.3%         	|
+| gov              	|                                	|              	|
+|                  	| min_deposit                    	| 1 GBOOT      	|
+|                  	| max_deposit_period             	| 1 Week       	|
+|                  	| voting_period                  	| 1 Week       	|
+|                  	| quorum                         	| 33.4%        	|
+|                  	| threshold                      	| 50%          	|
+|                  	| veto_threshold                 	| 33.4%        	|
+| energy           	|                                	|              	|
+|                  	| max_routes                     	| 8            	|
+| distribution     	|                                	|              	|
+|                  	| community_tax                  	| 0%           	|
+|                  	| base_proposer_reward           	| 1%           	|
+|                  	| bonus_proposer_reward          	| 4%           	|
+| cron             	|                                	|              	|
+|                  	| max_slots                      	| 4            	|
+|                  	| max_gas                        	| 4M           	|
+|                  	| fee_ttl                        	| 50           	|
+| crisis           	|                                	|              	|
+|                  	| constant_fee                   	| 10 MBOOT     	|
+| bandwidth        	|                                	|              	|
+|                  	| recovery_period                	| 16000 blocks 	|
+|                  	| adjust_price_period            	| 5 blocks     	|
+|                  	| base_price                     	| 0.25         	|
+|                  	| max_block_bandwidth            	| 50M          	|
+| auth             	|                                	|              	|
+|                  	| max_memo_characters            	| 1024         	|
+|                  	| tx_sig_limit                   	| 7            	|
+|                  	| tx_size_cost_per_byte          	| 10           	|
+| consensus_params 	|                                	|              	|
+|                  	| max_bytes                      	| 16 MB        	|
+|                  	| max_gas                        	| 100M         	|
+|                  	|                                	|              	|
+
+
 # Genesis Parameters
 
 A list of subjective parameter choices with reasons for their recommendation.

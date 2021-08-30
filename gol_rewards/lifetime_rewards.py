@@ -42,11 +42,10 @@ def get_mapped_df():
 
 
 def get_old_precommits():
-    df = pd.read_csv('./data/old_pre_commits.csv', header=None,
+    df = pd.read_csv('data/old_pre_commits.csv', header=None,
                      names=['consensus_pubkey', 'precommits', 'operator_address'],
                      usecols=['operator_address', 'precommits'])
     return df
-
 
 
 def get_lifetime_rewards():

@@ -19,7 +19,8 @@ FILES = [
             ('lifetime_rewards.csv', 'lifetime'),
             ('load.csv', 'load'),
             ('relevance.csv', 'relevance'),
-            ('takeoff.csv', 'takeoff')
+            ('takeoff.csv', 'takeoff'),
+            ('port.csv', 'port')
 ]
 
 
@@ -60,9 +61,10 @@ if __name__ == '__main__':
     get_all_rewards()
     print('Getting the result dataframe')
     df = get_result_df()
+    df.to_csv('./data/final_result.csv')
     print('The final result saved to csv')
     df = df.set_index('subject')
     result = df.to_json(orient="index")
-    with open('./data/final_result.json', 'w') as json_file:
+    with open('data/final_result.json', 'w') as json_file:
         json.dump(result, json_file)
     print('the final result converted to json')

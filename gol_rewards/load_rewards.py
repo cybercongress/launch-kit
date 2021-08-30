@@ -75,5 +75,6 @@ def get_load_rewards():
     fix_karma(TABLE)
     df = karma_grouped_to_df(TABLE)
     df['reward'] = (df['karma'] / sum(df['karma'])) * LOAD_REWARD
+    df = df.drop(['karma'])
     df['reward'] = df['reward'].round(0)
     df.to_csv('./data/load.csv')

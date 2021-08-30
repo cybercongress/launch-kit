@@ -61,14 +61,21 @@ def get_from_proxy_addresses2(proxy_address):
 
 
 def get_cp_rewards():
-    proposals = get_addresses()
+    df = get_addresses()
     sergey, sergey_sum = get_from_proxy_addresses(PROXY_ADDRESS)
     vladimir, vladimir_sum = get_from_proxy_addresses2(PROXY_ADDRESS_2)
-    df = pd.concat([proposals, sergey, vladimir])
+    sergey = sergey.drop(['description'], axis=1)
+    sergey = sergey.groupby(['subject'])['reward'].sum().reset_index()
+    sergey.loc[sergey['reward'] <= 1_000_000_000, "reward"] += 10_000_000
+    sergey_sum = sergey['reward'].sum()
     df = df.drop(['description'], axis=1)
-    df = df.groupby(['subject']).sum()
-    df = df.drop(PROXY_ADDRESS)
-    df.loc[PROXY_ADDRESS_2]['reward'] -= vladimir_sum
-    df = df.reset_index()
+    df = df.set_index('subject')
+    # df = df.groupby(['subject']).sum()
+    # df = df.drop(PROXY_ADDRESS)
+    df.loc[PROXY_ADDRESS]['reward'] = sergey_sum
     df = df.sort_values(by=['reward'], ascending=False)
+    df = df.reset_index()
+    # df.loc[df['reward'] <= 1_000_000_000, "reward"] += 10_000_000
     df.to_csv('./data/comm_pool_rewards.csv')
+    sergey.to_csv('./data/sergey_rewards.csv')
+    vladimir.to_csv('./data/vladimir_rewards.csv')

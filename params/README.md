@@ -7,13 +7,13 @@
 |                  	| instantiate_default_permission 	| Everybody    	|
 |                  	| max_wasm_code_size             	| 512 KB       	|
 | staking          	|                                	|              	|
-|                  	| unbonding_time                 	| 5 days       	|
+|                  	| unbonding_time                 	| 11 days       |
 |                  	| max_validators                 	| 92           	|
 |                  	| max_entries                    	| 8             |
 | slashing         	|                                	|              	|
-|                  	| signed_blocks_window           	| 1024 blocks  	|
-|                  	| min_signed_per_window          	| 60%          	|
-|                  	| downtime_jail_duration         	| 600 s        	|
+|                  	| signed_blocks_window           	| 5000 blocks  	|
+|                  	| min_signed_per_window          	| 40%          	|
+|                  	| downtime_jail_duration         	| 60 s        	|
 |                  	| slash_fraction_double_sign     	| 2%           	|
 |                  	| slash_fraction_downtime        	| 0.01%        	|
 | resources        	|                                	|              	|
@@ -43,7 +43,7 @@
 |                  	| max_deposit_period             	| 1 Week       	|
 |                  	| voting_period                  	| 1 Week       	|
 |                  	| quorum                         	| 33.4%        	|
-|                  	| threshold                      	| 50%          	|
+|                  	| threshold                      	| 50.1%         |
 |                  	| veto_threshold                 	| 33.4%        	|
 | energy           	|                                	|              	|
 |                  	| max_routes                     	| 8            	|

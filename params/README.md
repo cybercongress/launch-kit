@@ -2,36 +2,35 @@
 
 | Module           	| Parameter                      	| Value        	|
 |------------------	|--------------------------------	|--------------	|
-| wasm             	|                                	|              	|
-|                  	| code_upload_access             	| Everybody    	|
-|                  	| instantiate_default_permission 	| Everybody    	|
-|                  	| max_wasm_code_size             	| 512 KB       	|
 | staking          	|                                	|              	|
-|                  	| unbonding_time                 	| 5 days       	|
+|                  	| unbonding_time                 	| 4 days       	|
 |                  	| max_validators                 	| 92           	|
 |                  	| max_entries                    	| 8             |
-| slashing         	|                                	|              	|
-|                  	| signed_blocks_window           	| 1024 blocks  	|
-|                  	| min_signed_per_window          	| 60%          	|
-|                  	| downtime_jail_duration         	| 600 s        	|
-|                  	| slash_fraction_double_sign     	| 2%           	|
-|                  	| slash_fraction_downtime        	| 0.01%        	|
-| resources        	|                                	|              	|
+| resources[WIP]    |                                	|              	|
 |                  	| max_slots                      	| 8            	|
-|                  	| base_vesting_time              	| 1 month      	|
-|                  	| max_vesting_time               	| 6 month      	|
-|                  	| base_vesting_resource          	| 100 MBOOT    	|
-| rank             	|                                	|              	|
-|                  	| calculation_period             	| 5            	|
-|                  	| damping_factor                 	| 0.85         	|
-|                  	| tolerance                      	| 0.001        	|
-| mint             	|                                	|              	|
+|                  	| base_halving_period_volt        | 12M blocks (2y) |
+|                  	| base_halving_period_ampere      | 12M blocks (2y) |
+|                  	| base_investmint_period_volt     | 1 month      	|
+|                  	| base_investmint_period_ampere   | 1 month      	|
+|                  	| base_investmint_amount_volt     | 1 GBOOT     	|
+|                   | base_investmint_amount_ampere   | 1 GBOOT       |
+|                   | min_investmint_period_sec       | 1 day         |
+| mint[WIP]         |                                	|              	|
 |                  	| inflation                      	| 10%          	|
 |                  	| mint_denom                     	| boot         	|
 |                  	| inflation_rate_change          	| 7%           	|
-|                  	| inflation_max                  	| 20%          	|
+|                  	| inflation_max                  	| 15%          	|
 |                  	| inflation_min                  	| 5%           	|
 |                  	| goal_bonded                    	| 70%          	|
+| rank             	|                                	|              	|
+|                  	| calculation_period             	| 5            	|
+|                  	| damping_factor                 	| 0.80         	|
+|                  	| tolerance                      	| 0.001        	|
+| bandwidth        	|                                	|              	|
+|                  	| recovery_period                	| 16000 blocks 	|
+|                  	| adjust_price_period            	| 5 blocks     	|
+|                  	| base_price                     	| 0.25         	|
+|                  	| max_block_bandwidth            	| 25000         |
 | liquidity        	|                                	|              	|
 |                  	| min_init_deposit_amount        	| 100000       	|
 |                  	| init_pool_coin_mint_amount     	| 100000       	|
@@ -45,31 +44,36 @@
 |                  	| quorum                         	| 33.4%        	|
 |                  	| threshold                      	| 50%          	|
 |                  	| veto_threshold                 	| 33.4%        	|
+| cron             	|                                	|              	|
+|                  	| max_slots                      	| 4            	|
+|                  	| max_gas                        	| 2M           	|
+|                  	| fee_ttl                        	| 50           	|
 | energy           	|                                	|              	|
 |                  	| max_routes                     	| 8            	|
 | distribution     	|                                	|              	|
 |                  	| community_tax                  	| 0%           	|
 |                  	| base_proposer_reward           	| 1%           	|
-|                  	| bonus_proposer_reward          	| 4%           	|
-| cron             	|                                	|              	|
-|                  	| max_slots                      	| 4            	|
-|                  	| max_gas                        	| 4M           	|
-|                  	| fee_ttl                        	| 50           	|
+|                  	| bonus_proposer_reward          	| 3%           	|
+| slashing         	|                                	|              	|
+|                  	| signed_blocks_window           	| 16000 blocks  |
+|                  	| min_signed_per_window          	| 30%          	|
+|                  	| downtime_jail_duration         	| 600 sec       |
+|                  	| slash_fraction_double_sign     	| 2%           	|
+|                  	| slash_fraction_downtime        	| 0.01%        	|
 | crisis           	|                                	|              	|
 |                  	| constant_fee                   	| 10 MBOOT     	|
-| bandwidth        	|                                	|              	|
-|                  	| recovery_period                	| 16000 blocks 	|
-|                  	| adjust_price_period            	| 5 blocks     	|
-|                  	| base_price                     	| 0.25         	|
-|                  	| max_block_bandwidth            	| 50M          	|
+| wasm             	|                                	|              	|
+|                  	| code_upload_access             	| Everybody    	|
+|                  	| instantiate_default_permission 	| Everybody    	|
+|                  	| max_wasm_code_size             	| 512 KB       	|
 | auth             	|                                	|              	|
 |                  	| max_memo_characters            	| 1024         	|
 |                  	| tx_sig_limit                   	| 7            	|
-|                  	| tx_size_cost_per_byte          	| 10           	|
+|                  	| tx_size_cost_per_byte          	| 20            |
 | consensus_params 	|                                	|              	|
-|                  	| max_bytes                      	| 16 MB        	|
-|                  	| max_gas                        	| 100M         	|
-|                  	|                                	|              	|
+|                  	| max_bytes                      	| 4 MB        	|
+|                  	| max_gas                        	| 25M         	|
+
 
 
 # Genesis Parameters

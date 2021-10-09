@@ -6,17 +6,17 @@
 |                  	| unbonding_time                 	| 4 days       	|
 |                  	| max_validators                 	| 92           	|
 |                  	| max_entries                    	| 8             |
-| resources[WIP]    |                                	|              	|
+| resources         |                                	|              	|
 |                  	| max_slots                      	| 8            	|
-|                  	| base_halving_period_volt        | 12M blocks (2y) |
-|                  	| base_halving_period_ampere      | 12M blocks (2y) |
+|                  	| halving_period_volt_blocks      | 9M blocks (1.5y) |
+|                  	| halving_period_ampere_blocks    | 9M blocks (1.5y) |
 |                  	| base_investmint_period_volt     | 1 month      	|
 |                  	| base_investmint_period_ampere   | 1 month      	|
-|                  	| base_investmint_amount_volt     | 1 GBOOT     	|
+|                  	| base_investmint_amount_volt     | 100 MBOOT     |
 |                   | base_investmint_amount_ampere   | 1 GBOOT       |
-|                   | min_investmint_period_sec       | 1 day         |
-| mint[WIP]         |                                	|              	|
-|                  	| inflation                      	| 10%          	|
+|                   | min_investmint_period           | 1 day         |
+| mint              |                                	|              	|
+|                  	| inflation                      	| 7%          	|
 |                  	| mint_denom                     	| boot         	|
 |                  	| inflation_rate_change          	| 7%           	|
 |                  	| inflation_max                  	| 15%          	|
@@ -30,6 +30,7 @@
 |                  	| recovery_period                	| 16000 blocks 	|
 |                  	| adjust_price_period            	| 5 blocks     	|
 |                  	| base_price                     	| 0.25         	|
+|                  	| base_load                     	| 0.10         	|
 |                  	| max_block_bandwidth            	| 25000         |
 | liquidity        	|                                	|              	|
 |                  	| min_init_deposit_amount        	| 100000       	|
@@ -41,14 +42,14 @@
 |                  	| min_deposit                    	| 1 GBOOT      	|
 |                  	| max_deposit_period             	| 1 Week       	|
 |                  	| voting_period                  	| 1 Week       	|
-|                  	| quorum                         	| 33.4%        	|
+|                  	| quorum                         	| 25.0%        	|
 |                  	| threshold                      	| 50%          	|
-|                  	| veto_threshold                 	| 33.4%        	|
-| cron             	|                                	|              	|
+|                  	| veto_threshold                 	| 25.0%        	|
+| dmn             	|                                	|              	|
 |                  	| max_slots                      	| 4            	|
-|                  	| max_gas                        	| 2M           	|
+|                  	| max_gas                        	| 2M            |
 |                  	| fee_ttl                        	| 50           	|
-| energy           	|                                	|              	|
+| grid            	|                                	|              	|
 |                  	| max_routes                     	| 8            	|
 | distribution     	|                                	|              	|
 |                  	| community_tax                  	| 0%           	|

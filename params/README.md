@@ -16,12 +16,12 @@
 |                   | base_investmint_amount_ampere   | 1 GBOOT       |
 |                   | min_investmint_period           | 1 day         |
 | mint              |                                	|              	|
-|                  	| inflation                      	| 7%          	|
+|                  	| inflation                      	| 5%          	|
 |                  	| mint_denom                     	| boot         	|
-|                  	| inflation_rate_change          	| 7%           	|
+|                  	| inflation_rate_change          	| 20%           |
 |                  	| inflation_max                  	| 15%          	|
-|                  	| inflation_min                  	| 5%           	|
-|                  	| goal_bonded                    	| 70%          	|
+|                  	| inflation_min                  	| 3%           	|
+|                  	| goal_bonded                    	| 90%          	|
 | rank             	|                                	|              	|
 |                  	| calculation_period             	| 5            	|
 |                  	| damping_factor                 	| 0.80         	|

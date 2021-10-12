@@ -21,7 +21,7 @@
 |                  	| inflation_rate_change          	| 20%           |
 |                  	| inflation_max                  	| 15%          	|
 |                  	| inflation_min                  	| 3%           	|
-|                  	| goal_bonded                    	| 90%          	|
+|                  	| goal_bonded                    	| 80%          	|
 | rank             	|                                	|              	|
 |                  	| calculation_period             	| 5            	|
 |                  	| damping_factor                 	| 0.80         	|

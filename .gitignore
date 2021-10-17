@@ -20,10 +20,6 @@ genesis_generator_tool/processors/__pycache__/
 
 genesis_generator_tool/__pycache__/
 
-!*.json
-
-genesis_generator_tool/data/*.json
-
 venv/
 
 .idea/

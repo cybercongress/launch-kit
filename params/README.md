@@ -1,8 +1,82 @@
-# Genesis Parameters
+# Bostrom genesis parameters [WIP]
 
-A list of subjective parameter choices with reasons for their recommendation.
+| Module           	| Parameter                      	| Value        	|
+|------------------	|--------------------------------	|--------------	|
+| staking          	|                                	|              	|
+|                  	| unbonding_time                 	| 4 days       	|
+|                  	| max_validators                 	| 92           	|
+|                  	| max_entries                    	| 8             |
+| resources         |                                	|              	|
+|                  	| max_slots                      	| 8            	|
+|                  	| halving_period_volt_blocks      | 9M blocks (1.5y) |
+|                  	| halving_period_ampere_blocks    | 9M blocks (1.5y) |
+|                  	| base_investmint_period_volt     | 1 month      	|
+|                  	| base_investmint_period_ampere   | 1 month      	|
+|                  	| base_investmint_amount_volt     | 100 MBOOT     |
+|                   | base_investmint_amount_ampere   | 1 GBOOT       |
+|                   | min_investmint_period           | 1 day         |
+| mint              |                                	|              	|
+|                  	| inflation                      	| 5%          	|
+|                  	| mint_denom                     	| boot         	|
+|                  	| inflation_rate_change          	| 20%           |
+|                  	| inflation_max                  	| 15%          	|
+|                  	| inflation_min                  	| 3%           	|
+|                  	| goal_bonded                    	| 80%          	|
+| rank             	|                                	|              	|
+|                  	| calculation_period             	| 5            	|
+|                  	| damping_factor                 	| 0.80         	|
+|                  	| tolerance                      	| 0.001        	|
+| bandwidth        	|                                	|              	|
+|                  	| recovery_period                	| 16000 blocks 	|
+|                  	| adjust_price_period            	| 5 blocks     	|
+|                  	| base_price                     	| 0.25         	|
+|                  	| base_load                     	| 0.10         	|
+|                  	| max_block_bandwidth            	| 25000         |
+| liquidity        	|                                	|              	|
+|                  	| min_init_deposit_amount        	| 100000       	|
+|                  	| init_pool_coin_mint_amount     	| 100000       	|
+|                  	| pool_creation_fee              	| 1 GBOOT      	|
+|                  	| swap_fee_rate                  	| 0.3%         	|
+|                  	| withdraw_fee_rate              	| 0.3%         	|
+| gov              	|                                	|              	|
+|                  	| min_deposit                    	| 1 GBOOT      	|
+|                  	| max_deposit_period             	| 1 Week       	|
+|                  	| voting_period                  	| 1 Week       	|
+|                  	| quorum                         	| 25.0%        	|
+|                  	| threshold                      	| 50%          	|
+|                  	| veto_threshold                 	| 25.0%        	|
+| dmn             	|                                	|              	|
+|                  	| max_slots                      	| 4            	|
+|                  	| max_gas                        	| 2M            |
+|                  	| fee_ttl                        	| 50           	|
+| grid            	|                                	|              	|
+|                  	| max_routes                     	| 8            	|
+| distribution     	|                                	|              	|
+|                  	| community_tax                  	| 0%           	|
+|                  	| base_proposer_reward           	| 1%           	|
+|                  	| bonus_proposer_reward          	| 3%           	|
+| slashing         	|                                	|              	|
+|                  	| signed_blocks_window           	| 16000 blocks  |
+|                  	| min_signed_per_window          	| 30%          	|
+|                  	| downtime_jail_duration         	| 600 sec       |
+|                  	| slash_fraction_double_sign     	| 2%           	|
+|                  	| slash_fraction_downtime        	| 0.01%        	|
+| crisis           	|                                	|              	|
+|                  	| constant_fee                   	| 10 MBOOT     	|
+| wasm             	|                                	|              	|
+|                  	| code_upload_access             	| Everybody    	|
+|                  	| instantiate_default_permission 	| Everybody    	|
+|                  	| max_wasm_code_size             	| 512 KB       	|
+| auth             	|                                	|              	|
+|                  	| max_memo_characters            	| 1024         	|
+|                  	| tx_sig_limit                   	| 7            	|
+|                  	| tx_size_cost_per_byte          	| 20            |
+| consensus_params 	|                                	|              	|
+|                  	| max_bytes                      	| 4 MB        	|
+|                  	| max_gas                        	| 25M         	|
 
-## cyberd parameters
+
+## euler parameters
 
 | Param | `euler-4` |`euler-5` | `euler-6` | `cyber`* | Notes |
 |:--|:--:|:--:|:--:|:--:|:--:|

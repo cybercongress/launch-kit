@@ -22,6 +22,7 @@ FILES = [
             ('relevance.csv', 'relevance'),
             ('takeoff.csv', 'takeoff'),
             ('port.csv', 'port'),
+            ('bostrom_lifetime.csv', 'bostrom_lifetime'),
             ('investors.csv', 'investors'),
             ('inventors.csv', 'inventors')
 ]
@@ -75,14 +76,14 @@ if __name__ == '__main__':
     print('The final result saved to csv')
     genesis_df = res[0][['subject', 'sum']].copy()
     additional_accs = [
-        ('gift_ms', 700_000_000_000_000),
-        ('great_web_fund_ms', 50_000_000_000_000),
-        ('cyber_congress_ms', 116_048_196_057_145),
-        ('senate', 50_761_055_960_997)
+        ('bostrom1xszmhkfjs3s00z2nvtn7evqxw3dtus6yr8e4pw', 115_935_196_057_169),
+        ('bostrom1qs9w7ry45axfxjgxa4jmuhjthzfvj78sxh5p6e', 700_000_000_000_000),
+        ('bostrom1ha4pw9w2qgc2ce9jwfrwrmaft5fneus58nqwev', 50_000_000_000_000)
     ]
     add_accs_df = pd.DataFrame(additional_accs, columns=['subject', 'sum'])
-    genesis_df = genesis_df.append(add_accs_df, ignore_index=True)
+    genesis_df = add_accs_df.append(genesis_df, ignore_index=True)
     genesis_df.to_csv('./data/genesis_df.csv')
+    print('senate', 50_761_055_960_997)
     # df = df.set_index('subject')
     # result = df.to_json(orient="index")
     # with open('data/final_result.json', 'w') as json_file:

@@ -1,154 +1,94 @@
+import pandas as pd
+from functools import reduce
+from cyberpy._wallet import address_to_address
 import json
 from config import *
-from processors.processors import (
-    JSONProcessor, 
-    RelativeCSVProcessor, 
-    AbsoluteCSVProcessor, 
-    check_balances
-)
-import pandas as pd
 
 
-def load_config():
-    distribution_json = json.load(open(DISTRIBUTION_PATH))
-    manual_json = json.load(open(MANUAL_DISTRIBUTION_PATH))
-    genesis_json = json.load(open(GENESIS_EXAMPLE_PATH))
-    return distribution_json, manual_json, genesis_json
+def read_csv(file):
+    path = './data/' + file[0]
+    df = pd.read_csv(path)
+    df = df[['subject', 'reward']]
+    df['subject'] = df.apply(lambda x: address_to_address(x['subject'], prefix='bostrom'), axis=1)
+    _df = df.copy()
+    _df['categoty'] = file[1]
+    df = df.rename(columns={'reward': file[1]}, inplace=False)
+    df = df.astype({file[1]: int})
+    count = df.shape[0]
+    sum = df[file[1]].sum()
+    return df, file[1], count, sum, _df
 
 
-def get_json_distributions(distribution_json, manual_json):
-    return [
-        JSONProcessor(
-            total_json=manual_json,
-            expected_emission=distribution_json[distribution_type],
-            distribution_type=distribution_type
-        ) 
-        for distribution_type in manual_json
-    ]
+def get_result_df():
+    dfs = [read_csv(file)[0] for file in FILES]
+    df_final = reduce(lambda left, right: pd.merge(left, right, on=['subject'], how='outer'), dfs)
+    df_final['sum'] = df_final.sum(axis=1)
+    df_final = df_final.sort_values(by=['sum'], ascending=False)
+    df_final = df_final.reset_index()
+    df_final = df_final.drop('index', axis=1)
+    data = [read_csv(file)[1:4] for file in FILES]
+    df_pivot = pd.DataFrame(data, columns=['source', 'amount', 'sum'])
+    df_categorized = pd.concat([read_csv(file)[4] for file in FILES]).reset_index(drop=True)
+    return df_final, df_pivot, df_categorized
 
 
-def get_validators_distributions(distribution_json):
-    return [
-        AbsoluteCSVProcessor(
-            expected_emission=distribution_json["validators_drop"],
-            distribution_type="validators_drop",
-            path=VALIDATORS_PATH_CSV
-        )
-    ]
-
-def get_urbit_distributions(distribution_json):
-    return [
-        AbsoluteCSVProcessor(
-            expected_emission=distribution_json["urbit_drop"],
-            distribution_type="urbit_drop",
-            path=URBIT_PATH_CSV
-        )
-    ]
-
-
-def get_relative_distributions(distribution_json):
-    return [
-        RelativeCSVProcessor(
-            path=CSV_DISTRIBUTIONS[distribution_type],
-            expected_emission=distribution_json[distribution_type],
-            emission=distribution_json[distribution_type],
-            distribution_type=distribution_type
-        )
-        for distribution_type in CSV_DISTRIBUTIONS
-    ]
-
-
-def get_distributions(distribution_json, manual_json):
-    processors = get_json_distributions(distribution_json, manual_json) \
-                + get_validators_distributions(distribution_json) \
-                + get_urbit_distributions(distribution_json) \
-                + get_relative_distributions(distribution_json)
-
-    return [processor.process() for processor in processors]
-
-
-def concatenate_balances(all_balances):
-    balances_df = pd.concat(all_balances, sort=False)
-    # balances_df["number"] = range(balances_df.shape[0])
-    balances_df = balances_df.groupby("address", sort=False).agg({
-        "cyb_balance": "sum",
-        # "number": "min"
-    })
-    balances_df["number"] = range(balances_df.shape[0])
-    balances_df["cyb_balance"] = balances_df["cyb_balance"].astype(int)
-    return balances_df
-
-
-def save_json(distribution_json, genesis_json, balances):
-    (
-        balances["cyb_balance"],
-        float(distribution_json["total"]), 
-        "total"
-    )
-
-    genesis_json["app_state"]["auth"]["accounts"] = [{
-        "type": "cosmos-sdk/Account",
-        "value": {
-            "address": address,
+def generate_genesis(df, senate, network_genesis):
+    accounts = []
+    balances = []
+    account_number = 0
+    for index, row in df.iterrows():
+        account = {
+            "@type": "/cosmos.auth.v1beta1.BaseAccount",
+            "account_number": str(account_number),
+            "address": row['subject'],
+            "pub_key": None,
+            "sequence": "0"
+        }
+        balance = {
+            "address": row['subject'],
             "coins": [
                 {
-                    "denom":  DENOM,
-                    "amount": str(row["cyb_balance"])
+                    "amount": str(int(row['sum'])),
+                    "denom": BOOT_DENOM
+                },
+                {
+                    "amount": str(int(row['sum'])),
+                    "denom": CYB_DENOM
                 }
-            ],
-            "public_key": "",
-            "account_number": int(row["number"]),
-            "sequence": 0
+            ]
         }
-    } for address, row in balances.sort_values("number").iterrows()]
-
-    genesis_json["app_state"]["distribution"]["fee_pool"]["community_pool"] = [{
-            "denom": DENOM,
-            "amount": distribution_json['community_pool']
-    }]
-
-    genesis_json["app_state"]["pool"] = {
-            "not_bonded_tokens": distribution_json["total"],
-            "bonded_tokens": "0"
-    }
-
-    genesis_json["app_state"]["supply"]["supply"] = [{
-            "denom": DENOM,
-            "amount": distribution_json['total']
-    }]
-
-    sum_amt_accs = sum([int(i["value"]['coins'][0]['amount']) for i in genesis_json["app_state"]["auth"]["accounts"]])
-    print(DENOM, 'sum of accounts:', sum_amt_accs)
-
-    community_pool = int(genesis_json["app_state"]["distribution"]['fee_pool']['community_pool'][0]["amount"])
-    print(DENOM, 'in community pool:', community_pool)
-
-    summ = sum_amt_accs + community_pool
-    delta = int(genesis_json["app_state"]["supply"]["supply"][0]["amount"]) - summ
-
-    print("sum accounts and cummunity pool:", summ, "expected:", genesis_json["app_state"]["supply"]["supply"][0]["amount"], "delta:", delta, DENOM)
-    print("Allocate change dust to cummunity pool and save to .json")
-
-    community_pool += delta
-
-    genesis_json["app_state"]["distribution"]["fee_pool"]["community_pool"] = [{
-            "denom": DENOM,
-            "amount": str(community_pool)
-    }]
+        account_number += 1
+        accounts.append(account)
+        balances.append(balance)
+        network_genesis['app_state']['auth']['accounts'] = accounts
+        network_genesis['app_state']['bank']['balances'] = balances
+        network_genesis['app_state']['bank']['supply'] = [
+            {
+                "amount": str(SUPPLY),
+                "denom": BOOT_DENOM
+            },
+            {
+                "amount": str(int(SUPPLY - senate)),
+                "denom": CYB_DENOM
+            },
+        ]
+        network_genesis['app_state']['distribution']['fee_pool']['community_pool'] = [{
+            "amount": str(senate),
+            "denom": BOOT_DENOM
+        }]
+        with open('./data/genesis.json', 'w') as fp:
+            json.dump(network_genesis, fp, indent=4)
 
 
-    json.dump(
-        genesis_json,
-        open(GENERATED_GENESIS_PATH, "w")
-    )
+res = get_result_df()
+res[0].to_csv('./data/final_result.csv')
+res[1].to_csv('./data/pivot_result.csv')
+res[2].to_csv('./data/categorized_result.csv')
+genesis_df = res[0][['subject', 'sum']].copy()
+genesis_df.to_csv('./data/genesis.csv')
+senate = SUPPLY - genesis_df['sum'].sum()
 
+with open(NETWORK_GENESIS_PATH) as json_file:
+    network_genesis = json.load(json_file)
 
-def generate():
-    distribution_json, manual_json, genesis_json = load_config()
-    all_balances = get_distributions(distribution_json, manual_json)
-    cyb_balances_df = concatenate_balances(all_balances)
-    save_json(distribution_json, genesis_json, cyb_balances_df)
-
-
-if (__name__ == "__main__"):
-    generate()
+generate_genesis(genesis_df, senate, network_genesis)

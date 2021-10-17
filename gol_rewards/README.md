@@ -28,6 +28,8 @@ calculations: ./comm_pool_rewards.py
 result: ./data/comm_pool_rewards.csv
 sum: 1,238,944,039,000 tokens
 
+extra: ./data/sergey_rewards.csv and ./data/vladimir_rewards.csv are responsobilities of Sergey and Vladimir.
+
 #### delegation
 
 calculations: ./delegation_rewards.py
@@ -55,4 +57,10 @@ sum: 500,000,000,705 tokens
 ## bostrom rewards?
 
 current_sum: 85,000,000,000 tokens
+
+## final results
+
+calculations: ./main.py
+result: ./data/final_result.csv
+sum: 22,190,747,981,858 tokens
 

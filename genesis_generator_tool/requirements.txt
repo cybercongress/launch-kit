@@ -1,5 +1,0 @@
-tqdm==4.17.1
-pandas==0.23.3
-google-cloud-bigquery==1.14.0
-click==6.7
-numpy==1.14.5

@@ -1,0 +1,65 @@
+{
+    "type": "cosmos-sdk/StdTx",
+    "value": {
+        "msg": [
+            {
+                "type": "cosmos-sdk/MsgSend",
+                "value": {
+                    "from_address": "cosmos1latzme6xf6s8tsrymuu6laf2ks2humqv2tkd9a",
+                    "to_address": "cosmos14nzyt8wmx4g6zkeluelukamgsh5v4xgnmeq9y4",
+                    "amount": [
+                        {
+                            "denom": "uatom",
+                            "amount": "75442048"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "cosmos-sdk/MsgSend",
+                "value": {
+                    "from_address": "cosmos1latzme6xf6s8tsrymuu6laf2ks2humqv2tkd9a",
+                    "to_address": "cosmos1cg79pj70mgl8xlum0rw5yy6enk9jszsrpl6hw5",
+                    "amount": [
+                        {
+                            "denom": "uatom",
+                            "amount": "75442048"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "cosmos-sdk/MsgSend",
+                "value": {
+                    "from_address": "cosmos1latzme6xf6s8tsrymuu6laf2ks2humqv2tkd9a",
+                    "to_address": "cosmos16macu2qtc0jmqc7txvf0wkz84cycsx72ywrucl",
+                    "amount": [
+                        {
+                            "denom": "uatom",
+                            "amount": "75442048"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "cosmos-sdk/MsgSend",
+                "value": {
+                    "from_address": "cosmos1latzme6xf6s8tsrymuu6laf2ks2humqv2tkd9a",
+                    "to_address": "cosmos1rhlsrmu8qphuw9qcgulcyx9r3v2p7tm70w3yq5",
+                    "amount": [
+                        {
+                            "denom": "uatom",
+                            "amount": "75442048"
+                        }
+                    ]
+                }
+            }
+        ],
+        "fee": {
+            "amount": [],
+            "gas": "2000000"
+        },
+        "signatures": null,
+        "memo": "team motivation program"
+    }
+}

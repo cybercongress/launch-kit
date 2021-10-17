@@ -1,0 +1,260 @@
+{
+    "type": "cosmos-sdk/StdTx",
+    "value": {
+        "msg": [
+            {
+                "type": "cosmos-sdk/MsgSend",
+                "value": {
+                    "from_address": "cosmos1e859xaue4k2jzqw20cv6l7p3tmc378pc5znax0",
+                    "to_address": "cosmos12gha4nyydysttfmdkup73txavg0fsfpc50rk5a",
+                    "amount": [
+                        {
+                            "denom": "uatom",
+                            "amount": "1"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "cosmos-sdk/MsgSend",
+                "value": {
+                    "from_address": "cosmos1e859xaue4k2jzqw20cv6l7p3tmc378pc5znax0",
+                    "to_address": "cosmos16ahkkv0jzhtp73z83qlhqrypss6jpjm862zjst",
+                    "amount": [
+                        {
+                            "denom": "uatom",
+                            "amount": "400"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "cosmos-sdk/MsgSend",
+                "value": {
+                    "from_address": "cosmos1e859xaue4k2jzqw20cv6l7p3tmc378pc5znax0",
+                    "to_address": "cosmos176m2p8l3fps3dal7h8gf9jvrv98tu3rqfdht86",
+                    "amount": [
+                        {
+                            "denom": "uatom",
+                            "amount": "42499993"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "cosmos-sdk/MsgSend",
+                "value": {
+                    "from_address": "cosmos1e859xaue4k2jzqw20cv6l7p3tmc378pc5znax0",
+                    "to_address": "cosmos17xns6wc65n37mdf6k8mqxunkc2exq6qxfd994q",
+                    "amount": [
+                        {
+                            "denom": "uatom",
+                            "amount": "15000"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "cosmos-sdk/MsgSend",
+                "value": {
+                    "from_address": "cosmos1e859xaue4k2jzqw20cv6l7p3tmc378pc5znax0",
+                    "to_address": "cosmos192cmlc77ft9uaxujgdm0gwmtzav50te7ycpger",
+                    "amount": [
+                        {
+                            "denom": "uatom",
+                            "amount": "10"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "cosmos-sdk/MsgSend",
+                "value": {
+                    "from_address": "cosmos1e859xaue4k2jzqw20cv6l7p3tmc378pc5znax0",
+                    "to_address": "cosmos19xzc7k8q3xa6nsy0gugzcxyykpfcczddvvn5gc",
+                    "amount": [
+                        {
+                            "denom": "uatom",
+                            "amount": "21600"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "cosmos-sdk/MsgSend",
+                "value": {
+                    "from_address": "cosmos1e859xaue4k2jzqw20cv6l7p3tmc378pc5znax0",
+                    "to_address": "cosmos1d8754xqa9245pctlfcyv8eah468neqznjwmh3v",
+                    "amount": [
+                        {
+                            "denom": "uatom",
+                            "amount": "30000"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "cosmos-sdk/MsgSend",
+                "value": {
+                    "from_address": "cosmos1e859xaue4k2jzqw20cv6l7p3tmc378pc5znax0",
+                    "to_address": "cosmos1e859xaue4k2jzqw20cv6l7p3tmc378pc5znax0",
+                    "amount": [
+                        {
+                            "denom": "uatom",
+                            "amount": "4928"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "cosmos-sdk/MsgSend",
+                "value": {
+                    "from_address": "cosmos1e859xaue4k2jzqw20cv6l7p3tmc378pc5znax0",
+                    "to_address": "cosmos1ez0jlywwr8ysfmkp9tmse4q4v32w3m3axmdkwx",
+                    "amount": [
+                        {
+                            "denom": "uatom",
+                            "amount": "30937"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "cosmos-sdk/MsgSend",
+                "value": {
+                    "from_address": "cosmos1e859xaue4k2jzqw20cv6l7p3tmc378pc5znax0",
+                    "to_address": "cosmos1ffve0zx389ffl80ae9t8jmghcjuzdlqrh2fhh2",
+                    "amount": [
+                        {
+                            "denom": "uatom",
+                            "amount": "160000"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "cosmos-sdk/MsgSend",
+                "value": {
+                    "from_address": "cosmos1e859xaue4k2jzqw20cv6l7p3tmc378pc5znax0",
+                    "to_address": "cosmos1gw5kdey7fs9wdh05w66s0h4s24tjdvtcxlwll7",
+                    "amount": [
+                        {
+                            "denom": "uatom",
+                            "amount": "2"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "cosmos-sdk/MsgSend",
+                "value": {
+                    "from_address": "cosmos1e859xaue4k2jzqw20cv6l7p3tmc378pc5znax0",
+                    "to_address": "cosmos1h0znr3mah0r6addl6yuww3vls049ee07d4qt95",
+                    "amount": [
+                        {
+                            "denom": "uatom",
+                            "amount": "200"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "cosmos-sdk/MsgSend",
+                "value": {
+                    "from_address": "cosmos1e859xaue4k2jzqw20cv6l7p3tmc378pc5znax0",
+                    "to_address": "cosmos1jxpe7neu764uasz5y5u4lrr5jtltv430tp0knf",
+                    "amount": [
+                        {
+                            "denom": "uatom",
+                            "amount": "5"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "cosmos-sdk/MsgSend",
+                "value": {
+                    "from_address": "cosmos1e859xaue4k2jzqw20cv6l7p3tmc378pc5znax0",
+                    "to_address": "cosmos1lugpap3vtd7ncg8hf4zkreqtecgfv5a0kgeeux",
+                    "amount": [
+                        {
+                            "denom": "uatom",
+                            "amount": "310"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "cosmos-sdk/MsgSend",
+                "value": {
+                    "from_address": "cosmos1e859xaue4k2jzqw20cv6l7p3tmc378pc5znax0",
+                    "to_address": "cosmos1qn8sr2hzmktlecusdtxj9hwj0upnm0jfgkyqry",
+                    "amount": [
+                        {
+                            "denom": "uatom",
+                            "amount": "50000"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "cosmos-sdk/MsgSend",
+                "value": {
+                    "from_address": "cosmos1e859xaue4k2jzqw20cv6l7p3tmc378pc5znax0",
+                    "to_address": "cosmos1s2a7rckcky6jmhncxwy0xtwf2ymg87pu4fxju9",
+                    "amount": [
+                        {
+                            "denom": "uatom",
+                            "amount": "68185"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "cosmos-sdk/MsgSend",
+                "value": {
+                    "from_address": "cosmos1e859xaue4k2jzqw20cv6l7p3tmc378pc5znax0",
+                    "to_address": "cosmos1u3ap2d4ytcqrr6jlsjf380g3lvgldq4mexydn0",
+                    "amount": [
+                        {
+                            "denom": "uatom",
+                            "amount": "1200"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "cosmos-sdk/MsgSend",
+                "value": {
+                    "from_address": "cosmos1e859xaue4k2jzqw20cv6l7p3tmc378pc5znax0",
+                    "to_address": "cosmos1uyvzhzf5semtee94x5tkjavtacpvh7kpa0peth",
+                    "amount": [
+                        {
+                            "denom": "uatom",
+                            "amount": "407"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "cosmos-sdk/MsgSend",
+                "value": {
+                    "from_address": "cosmos1e859xaue4k2jzqw20cv6l7p3tmc378pc5znax0",
+                    "to_address": "cosmos1wnpak7sfawsfv9c8vqe7naxfa4g99lv7a72t39",
+                    "amount": [
+                        {
+                            "denom": "uatom",
+                            "amount": "230425"
+                        }
+                    ]
+                }
+            }
+        ],
+        "fee": {
+            "amount": [],
+            "gas": "2000000"
+        },
+        "signatures": null,
+        "memo": "Refund of shares for slashing on block 4629079"
+    }
+}

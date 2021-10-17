@@ -1,44 +1,26 @@
 # Genesis generator tool
 
-This tool provides `genesis.json` file compilation from the next following files: 
+This tool provides `genesis.json` file compilation from the next following files:
 
-- `network_genesis.json`
-- `cyber_distribution.json`
-- `manual_distribution.json`
-- `ethereum.csv`
-- `cosmos.csv`
-- `urbit.csv`
-- `validators.csv`
+- [network_genesis.json](./data/network_genesis.json), the `genesis.json` file template with set parameters, but without accounts, community pool values and suuply.
+- [bostrom_lifetime.csv](./data/bostrom_lifetime.csv), the rewards for `bostrom-testnets` [supporting](../pre_bostrom_lifetime/README.md)
+- [comm_pool_rewards.csv](./data/comm_pool_rewards.csv), the [community pool rewards](../gol_rewards/README.md) during `euler` testnets, excluding evangelism program
+- [cyberdbot_sergey.csv](./data/cyberdbot_sergey.csv), an extra gift for [cyberd telegram bot](https://github.com/Snedashkovsky/cyberdBot) users
+- [delegation.csv](./data/delegation.csv), the [delegation rewards](../gol_rewards/README.md) of the Game of Links during `euler` testnets
+- [euler4_rewards.csv](./data/euler4_rewards.csv), the [lifetime reards](../gol_rewards/README.md) during `euler-4`
+- [inventors.csv](./data/inventors.csv), investor shares
+- [investors.csv](./data/investors.csv), inventor shares
+- [lifetime_rewards.csv](./data/lifetime_rewards.csv), the [lifetime reards](../gol_rewards/README.md) during `euler-5-6`
+- [load.csv](./data/load.csv), the [load rewards](../gol_rewards/README.md) of the Game of Links during `euler` testnets
+- [multisigs.csv](./data/multisigs.csv), cybercongress, gift and euler_foundation multisig accounts
+- [port.csv](./data/port.csv), all [port visitors rewards](../port_migration/README.md)
+- [relevance.csv](./data/relevance.csv), the [relevance rewards](../gol_rewards/README.md) of the Game of Links during `euler` testnets
+- [sergandmyselfrewards.csv](./data/sergandmyselfrewards.csv), evangelism program rewards
+- [takeoff.csv](./data/takeoff.csv), all [takeoff donors](../takeoff_distribution/README.md)
+- [vladimirrewards.csv](./data/vladimirrewards.csv), special gift from posthuman
 
-As output of this script is generated `genesis.json` file ready for signing. All files above should be at `./data` folder, the `genesis.json` is saving in the same folder.
+As the output of this script is generated [genesis.json](./data/genesis.json) file ready for signing. Also, the output is:
 
-The `network_genesis.json` should contain all network parameters including network launch time and excluding accounts.
-
-The `cyber_distribution.json` should contain account groups and token balances by each group. The sum of group balances should be equal to the total supply of genesis distribution.
-
-The `manual_distribution.json` should contain special addresses divided by groups existed in `cyber_distribution.json`. These is all non-gift addresses.
-
-The `ethereum.csv` is the file with ethereum balances but with converted to `cyber` addresses like:
-
-```bash
-cyber_address, ethereum_balance
-```
-
-The `cosmos.csv` is the file with cosmos balances but with converted to `cyber` addresses like:
-
-```bash
-cyber_address, cosmos_balance
-```
-
-The `urbit.csv` file contains converted to `cyber` ethereum accounts with Urbit entities. The balances in `cyber` network should be calculated before. See the [urbit_gift_tool](../urbit_gift_tool/README.md) folder. 
-
-The `validators.csv` file contains converted to `cyber` `cybervaloper` accounts with `euler-4` validators. The balances in `cyber` network should be calculated before. See the [lifetime_rewards_tool](../lifetime_rewards_tool/README.md) folder. 
-
-If the `./data` folder contains necessary files the genesis generator tool should work correctly.
-
-1. The script loads all files from `./data` folder
-2. Calculate gifts for `ethereum` and `cosmos` accounts by quadratic distribution
-3. Get all accounts and group them by addresses with the account sum. 
-4. Check sum of all accounts balances with total supply, if the change less than `0.0001` the script allocates it to the community pool. This is a normal thing like change or dust in that calculations because of the number of addresses and complex distribution functions.
-5. Put addresses and balances to genesis structure to the correct format.
-5. Save genesis structure to `genesis.json`
+- [categorized_result.csv](./data/categorized_result.csv) the table with accs by categories
+- [final_result.csv](./data/final_result.csv) the table with final result of calculations
+- [genesis.csv](/data/genesis.csv) the table with grouped by agent balances

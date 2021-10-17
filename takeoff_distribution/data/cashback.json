@@ -1,0 +1,117 @@
+{
+    "type": "cosmos-sdk/StdTx",
+    "value": {
+        "msg": [
+            {
+                "type": "cosmos-sdk/MsgSend",
+                "value": {
+                    "from_address": "cosmos1latzme6xf6s8tsrymuu6laf2ks2humqv2tkd9a",
+                    "to_address": "cosmos1qn8sr2hzmktlecusdtxj9hwj0upnm0jfgkyqry",
+                    "amount": [
+                        {
+                            "denom": "uatom",
+                            "amount": "350600000"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "cosmos-sdk/MsgSend",
+                "value": {
+                    "from_address": "cosmos1latzme6xf6s8tsrymuu6laf2ks2humqv2tkd9a",
+                    "to_address": "cosmos12u6qgyrdsy4xmw04vfkkkh9a9tqzw66ghkr0nv",
+                    "amount": [
+                        {
+                            "denom": "uatom",
+                            "amount": "331900000"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "cosmos-sdk/MsgSend",
+                "value": {
+                    "from_address": "cosmos1latzme6xf6s8tsrymuu6laf2ks2humqv2tkd9a",
+                    "to_address": "cosmos1rhlsrmu8qphuw9qcgulcyx9r3v2p7tm70w3yq5",
+                    "amount": [
+                        {
+                            "denom": "uatom",
+                            "amount": "50200000"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "cosmos-sdk/MsgSend",
+                "value": {
+                    "from_address": "cosmos1latzme6xf6s8tsrymuu6laf2ks2humqv2tkd9a",
+                    "to_address": "cosmos1cg79pj70mgl8xlum0rw5yy6enk9jszsrpl6hw5",
+                    "amount": [
+                        {
+                            "denom": "uatom",
+                            "amount": "40000300"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "cosmos-sdk/MsgSend",
+                "value": {
+                    "from_address": "cosmos1latzme6xf6s8tsrymuu6laf2ks2humqv2tkd9a",
+                    "to_address": "cosmos1n2ukmp0r4m90rr4nszuprfvqpuy4ccf044ehrv",
+                    "amount": [
+                        {
+                            "denom": "uatom",
+                            "amount": "12439100"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "cosmos-sdk/MsgSend",
+                "value": {
+                    "from_address": "cosmos1latzme6xf6s8tsrymuu6laf2ks2humqv2tkd9a",
+                    "to_address": "cosmos1gw5kdey7fs9wdh05w66s0h4s24tjdvtcxlwll7",
+                    "amount": [
+                        {
+                            "denom": "uatom",
+                            "amount": "10050000"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "cosmos-sdk/MsgSend",
+                "value": {
+                    "from_address": "cosmos1latzme6xf6s8tsrymuu6laf2ks2humqv2tkd9a",
+                    "to_address": "cosmos14nzyt8wmx4g6zkeluelukamgsh5v4xgnmeq9y4",
+                    "amount": [
+                        {
+                            "denom": "uatom",
+                            "amount": "3394920"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "cosmos-sdk/MsgSend",
+                "value": {
+                    "from_address": "cosmos1latzme6xf6s8tsrymuu6laf2ks2humqv2tkd9a",
+                    "to_address": "cosmos1s2a7rckcky6jmhncxwy0xtwf2ymg87pu4fxju9",
+                    "amount": [
+                        {
+                            "denom": "uatom",
+                            "amount": "1800000"
+                        }
+                    ]
+                }
+            }
+        ],
+        "fee": {
+            "amount": [],
+            "gas": "2000000"
+        },
+        "signatures": null,
+        "memo": "evangelism cashback program"
+    }
+}

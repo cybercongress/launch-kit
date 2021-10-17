@@ -1,10 +1,10 @@
 CONGRESS_COSMOS_ADDRESS = 'cosmos1latzme6xf6s8tsrymuu6laf2ks2humqv2tkd9a'
 CONGRESS_CYBER_ADDRESS = 'cyber1latzme6xf6s8tsrymuu6laf2ks2humqvdq39v8'
-URL = '' + 'txs?message.action=send&transfer.recipient={}&page={}'
+URL = 'https://io.cybernode.ai/gaia_lcd/' + 'txs?message.action=send&transfer.recipient={}&page={}'
 takeoff_distr = 100000000000000 # 100 TEUL
 from_date = '2020-03-30 00:00:00'
-to_date = '2020-12-01 00:00:00'
-ETH_NODE_RPC = ''
+to_date = '2020-12-03 00:00:00'
+ETH_NODE_RPC = 'https://mainnet.infura.io/v3/d8b6c8308bfb4101b6480a5874e8a944'
 
 EVANGELISM_CONTRACT = '0xfc3849b9711f69ddb677FAcfF0CD6755A981a1F0'
 

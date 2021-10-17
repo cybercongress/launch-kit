@@ -1,15 +1,25 @@
-from collections import OrderedDict
-
 # For genesis generator
-DENOM = "eul"
-VALIDATORS_PATH_CSV = "./data/validators.csv"
-URBIT_PATH_CSV = "./data/urbit.csv"
-CSV_DISTRIBUTIONS = OrderedDict([
-    ("cosmos_drop", "./data/cosmos.csv"),
-    ("ethereum_drop", "./data/ethereum.csv")
-])
-DISTRIBUTION_PATH = "./data/cyber_distribution.json"
-MANUAL_DISTRIBUTION_PATH = "./data/manual_distribution.json"
-GENESIS_EXAMPLE_PATH = "./data/network_genesis.json"
-GENERATED_GENESIS_PATH = "./data/genesis.json"
-DIFFERENCE_THRESHOLD = 0.0001
+BOOT_DENOM = "boot"
+CYB_DENOM = '2cyb'
+
+FILES = [
+    ('multisigs.csv', 'multisigs'),
+    ('bostrom_lifetime.csv', 'pre_bostrom_heroes'),
+    ('comm_pool_rewards.csv', 'comm_pool'),
+    ('cyberdbot_sergey.csv', 'cyberd_bot_sergey'),
+    ('delegation.csv', 'delegation'),
+    ('euler4_rewards.csv', 'euler-4'),
+    ('inventors.csv', 'inventors'),
+    ('investors.csv', 'investors'),
+    ('lifetime_rewards.csv', 'lifetime'),
+    ('load.csv', 'load'),
+    ('port.csv', 'port'),
+    ('relevance.csv', 'relevance'),
+    ('sergandmyselfrewards.csv', 'sergeandmyself_rewards'),
+    ('takeoff.csv', 'takeoff'),
+    ('vladimirrewards.csv', 'posthuman_rewards'),
+]
+
+SUPPLY = 1_000_000_000_000_000
+
+NETWORK_GENESIS_PATH = './data/network_genesis.json'

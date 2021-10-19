@@ -60,24 +60,56 @@ def generate_genesis(df, senate, network_genesis):
         account_number += 1
         accounts.append(account)
         balances.append(balance)
-        network_genesis['app_state']['auth']['accounts'] = accounts
-        network_genesis['app_state']['bank']['balances'] = balances
-        network_genesis['app_state']['bank']['supply'] = [
-            {
-                "amount": str(SUPPLY),
-                "denom": BOOT_DENOM
-            },
-            {
-                "amount": str(int(SUPPLY - senate)),
-                "denom": CYB_DENOM
-            },
-        ]
-        network_genesis['app_state']['distribution']['fee_pool']['community_pool'] = [{
-            "amount": str(senate),
+    community_poll_acc = {
+        "@type": "/cosmos.auth.v1beta1.ModuleAccount",
+        "base_account": {
+            "account_number": str(account_number),
+            "address": COMMUNITY_POOL_ACC,
+            "pub_key": None,
+            "sequence": "0"
+        },
+        "name": "distribution",
+        "permissions": []
+    }
+    accounts.append(community_poll_acc)
+    community_poll_bal = {
+            "address": COMMUNITY_POOL_ACC,
+            "coins": [
+                {
+                    "amount": str(int(senate)),
+                    "denom": BOOT_DENOM
+                },
+                {
+                    "amount": str(int(senate)),
+                    "denom": CYB_DENOM
+                }
+            ]
+        }
+    balances.append(community_poll_bal)
+    network_genesis['app_state']['auth']['accounts'] = accounts
+    network_genesis['app_state']['bank']['balances'] = balances
+    network_genesis['app_state']['bank']['supply'] = [
+        {
+            "amount": str(int(SUPPLY)),
             "denom": BOOT_DENOM
-        }]
-        with open('./data/genesis.json', 'w') as fp:
-            json.dump(network_genesis, fp, indent=4)
+        },
+        {
+            "amount": str(int(SUPPLY)),
+            "denom": CYB_DENOM
+        },
+    ]
+    network_genesis['app_state']['distribution']['fee_pool']['community_pool'] = [
+        {
+            "amount": str(int(senate)),
+            "denom": BOOT_DENOM
+        },
+        {
+            "amount": str(int(senate)),
+            "denom": CYB_DENOM
+        }
+    ]
+    with open('./data/genesis.json', 'w') as fp:
+        json.dump(network_genesis, fp, indent=4)
 
 
 res = get_result_df()

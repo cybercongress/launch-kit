@@ -1,6 +1,6 @@
 # For genesis generator
 BOOT_DENOM = "boot"
-CYB_DENOM = '2cyb'
+CYB_DENOM = 'tocyb'
 
 FILES = [
     ('multisigs.csv', 'multisigs'),
@@ -21,5 +21,6 @@ FILES = [
 ]
 
 SUPPLY = 1_000_000_000_000_000
-
 NETWORK_GENESIS_PATH = './data/network_genesis.json'
+
+COMMUNITY_POOL_ACC = 'bostrom1jv65s3grqf6v6jl3dp4t6c9t9rk99cd8yvs0hc'

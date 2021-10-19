@@ -1,11 +1,11 @@
 {
   "genesis_time": "2021-09-10T09:16:31.75066Z",
-  "chain_id": "bostrom-testnet-5",
+  "chain_id": "bostrom-testnet-6",
   "initial_height": "1",
   "consensus_params": {
     "block": {
       "max_bytes": "4194304",
-      "max_gas": "20000000",
+      "max_gas": "25000000",
       "time_iota_ms": "1000"
     },
     "evidence": {
@@ -32,12 +32,16 @@
       },
       "accounts": []
     },
+    "authz": {
+      "authorization": []
+    },
     "bandwidth": {
       "params": {
         "recovery_period": "16000",
         "adjust_price_period": "5",
         "base_price": "0.250000000000000000",
-        "max_block_bandwidth": "10000"
+        "max_block_bandwidth": "25000",
+        "base_load": "0.100000000000000000"
       }
     },
     "bank": {
@@ -47,74 +51,7 @@
       },
       "balances": [],
       "supply": [],
-      "denom_metadata":  [
-        {
-          "description": "The native staking token of Bostrom AI",
-          "display": "boot",
-          "base": "boot",
-          "denom_units": [
-            {
-              "denom": "boot",
-              "exponent": 0,
-              "aliases": [
-                "BOOT"
-              ]
-            }
-          ]
-        },
-        {
-          "description": "The native liquid staking token of Bostrom AI",
-          "display": "hydrogen",
-          "base": "hydrogen",
-          "denom_units": [
-            {
-              "denom": "hydrogen",
-              "exponent": 0,
-              "aliases": [
-                "HYDROGEN"
-              ]
-            }
-          ]
-        },
-        {
-          "description": "The native power token of the Bostrom AI",
-          "base": "milliampere",
-          "display": "ampere",
-          "denom_units": [
-            {
-              "denom": "milliampere",
-              "exponent": 0,
-              "aliases": []
-            },
-            {
-              "denom": "ampere",
-              "exponent": 3,
-              "aliases": [
-                "AMPERE"
-              ]
-            }
-          ]
-        },
-        {
-          "description": "The native bandwidth token of the Bostrom AI",
-          "base": "millivolt",
-          "display": "volt",
-          "denom_units": [
-            {
-              "denom": "millivolt",
-              "exponent": 0,
-              "aliases": []
-            },
-            {
-              "denom": "volt",
-              "exponent": 3,
-              "aliases": [
-                "VOLT"
-              ]
-            }
-          ]
-        }
-      ]
+      "denom_metadata": []
     },
     "capability": {
       "index": "1",
@@ -124,13 +61,6 @@
       "constant_fee": {
         "denom": "boot",
         "amount": "10000000"
-      }
-    },
-    "cron": {
-      "params": {
-        "max_slots": 4,
-        "max_gas": 2000000,
-        "fee_ttl": 50
       }
     },
     "cyberbank": null,
@@ -153,14 +83,18 @@
       "delegator_starting_infos": [],
       "validator_slash_events": []
     },
-    "energy": {
+    "dmn": {
       "params": {
-        "max_routes": 8
-      },
-      "routes": []
+        "max_slots": 4,
+        "max_gas": 2500000,
+        "fee_ttl": 100
+      }
     },
     "evidence": {
       "evidence": []
+    },
+    "feegrant": {
+      "allowances": []
     },
     "genutil": {
       "gen_txs": []
@@ -189,6 +123,12 @@
       }
     },
     "graph": null,
+    "grid": {
+      "params": {
+        "max_routes": 8
+      },
+      "routes": []
+    },
     "ibc": {
       "client_genesis": {
         "clients": [],
@@ -206,7 +146,10 @@
       "connection_genesis": {
         "connections": [],
         "client_connection_paths": [],
-        "next_connection_sequence": "0"
+        "next_connection_sequence": "0",
+        "params": {
+          "max_expected_time_per_block": "30000000000"
+        }
       },
       "channel_genesis": {
         "channels": [],
@@ -249,15 +192,15 @@
     },
     "mint": {
       "minter": {
-        "inflation": "0.100000000000000000",
+        "inflation": "0.050000000000000000",
         "annual_provisions": "0.000000000000000000"
       },
       "params": {
         "mint_denom": "boot",
-        "inflation_rate_change": "0.070000000000000000",
+        "inflation_rate_change": "0.200000000000000000",
         "inflation_max": "0.150000000000000000",
-        "inflation_min": "0.050000000000000000",
-        "goal_bonded": "0.700000000000000000",
+        "inflation_min": "0.030000000000000000",
+        "goal_bonded": "0.800000000000000000",
         "blocks_per_year": "6311520"
       }
     },
@@ -272,18 +215,18 @@
     "resources": {
       "params": {
         "max_slots": 8,
-        "base_halving_period_volt": 30000,
-        "base_halving_period_ampere": 30000,
+        "halving_period_volt_blocks": 30000,
+        "halving_period_ampere_blocks": 30000,
         "base_investmint_period_volt": 86400,
         "base_investmint_period_ampere": 86400,
-        "min_investmint_period_sec": 3600,
+        "min_investmint_period": 3600,
         "base_investmint_amount_volt": {
-          "denom": "boot",
+          "denom": "hydrogen",
           "amount": "10000000"
         },
         "base_investmint_amount_ampere": {
-          "denom": "boot",
-          "amount": "10000000"
+          "denom": "hydrogen",
+          "amount": "100000000"
         }
       }
     },
@@ -293,7 +236,7 @@
         "min_signed_per_window": "0.300000000000000000",
         "downtime_jail_duration": "600s",
         "slash_fraction_double_sign": "0.050000000000000000",
-        "slash_fraction_downtime": "0.001000000000000000"
+        "slash_fraction_downtime": "0.000100000000000000"
       },
       "signing_infos": [],
       "missed_blocks": []

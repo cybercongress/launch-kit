@@ -1,5 +1,5 @@
 {
-  "genesis_time": "2021-09-10T09:16:31.75066Z",
+  "genesis_time": "2021-11-05T13:23:00.00000Z",
   "chain_id": "bostrom-testnet-6",
   "initial_height": "1",
   "consensus_params": {
@@ -24,9 +24,9 @@
   "app_state": {
     "auth": {
       "params": {
-        "max_memo_characters": "1024",
+        "max_memo_characters": "256",
         "tx_sig_limit": "7",
-        "tx_size_cost_per_byte": "20",
+        "tx_size_cost_per_byte": "10",
         "sig_verify_cost_ed25519": "590",
         "sig_verify_cost_secp256k1": "1000"
       },
@@ -51,7 +51,82 @@
       },
       "balances": [],
       "supply": [],
-      "denom_metadata": []
+      "denom_metadata": [
+        {
+          "description": "The staking token of Bostrom",
+          "base": "boot",
+          "display": "boot",
+          "name": "Bostrom Boot",
+          "symbol": "BOOT",
+          "denom_units": [
+            {
+              "denom": "boot",
+              "exponent": 0,
+              "aliases": [
+                "BOOT"
+              ]
+            }
+          ]
+        },
+        {
+          "description": "The liquid staking token of Bostrom",
+          "base": "hydrogen",
+          "display": "hydrogen",
+          "name": "Bostrom Hydrogen",
+          "symbol": "HYDROGEN",
+          "denom_units": [
+            {
+              "denom": "hydrogen",
+              "exponent": 0,
+              "aliases": [
+                "HYDROGEN"
+              ]
+            }
+          ]
+        },
+        {
+          "description": "The power token of the Bostrom",
+          "base": "milliampere",
+          "display": "ampere",
+          "name": "Bostrom Ampere",
+          "symbol": "AMPERE",
+          "denom_units": [
+            {
+              "denom": "milliampere",
+              "exponent": 0,
+              "aliases": []
+            },
+            {
+              "denom": "ampere",
+              "exponent": 3,
+              "aliases": [
+                "AMPERE"
+              ]
+            }
+          ]
+        },
+        {
+          "description": "The bandwidth token of Bostrom",
+          "base": "millivolt",
+          "display": "volt",
+          "name": "Bostrom Volt",
+          "symbol": "VOLT",
+          "denom_units": [
+            {
+              "denom": "millivolt",
+              "exponent": 0,
+              "aliases": []
+            },
+            {
+              "denom": "volt",
+              "exponent": 3,
+              "aliases": [
+                "VOLT"
+              ]
+            }
+          ]
+        }
+      ]
     },
     "capability": {
       "index": "1",
@@ -87,7 +162,7 @@
       "params": {
         "max_slots": 4,
         "max_gas": 2500000,
-        "fee_ttl": 100
+        "fee_ttl": 50
       }
     },
     "evidence": {
@@ -111,10 +186,10 @@
             "amount": "1000000000"
           }
         ],
-        "max_deposit_period": "172800s"
+        "max_deposit_period": "604800s"
       },
       "voting_params": {
-        "voting_period": "172800s"
+        "voting_period": "604800s"
       },
       "tally_params": {
         "quorum": "0.250000000000000000",
@@ -215,14 +290,14 @@
     "resources": {
       "params": {
         "max_slots": 8,
-        "halving_period_volt_blocks": 30000,
-        "halving_period_ampere_blocks": 30000,
-        "base_investmint_period_volt": 86400,
-        "base_investmint_period_ampere": 86400,
-        "min_investmint_period": 3600,
+        "halving_period_volt_blocks": 9000000000,
+        "halving_period_ampere_blocks": 9000000000,
+        "base_investmint_period_volt": 2592000,
+        "base_investmint_period_ampere": 2592000,
+        "min_investmint_period": 86400,
         "base_investmint_amount_volt": {
           "denom": "hydrogen",
-          "amount": "10000000"
+          "amount": "1000000000"
         },
         "base_investmint_amount_ampere": {
           "denom": "hydrogen",
@@ -243,7 +318,7 @@
     },
     "staking": {
       "params": {
-        "unbonding_time": "259200s",
+        "unbonding_time": "345600s",
         "max_validators": 92,
         "max_entries": 10,
         "historical_entries": 128000,

@@ -1,6 +1,6 @@
 {
-  "genesis_time": "2021-11-05T13:23:00.00000Z",
-  "chain_id": "bostrom-testnet-6",
+  "genesis_time": "2021-11-05T13:23:00Z",
+  "chain_id": "bostrom",
   "initial_height": "1",
   "consensus_params": {
     "block": {

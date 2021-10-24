@@ -8,10 +8,11 @@ from config import *
 def read_csv(file):
     path = './data/' + file[0]
     df = pd.read_csv(path)
-    df = df[['subject', 'reward']]
     df['subject'] = df.apply(lambda x: address_to_address(x['subject'], prefix='bostrom'), axis=1)
     _df = df.copy()
-    _df['categoty'] = file[1]
+    df = df[['subject', 'reward']]
+    _df['discipline'] = file[1]
+    _df = _df[['subject', 'reward', 'discipline', 'audience']]
     df = df.rename(columns={'reward': file[1]}, inplace=False)
     df = df.astype({file[1]: int})
     count = df.shape[0]
@@ -22,70 +23,44 @@ def read_csv(file):
 def get_result_df():
     dfs = [read_csv(file)[0] for file in FILES]
     df_final = reduce(lambda left, right: pd.merge(left, right, on=['subject'], how='outer'), dfs)
+    df_final = df_final.groupby('subject', as_index=False).sum()
     df_final['sum'] = df_final.sum(axis=1)
     df_final = df_final.sort_values(by=['sum'], ascending=False)
-    df_final = df_final.reset_index()
-    df_final = df_final.drop('index', axis=1)
+    df_final = df_final.reset_index(drop=True)
     data = [read_csv(file)[1:4] for file in FILES]
     df_pivot = pd.DataFrame(data, columns=['source', 'amount', 'sum'])
     df_categorized = pd.concat([read_csv(file)[4] for file in FILES]).reset_index(drop=True)
     return df_final, df_pivot, df_categorized
 
 
-def generate_genesis(df, senate, network_genesis):
+def genesis_balance_checker(genesis: dict):
+    balances = genesis['app_state']['bank']['balances']
+    sum_boot_balances = sum([int(balance['coins'][0]['amount']) for balance in balances])
+    sum_tocyb_balances = sum([int(balance['coins'][1]['amount']) for balance in balances])
+    if sum_boot_balances == SUPPLY:
+        print(f'boot supply is correct = {sum_boot_balances}')
+    else:
+        print(f'error in boot supply. Expected={SUPPLY}, got={sum_boot_balances}')
+    if sum_tocyb_balances == SUPPLY:
+        print(f'tocyb supply is correct = {sum_tocyb_balances}')
+    else:
+        print(f'error in tocyb supply. Expected={SUPPLY}, got={sum_tocyb_balances}')
+
+
+def generate_genesis(df, network_genesis):
     accounts = []
     balances = []
     account_number = 0
     for index, row in df.iterrows():
-        account = {
-            "@type": "/cosmos.auth.v1beta1.BaseAccount",
-            "account_number": str(account_number),
-            "address": row['subject'],
-            "pub_key": None,
-            "sequence": "0"
-        }
-        balance = {
-            "address": row['subject'],
-            "coins": [
-                {
-                    "amount": str(int(row['sum'])),
-                    "denom": BOOT_DENOM
-                },
-                {
-                    "amount": str(int(row['sum'])),
-                    "denom": CYB_DENOM
-                }
-            ]
-        }
+        if row['subject'] != COMMUNITY_POOL_ACC:
+            account = get_base_account(str(account_number), row['subject'])
+            balance = get_base_balance(row['subject'], str(int(row['sum'])))
+        else:
+            account = get_module_account(str(account_number), row['subject'])
+            balance = get_base_balance(row['subject'], str(int(row['sum'])))
         account_number += 1
         accounts.append(account)
         balances.append(balance)
-    community_poll_acc = {
-        "@type": "/cosmos.auth.v1beta1.ModuleAccount",
-        "base_account": {
-            "account_number": str(account_number),
-            "address": COMMUNITY_POOL_ACC,
-            "pub_key": None,
-            "sequence": "0"
-        },
-        "name": "distribution",
-        "permissions": []
-    }
-    accounts.append(community_poll_acc)
-    community_poll_bal = {
-            "address": COMMUNITY_POOL_ACC,
-            "coins": [
-                {
-                    "amount": str(int(senate)),
-                    "denom": BOOT_DENOM
-                },
-                {
-                    "amount": str(int(senate)),
-                    "denom": CYB_DENOM
-                }
-            ]
-        }
-    balances.append(community_poll_bal)
     network_genesis['app_state']['auth']['accounts'] = accounts
     network_genesis['app_state']['bank']['balances'] = balances
     network_genesis['app_state']['bank']['supply'] = [
@@ -98,16 +73,18 @@ def generate_genesis(df, senate, network_genesis):
             "denom": CYB_DENOM
         },
     ]
+    senate_balance = df.loc[df['subject'] == COMMUNITY_POOL_ACC].sum()[1]
     network_genesis['app_state']['distribution']['fee_pool']['community_pool'] = [
         {
-            "amount": str(int(senate)),
+            "amount": str(int(senate_balance)),
             "denom": BOOT_DENOM
         },
         {
-            "amount": str(int(senate)),
+            "amount": str(int(senate_balance)),
             "denom": CYB_DENOM
         }
     ]
+    genesis_balance_checker(network_genesis)
     with open('./data/genesis.json', 'w') as fp:
         json.dump(network_genesis, fp, indent=4)
 
@@ -116,11 +93,16 @@ res = get_result_df()
 res[0].to_csv('./data/final_result.csv')
 res[1].to_csv('./data/pivot_result.csv')
 res[2].to_csv('./data/categorized_result.csv')
+_df = res[2].groupby(['audience', 'subject'], as_index=False)['reward'].agg(['sum'])
+audience_pivot_df = _df.groupby('audience', as_index=False)['sum'].agg(['sum', 'count'])
+audience_pivot_df['%'] = audience_pivot_df['sum'] / 10_000_000_000_000
+audience_pivot_df.to_csv('./data/audience_pivot.csv')
+discipline_pivot_df = res[2].groupby('discipline', as_index=False)['reward'].agg(['sum', 'count'])
+discipline_pivot_df.to_csv('./data/discipline_pivot.csv')
 genesis_df = res[0][['subject', 'sum']].copy()
 genesis_df.to_csv('./data/genesis.csv')
-senate = SUPPLY - genesis_df['sum'].sum()
 
 with open(NETWORK_GENESIS_PATH) as json_file:
     network_genesis = json.load(json_file)
 
-generate_genesis(genesis_df, senate, network_genesis)
+generate_genesis(genesis_df, network_genesis)

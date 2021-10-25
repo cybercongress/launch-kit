@@ -129,4 +129,4 @@ def get_relevance_rewards():
     df = df[['subject', 'reward']]
     df = df.groupby(['subject']).sum()
     df = df.sort_values(by=['reward'], ascending=False)
-    df.to_csv('./data/relevance.csv')
+    df.to_csv('./relevance.csv')

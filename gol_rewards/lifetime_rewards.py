@@ -58,4 +58,4 @@ def get_lifetime_rewards():
     result = result.sort_values(by=['reward'], ascending=False)
     result = result.reset_index(drop=True)
     result = result.drop(['operator_address', 'precommits'], axis=1)
-    result.to_csv('./data/lifetime_rewards.csv')
+    result.to_csv('./lifetime_rewards.csv')

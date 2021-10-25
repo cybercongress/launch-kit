@@ -77,4 +77,4 @@ def get_load_rewards():
     df['reward'] = (df['karma'] / sum(df['karma'])) * LOAD_REWARD
     df = df.drop(['karma'])
     df['reward'] = df['reward'].round(0)
-    df.to_csv('./data/load.csv')
+    df.to_csv('./load.csv')

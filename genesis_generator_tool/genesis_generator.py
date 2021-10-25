@@ -77,22 +77,27 @@ def generate_genesis(df, network_genesis):
 
 res = get_result_df()
 res.to_csv(RESULTS_PATH + 'categorized_result.csv')
-_df = res.groupby(['audience', 'subject'], as_index=False)['reward'].agg(['sum'])
-audience_pivot_df = _df.groupby('audience', as_index=False)['sum'].agg(['sum', 'count'])
+audience_pivot_df = res.groupby(['audience', 'subject'], as_index=False)['reward'].agg(['sum'])
+audience_pivot_df = audience_pivot_df.groupby('audience', as_index=False)['sum'].agg(['sum', 'count'])
 audience_pivot_df['%'] = audience_pivot_df['sum'] / 10_000_000_000_000
 audience_pivot_df.to_csv(RESULTS_PATH + 'audience_pivot.csv')
+
+discipline_pivot_df = res.groupby(['discipline', 'subject'], as_index=False)['reward'].agg(['sum'])
+discipline_pivot_df = discipline_pivot_df.groupby('discipline', as_index=False)['sum'].agg(['sum', 'count'])
+discipline_pivot_df.to_csv(RESULTS_PATH + 'discipline_pivot.csv')
+
 genesis_df = res[['subject', 'reward']].copy()
 genesis_df = genesis_df.groupby('subject', sort=False, as_index=False).agg('sum')
 genesis_df = genesis_df.rename(columns={'reward': 'sum'}, inplace=False)
-df = res.pivot(index='subject', columns='discipline', values='reward')
-df['sum'] = df.sum(axis=1)
-df = df.sort_values(by='sum', ascending=False)
-df.to_csv(RESULTS_PATH + 'final_result.csv')
-df_json = df.apply(lambda x: [x.dropna()], axis=1).to_json()
-df_json = json.loads(df_json)
-df_json = {key: value[0] for (key,value) in df_json.items()}
-with open(RESULTS_PATH + 'genesis_app.json', 'w') as fp:
-    json.dump(df_json, fp, indent=4)
+# df = res.pivot(index='subject', columns='discipline', values='reward')
+# df['sum'] = df.sum(axis=1)
+# df = df.sort_values(by='sum', ascending=False)
+# df.to_csv(RESULTS_PATH + 'final_result.csv')
+# df_json = df.apply(lambda x: [x.dropna()], axis=1).to_json()
+# df_json = json.loads(df_json)
+# df_json = {key: value[0] for (key,value) in df_json.items()}
+# with open(RESULTS_PATH + 'genesis_app.json', 'w') as fp:
+#     json.dump(df_json, fp, indent=4)
 
 
 with open(NETWORK_GENESIS_PATH) as json_file:

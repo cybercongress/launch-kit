@@ -9,4 +9,4 @@ def get_e4_rewards():
     df['subject'] = df.apply(lambda x: address_to_address(x['operator_address'], 'cyber'), axis=1)
     df = df.drop(['operator_address'], axis=1)
     df = df.reindex(columns=['subject', 'reward'])
-    df.to_csv('./data/euler4_rewards.csv')
+    df.to_csv('./euler4_rewards.csv')

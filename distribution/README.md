@@ -10,7 +10,7 @@ Other files are result of the [genesis generator tool](../genesis_generator_tool
 - [Audience Pivot](./audience_pivot.csv) contains summary audience categorization
 - [Categorized Result](./categorized_result.csv) contains all genesis accounts with balances categorized by `discipline` and `audience`
 - [Discipline Pivot](./discipline_pivot.csv) contains summary discipline categorization
-- [genesis.json](./discipline_pivot.csv) ready for signing Genesis file
+- [genesis.json](./genesis.json) ready for signing Genesis file
 
 The final distribution is:
 

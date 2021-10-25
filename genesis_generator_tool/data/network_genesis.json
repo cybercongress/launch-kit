@@ -1,5 +1,5 @@
 {
-  "genesis_time": "2021-11-05T13:23:00Z",
+  "genesis_time": "2021-11-05T13:22:42Z",
   "chain_id": "bostrom",
   "initial_height": "1",
   "consensus_params": {
@@ -24,9 +24,9 @@
   "app_state": {
     "auth": {
       "params": {
-        "max_memo_characters": "256",
+        "max_memo_characters": "1024",
         "tx_sig_limit": "7",
-        "tx_size_cost_per_byte": "10",
+        "tx_size_cost_per_byte": "20",
         "sig_verify_cost_ed25519": "590",
         "sig_verify_cost_secp256k1": "1000"
       },
@@ -200,7 +200,7 @@
     "graph": null,
     "grid": {
       "params": {
-        "max_routes": 8
+        "max_routes": 16
       },
       "routes": []
     },
@@ -249,7 +249,7 @@
           }
         ],
         "min_init_deposit_amount": "1000000",
-        "init_pool_coin_mint_amount": "1000000",
+        "init_pool_coin_mint_amount": "10000000",
         "max_reserve_coin_amount": "0",
         "pool_creation_fee": [
           {
@@ -307,8 +307,8 @@
     },
     "slashing": {
       "params": {
-        "signed_blocks_window": "16000",
-        "min_signed_per_window": "0.300000000000000000",
+        "signed_blocks_window": "8000",
+        "min_signed_per_window": "0.750000000000000000",
         "downtime_jail_duration": "600s",
         "slash_fraction_double_sign": "0.050000000000000000",
         "slash_fraction_downtime": "0.000100000000000000"

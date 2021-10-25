@@ -1,36 +1,22 @@
 import pandas as pd
-from functools import reduce
 from cyberpy._wallet import address_to_address
 import json
 from config import *
 
 
 def read_csv(file):
-    path = './data/' + file[0]
-    df = pd.read_csv(path)
+    df = pd.read_csv(file[0])
     df['subject'] = df.apply(lambda x: address_to_address(x['subject'], prefix='bostrom'), axis=1)
-    _df = df.copy()
-    df = df[['subject', 'reward']]
-    _df['discipline'] = file[1]
-    _df = _df[['subject', 'reward', 'discipline', 'audience']]
-    df = df.rename(columns={'reward': file[1]}, inplace=False)
-    df = df.astype({file[1]: int})
-    count = df.shape[0]
-    sum = df[file[1]].sum()
-    return df, file[1], count, sum, _df
+    if 'discipline' in list(df.columns):
+        pass
+    else:
+        df['discipline'] = file[1]
+    _df = df[['subject', 'reward', 'discipline', 'audience']]
+    return _df
 
 
 def get_result_df():
-    dfs = [read_csv(file)[0] for file in FILES]
-    df_final = reduce(lambda left, right: pd.merge(left, right, on=['subject'], how='outer'), dfs)
-    df_final = df_final.groupby('subject', as_index=False).sum()
-    df_final['sum'] = df_final.sum(axis=1)
-    df_final = df_final.sort_values(by=['sum'], ascending=False)
-    df_final = df_final.reset_index(drop=True)
-    data = [read_csv(file)[1:4] for file in FILES]
-    df_pivot = pd.DataFrame(data, columns=['source', 'amount', 'sum'])
-    df_categorized = pd.concat([read_csv(file)[4] for file in FILES]).reset_index(drop=True)
-    return df_final, df_pivot, df_categorized
+    return pd.concat([read_csv(file) for file in FILES]).reset_index(drop=True)
 
 
 def genesis_balance_checker(genesis: dict):
@@ -85,22 +71,29 @@ def generate_genesis(df, network_genesis):
         }
     ]
     genesis_balance_checker(network_genesis)
-    with open('./data/genesis.json', 'w') as fp:
+    with open(RESULTS_PATH + 'genesis.json', 'w') as fp:
         json.dump(network_genesis, fp, indent=4)
 
 
 res = get_result_df()
-res[0].to_csv('./data/final_result.csv')
-res[1].to_csv('./data/pivot_result.csv')
-res[2].to_csv('./data/categorized_result.csv')
-_df = res[2].groupby(['audience', 'subject'], as_index=False)['reward'].agg(['sum'])
+res.to_csv(RESULTS_PATH + 'categorized_result.csv')
+_df = res.groupby(['audience', 'subject'], as_index=False)['reward'].agg(['sum'])
 audience_pivot_df = _df.groupby('audience', as_index=False)['sum'].agg(['sum', 'count'])
 audience_pivot_df['%'] = audience_pivot_df['sum'] / 10_000_000_000_000
-audience_pivot_df.to_csv('./data/audience_pivot.csv')
-discipline_pivot_df = res[2].groupby('discipline', as_index=False)['reward'].agg(['sum', 'count'])
-discipline_pivot_df.to_csv('./data/discipline_pivot.csv')
-genesis_df = res[0][['subject', 'sum']].copy()
-genesis_df.to_csv('./data/genesis.csv')
+audience_pivot_df.to_csv(RESULTS_PATH + 'audience_pivot.csv')
+genesis_df = res[['subject', 'reward']].copy()
+genesis_df = genesis_df.groupby('subject', sort=False, as_index=False).agg('sum')
+genesis_df = genesis_df.rename(columns={'reward': 'sum'}, inplace=False)
+df = res.pivot(index='subject', columns='discipline', values='reward')
+df['sum'] = df.sum(axis=1)
+df = df.sort_values(by='sum', ascending=False)
+df.to_csv(RESULTS_PATH + 'final_result.csv')
+df_json = df.apply(lambda x: [x.dropna()], axis=1).to_json()
+df_json = json.loads(df_json)
+df_json = {key: value[0] for (key,value) in df_json.items()}
+with open(RESULTS_PATH + 'genesis_app.json', 'w') as fp:
+    json.dump(df_json, fp, indent=4)
+
 
 with open(NETWORK_GENESIS_PATH) as json_file:
     network_genesis = json.load(json_file)

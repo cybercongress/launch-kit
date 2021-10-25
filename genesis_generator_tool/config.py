@@ -3,29 +3,24 @@ BOOT_DENOM = "boot"
 CYB_DENOM = 'tocyb'
 
 FILES = [
-    ('cybercongress.csv', 'cybercongress'),
-    ('gift.csv', 'gift'),
-    ('gol_comm_pool.csv', 'gol.comm_pool'),
-    ('gol_delegation.csv', 'gol.delegation'),
-    ('gol_lifetime.csv', 'gol.lifetime'),
-    ('gol_load.csv', 'gol.load'),
-    ('gol_posthuman.csv', 'gol.posthuman'),
-    ('gol_relevance.csv', 'gol.relevance'),
-    ('gol_sergeandmyself.csv', 'gol.sergeandmyself'),
-    ('grants_cyberdbot.csv', 'grants.cyberdbot'),
-    ('grants_init_implementation.csv', 'grants.init_implementation'),
-    ('greatweb_foundation.csv', 'greatweb_foundation'),
-    ('heroes_euler4.csv', 'heroes.euler4'),
-    ('heroes_pre_bostrom.csv', 'heroes.pre_bostrom'),
-    ('inventors.csv', 'inventors'),
-    ('investors_genesis.csv', 'investors.genesis'),
-    ('investors_port.csv', 'investors.port'),
-    ('investors_takeoff.csv', 'investors.takeoff'),
-    ('senate.csv', 'senate'),
+    ('../distribution/manual_distribution.csv', ''),
+    ('../gol_rewards/heroes_euler4.csv', 'heroes.euler4'),
+    ('../takeoff_distribution/investors_takeoff.csv', 'investors.takeoff'),
+    ('../gol_rewards/gol_comm_pool.csv', 'gol.comm_pool'),
+    ('../port_migration/investors_port.csv', 'investors.port'),
+    ('../pre_bostrom_lifetime/heroes_pre_bostrom.csv', 'heroes.pre_bostrom'),
+    ('../gol_rewards/gol_delegation.csv', 'gol.delegation'),
+    ('../gol_rewards/gol_lifetime.csv', 'gol.lifetime'),
+    ('../gol_rewards/gol_load.csv', 'gol.load'),
+    ('../gol_rewards/gol_relevance.csv', 'gol.relevance'),
+    ('../gol_rewards/gol_sergeandmyself.csv', 'gol.sergeandmyself'),
+    ('../gol_rewards/gol_posthuman.csv', 'gol.posthuman'),
+    ('../distribution/grants_cyberdbot.csv', 'grants.cyberdbot')
 ]
 
 SUPPLY = 1_000_000_000_000_000
-NETWORK_GENESIS_PATH = './data/network_genesis.json'
+NETWORK_GENESIS_PATH = '../params/network_genesis.json'
+RESULTS_PATH = '../distribution/'
 COMMUNITY_POOL_ACC = 'bostrom1jv65s3grqf6v6jl3dp4t6c9t9rk99cd8yvs0hc'
 
 

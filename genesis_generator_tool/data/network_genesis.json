@@ -85,7 +85,7 @@
           ]
         },
         {
-          "description": "The power token of the Bostrom",
+          "description": "The power token of Bostrom",
           "base": "milliampere",
           "display": "ampere",
           "name": "Bostrom Ampere",

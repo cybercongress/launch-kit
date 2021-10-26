@@ -11453,7 +11453,7 @@
                     }
                 ],
                 "min_init_deposit_amount": "1000000",
-                "init_pool_coin_mint_amount": "10000000",
+                "init_pool_coin_mint_amount": "1000000000000",
                 "max_reserve_coin_amount": "0",
                 "pool_creation_fee": [
                     {
@@ -11525,7 +11525,7 @@
                 "unbonding_time": "345600s",
                 "max_validators": 92,
                 "max_entries": 10,
-                "historical_entries": 128000,
+                "historical_entries": 10000,
                 "bond_denom": "boot"
             },
             "last_total_power": "0",
@@ -11540,8 +11540,8 @@
             "port_id": "transfer",
             "denom_traces": [],
             "params": {
-                "send_enabled": true,
-                "receive_enabled": true
+                "send_enabled": false,
+                "receive_enabled": false
             }
         },
         "upgrade": {},

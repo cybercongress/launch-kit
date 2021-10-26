@@ -19,3 +19,5 @@ gol_rewards/utils/__pycache__/db.cpython-38.pyc
 gol_rewards/utils/__pycache__/queries.cpython-38.pyc
 
 gol_rewards/__pycache__/
+
+*.pyc

@@ -4,7 +4,7 @@ An awesome, must-have toolkit for the Genesis launch. This toolkit provides the 
 
 ## Tools
 
-- [The GoL rewards tools](./gol_rewards/README.md) for calculating rewards after an incentivized game
+- [The GoL rewards tools](./game_of_links/README.md) for calculating rewards after an incentivized game
 - [Genesis generator tool](./genesis_generator_tool/README.md) for generating the genesis file
 
 ## Network params

@@ -4,17 +4,17 @@ CYB_DENOM = 'tocyb'
 
 FILES = [
     ('../manual/manual_distribution.csv', ''),
-    ('../gol_rewards/heroes_euler4.csv', 'heroes.euler4'),
+    ('../game_of_links/heroes_euler4.csv', 'heroes.euler4'),
     ('../takeoff_distribution/investors_takeoff.csv', 'investors.takeoff'),
-    ('../gol_rewards/gol_comm_pool.csv', 'gol.comm_pool'),
+    ('../game_of_links/gol_comm_pool.csv', 'gol.comm_pool'),
     ('../port_migration/investors_port.csv', 'investors.port'),
     ('../pre_bostrom_lifetime/heroes_pre_bostrom.csv', 'heroes.pre_bostrom'),
-    ('../gol_rewards/gol_delegation.csv', 'gol.delegation'),
-    ('../gol_rewards/gol_lifetime.csv', 'gol.lifetime'),
-    ('../gol_rewards/gol_load.csv', 'gol.load'),
-    ('../gol_rewards/gol_relevance.csv', 'gol.relevance'),
-    ('../gol_rewards/gol_sergeandmyself.csv', 'gol.sergeandmyself'),
-    ('../gol_rewards/gol_posthuman.csv', 'gol.posthuman'),
+    ('../game_of_links/gol_delegation.csv', 'gol.delegation'),
+    ('../game_of_links/gol_lifetime.csv', 'gol.lifetime'),
+    ('../game_of_links/gol_load.csv', 'gol.load'),
+    ('../game_of_links/gol_relevance.csv', 'gol.relevance'),
+    ('../game_of_links/gol_sergeandmyself.csv', 'gol.sergeandmyself'),
+    ('../game_of_links/gol_posthuman.csv', 'gol.posthuman'),
     ('../manual/grants_cyberdbot.csv', 'grants.cyberdbot')
 ]
 

@@ -5,7 +5,7 @@ CYB_DENOM = 'tocyb'
 FILES = [
     ('../manual/manual_distribution.csv', ''),
     ('../game_of_links/heroes_euler4.csv', 'heroes.euler4'),
-    ('../takeoff_distribution/investors_takeoff.csv', 'investors.takeoff'),
+    ('../atom_fundraiser/investors_takeoff.csv', 'investors.takeoff'),
     ('../game_of_links/gol_comm_pool.csv', 'gol.comm_pool'),
     ('../eth_fundraiser/investors_port.csv', 'investors.port'),
     ('../lifetime/heroes_pre_bostrom.csv', 'heroes.pre_bostrom'),

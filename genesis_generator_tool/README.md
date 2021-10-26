@@ -14,10 +14,10 @@ This tool provides `genesis.json` file compilation from the next following files
 - [port.csv](../eth_fundraiser/investors_port.csv), all port visitors rewards
 - [relevance.csv](../game_of_links/gol_relevance.csv), the relevance rewards of the Game of Links during `euler` testnets
 - [gol_sergeandmyself.csv](../game_of_links/gol_sergeandmyself.csv), evangelism program rewards
-- [investors_takeoff.csv](../atom_fundraiser/investors_takeoff.csv), all [takeoff donors](../takeoff_distribution/README.md)
+- [investors_takeoff.csv](../atom_fundraiser/investors_takeoff.csv), all [takeoff donors](../atom_fundraiser/README.md)
 - [gol_posthuman.csv](../game_of_links/gol_posthuman.csv), special gift from posthuman
 
-As the output of this script is generated [genesis.json](./data/genesis.json) file ready for signing. Also, the output is:
+As the output of this script is generated [genesis.json](../distribution/genesis.json) file ready for signing. Also, the output is:
 
 - [categorized_result.csv](../distribution/categorized_result.csv) the table with accs by categories
 - [Audience Pivot](../distribution/audience_pivot.csv) contains summary audience categorization

@@ -26,6 +26,14 @@ As the output of this script is generated [genesis.json](./data/genesis.json) fi
 
 ## Usage
 
+1. Install packages
+
+```bash
+pip3 install -r requirements.txt
+```
+
+2. Run
+
 ```bash
 python3 genesis_generator.py
 ```

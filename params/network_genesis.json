@@ -321,7 +321,7 @@
         "unbonding_time": "345600s",
         "max_validators": 92,
         "max_entries": 10,
-        "historical_entries": 128000,
+        "historical_entries": 10000,
         "bond_denom": "boot"
       },
       "last_total_power": "0",

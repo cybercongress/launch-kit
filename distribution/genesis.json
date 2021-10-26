@@ -11494,8 +11494,8 @@
         "resources": {
             "params": {
                 "max_slots": 8,
-                "halving_period_volt_blocks": 9000000000,
-                "halving_period_ampere_blocks": 9000000000,
+                "halving_period_volt_blocks": 9000000,
+                "halving_period_ampere_blocks": 9000000,
                 "base_investmint_period_volt": 2592000,
                 "base_investmint_period_ampere": 2592000,
                 "min_investmint_period": 86400,

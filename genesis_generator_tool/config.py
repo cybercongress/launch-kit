@@ -3,7 +3,7 @@ BOOT_DENOM = "boot"
 CYB_DENOM = 'tocyb'
 
 FILES = [
-    ('../distribution/manual_distribution.csv', ''),
+    ('../manual/manual_distribution.csv', ''),
     ('../gol_rewards/heroes_euler4.csv', 'heroes.euler4'),
     ('../takeoff_distribution/investors_takeoff.csv', 'investors.takeoff'),
     ('../gol_rewards/gol_comm_pool.csv', 'gol.comm_pool'),
@@ -15,7 +15,7 @@ FILES = [
     ('../gol_rewards/gol_relevance.csv', 'gol.relevance'),
     ('../gol_rewards/gol_sergeandmyself.csv', 'gol.sergeandmyself'),
     ('../gol_rewards/gol_posthuman.csv', 'gol.posthuman'),
-    ('../distribution/grants_cyberdbot.csv', 'grants.cyberdbot')
+    ('../manual/grants_cyberdbot.csv', 'grants.cyberdbot')
 ]
 
 SUPPLY = 1_000_000_000_000_000

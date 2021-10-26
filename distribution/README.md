@@ -1,11 +1,6 @@
 # Distribution
 
-This folder contains:
-
-- [Manual Distribution](./manual_distribution.csv) file is filled with inventors, genesis investors, senate and multisig accounts.
-- [Grants Cyberdbot](./grants_cyberdbot.csv) file contains active users of `cyberdbot` telegram bot. `1,000,000,000` GTOCYB and `1,000,000,000` GTBOOT are allocated to users who made more than 100 cyberlinks via bot, and `200,000,000` GTOCYB and `200,000,000` GTBOOT are allocated to users who made at least 1 cyberlink.
-
-Other files are result of the [genesis generator tool](../genesis_generator_tool/README.md) working:
+The files of this folder are result of the [genesis generator tool](../genesis_generator_tool/README.md) working:
 
 - [Audience Pivot](./audience_pivot.csv) contains summary audience categorization
 - [Categorized Result](./categorized_result.csv) contains all genesis accounts with balances categorized by `discipline` and `audience`

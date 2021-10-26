@@ -7,7 +7,7 @@ FILES = [
     ('../game_of_links/heroes_euler4.csv', 'heroes.euler4'),
     ('../takeoff_distribution/investors_takeoff.csv', 'investors.takeoff'),
     ('../game_of_links/gol_comm_pool.csv', 'gol.comm_pool'),
-    ('../port_migration/investors_port.csv', 'investors.port'),
+    ('../eth_fundraiser/investors_port.csv', 'investors.port'),
     ('../pre_bostrom_lifetime/heroes_pre_bostrom.csv', 'heroes.pre_bostrom'),
     ('../game_of_links/gol_delegation.csv', 'gol.delegation'),
     ('../game_of_links/gol_lifetime.csv', 'gol.lifetime'),

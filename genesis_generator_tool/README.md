@@ -22,7 +22,7 @@ As the output of this script is generated [genesis.json](./data/genesis.json) fi
 - [categorized_result.csv](../distribution/categorized_result.csv) the table with accs by categories
 - [Audience Pivot](../distribution/audience_pivot.csv) contains summary audience categorization
 - [Discipline Pivot](../distribution/discipline_pivot.csv) contains summary discipline categorization
-- [genesis.json](../distribution/discipline_pivot.csv) ready for signing Genesis file
+- [genesis.json](../distribution/genesis.json) ready for signing Genesis file
 
 ## Usage
 

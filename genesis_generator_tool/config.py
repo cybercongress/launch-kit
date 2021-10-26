@@ -8,7 +8,7 @@ FILES = [
     ('../takeoff_distribution/investors_takeoff.csv', 'investors.takeoff'),
     ('../game_of_links/gol_comm_pool.csv', 'gol.comm_pool'),
     ('../eth_fundraiser/investors_port.csv', 'investors.port'),
-    ('../pre_bostrom_lifetime/heroes_pre_bostrom.csv', 'heroes.pre_bostrom'),
+    ('../lifetime/heroes_pre_bostrom.csv', 'heroes.pre_bostrom'),
     ('../game_of_links/gol_delegation.csv', 'gol.delegation'),
     ('../game_of_links/gol_lifetime.csv', 'gol.lifetime'),
     ('../game_of_links/gol_load.csv', 'gol.load'),

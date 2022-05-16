@@ -1,5 +1,5 @@
 requests==2.22.0
 pandas==0.25.3
-numpy==1.17.4
+numpy==1.21.0
 cyberpy
 web3==5.13.0

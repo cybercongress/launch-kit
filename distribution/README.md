@@ -1,8 +1,8 @@
 # Distribution
 
-The files of this folder are result of the [genesis generator tool](../genesis_generator_tool/README.md) working:
+The files in this folder are the result of the [genesis generator tool](../genesis_generator_tool/README.md) working:
 
-- [Audience Pivot](./audience_pivot.csv) contains summary audience categorization
+- [Audience Pivot](./audience_pivot.csv) contains a summary of audience categorization
 - [Categorized Result](./categorized_result.csv) contains all genesis accounts with balances categorized by `discipline` and `audience`
 - [Discipline Pivot](./discipline_pivot.csv) contains summary discipline categorization
 - [genesis.json](./genesis.json) ready for signing Genesis file

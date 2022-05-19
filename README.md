@@ -6,8 +6,8 @@ An awesome, must-have toolkit for the Genesis preparation. This toolkit provides
 
 - [Genesis generator tool](./genesis_generator_tool/README.md) for generating the genesis file
 - [The Game of Links rewards tools](./game_of_links/README.md) for calculating rewards after an incentivized game
-- [Atom fundraiser tool](./atom_fundraiser/README.md) for calculating rewards after atom fundriase
-- [Eth fundriser tool](./eth_fundraiser/README.md) for calculating rewards after ethereum fundriase
+- [Atom fundraiser tool](./atom_fundraiser/README.md) for calculating rewards after atom fundraiser
+- [Eth fundriser tool](./eth_fundraiser/README.md) for calculating rewards after ethereum fundraiser
 - [The lifetime tool](./lifetime/README.md) for calculating rewards for precommits
 
 
